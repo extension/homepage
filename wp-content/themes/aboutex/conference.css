@@ -1,0 +1,427 @@
+/*  
+Theme Name: AbouteX
+Theme URI: 
+Description: 
+Version: 0.1
+Author: Ben MacNeill / North Carolina State University
+Author URI:
+*/
+
+/* the browser font-size default is 16pt. multiple by 62.5% to reset font size to 1em.
+1em is now equal to 10pt. 1.2em is 12pt, 1.6em is 16pt, etc. (unless nested) */
+
+/* reset all margins, padding, and borders */
+* { margin: 0; padding: 0; }
+img { border: 0; }
+
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9em;
+	color: #000;
+	line-height: 1.3em;
+    text-align:center;
+    background: #ddd url("images/bk_left.gif") repeat top left;
+}
+/* correct font-size for IE5/Win */
+* html body {
+	font-size: x-small; /* for IE5/Win */
+	f\ont-size: small; /* hack for IE6,7 */
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0 0 .5em 0;
+	padding: 0;
+	line-height: 120%;
+	font-weight: bold;
+	clear: both;
+	color: #e67527;
+}
+
+h2 {font-size: 120%;}
+h3 {font-size: 110%;}
+
+	
+p {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+}
+
+
+.clear {clear: both;}
+img {border: 0;}
+
+div.description {
+    text-indent: -1000px;
+    float: left;
+}
+
+#header {
+    margin:0;
+    padding:0;
+/*    float: left;*/
+    background: #fff url("images/conference/st_louis_bk.jpg") no-repeat top left;
+    width: 800px;
+	height: 220px;
+}
+
+
+#home p {
+    margin-bottom: .5em;
+}
+
+
+.more {
+    display: block;
+    padding-left: 20px;
+    background: #000 url("images/more_icon.gif") no-repeat top left;
+    color: #fce700 !important;
+    text-decoration: none;
+}
+a.more:hover {
+    text-decoration: underline;
+}
+#footer {
+    clear: both;
+    padding: 1.75em 1em .25em;
+    font-size: 90%;
+    color: #80848a;
+}
+#footer p {
+    float: left;
+}
+#footer ul {
+    margin:0;
+    padding:0;
+    float: right;
+}
+#footer li {
+    list-style-type: none;
+    display: block;
+    margin: 0;
+    padding: 0 .65em 0 .65em;
+    display: inline;
+	border-right: 1px solid #6d6e71;
+}
+#footer a       {color: #80848a; text-decoration: none;}
+#footer a:hover {color: #000; text-decoration: underline;}
+
+#footer .feed {
+    margin-left: .65em;
+    padding-left: 18px;
+    background: url("images/feed_icon.gif") no-repeat 0 50%;
+}
+
+
+/*---------------------------------------------------------------------------*/
+
+		
+
+#frame {
+	width:800px;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:0;
+	padding:0;
+	text-align:left;
+	background: #fff;
+}
+		
+	
+#search {
+    width: auto;
+	padding-top:21px;
+	padding-right:11px;
+	float:right;
+	text-align:right;
+}
+#search div {
+/*    padding-right: 16px;*/
+/*    background: url("images/searchbutton.gif") no-repeat right 50%;*/
+}
+
+li.last {
+    border: 0 !important;
+}
+
+#nav {
+    width: auto;
+    clear: both;
+    height:44px;
+    margin:  1em 1em 0;
+    padding:0;
+    float: left;
+}
+
+#nav li {
+    list-style-type: none;
+    height: 33px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 14px;
+    float: left;
+}
+#nav li a {
+    display: block;
+    height: 33px;
+    font-size: 90%;
+    padding-top: 1em;
+    padding-right: .5em;
+    padding-left: .5em;
+    vertical-align: bottom;
+    text-decoration: none;
+    color: #f47b29;
+    font-weight: bold;
+    float: left;
+}
+#nav li a:hover {
+    color: #80848a;
+    padding-top: 0;
+    padding-bottom: 1em;
+    background: #fff url("images/orange_arc.gif") no-repeat 50% 1.4em;
+}		
+
+
+
+	#rule { 
+	    width:135px;
+		border: 0px;
+	    margin:0px;
+		background:#FFFFFF;
+	    }	
+		
+
+/* homepage
+-----------------------------------------------------------------------------*/
+
+#bottombox {
+    width:800px;
+	margin:0;
+    border: 0;
+    background: #fff;
+    float: left;
+    clear: both;
+    font-size: 95%;
+}
+.hide {
+    display: none;
+}
+
+ul#homepage_links {
+    width:449px;    
+    margin:1.8em 0 0 0;
+    padding: 0;
+    float: left;
+    background:#fff;
+}
+ul#homepage_links li {
+    list-style-type: none;
+    margin: 0 10px 0 120px;
+    padding-left: 25px;
+    background: #fff url("images/bigarrow.gif") no-repeat top left;
+    padding-bottom:1em;
+}
+#bottomright {
+    width:300px;
+    margin: 1.8em 0 0;
+    padding: 0 0 0 1em;
+    border: 0;
+    float: left;
+    background:#fff;
+}
+#bottomright h3 {
+    color: #f47b29;
+    font-weight: bold;
+    font-size:130%;
+}
+#bottomright ul {
+    margin:0 0 .5em;
+    padding:0 0 .5em;
+    background: #fff url("images/dotted_rule.gif") no-repeat bottom left;
+}
+#bottomright ul li {
+    list-style-type: none;
+    margin: 0 0 .5em;
+    padding:0;
+}
+
+/*.idlink {
+    color: #4a4647;
+    letter-spacing:.5px;
+    text-align:center;
+    }               
+*/
+.maintext {
+	color: #000000;
+	text-decoration: none;
+	}
+
+
+a:link      {color: #0066ff; text-decoration: none;}
+a:visited   {color: #0066ff; text-decoration: none;}
+a:hover     {color: #80848a; text-decoration: underline;}
+
+#clear {margin: auto; padding: 0; clear: both; width: 800px; height: 200px;}
+#clear2 {margin: auto; padding: 0; clear: both; width: 800px; height: 30px;}
+
+
+
+
+/*----------------daughter------------------*/
+#subnav {
+    width:130px;
+    margin: 0 20px 0 20px;
+    float: left;
+    padding-top: 18px;
+}
+#subnav h3 {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#subnav ul {
+    margin:0;
+    padding:0 0 .1em;
+    list-style-type: none;
+    background: #fff url("images/dotted_rule.gif") repeat-x bottom left;
+    
+}
+#subnav ul li {
+    line-height: 1.1em;
+    margin-bottom: .8em;
+}
+#subnav ul li a {
+    font-size: 90%;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#subnav ul li#foundation a{
+    text-transform: none;
+}
+#subnav ul li a:link    {color: #0db14b;}
+#subnav ul li a:visited {color: #0db14b;}
+#subnav ul li a:hover   {color: #0db14b; text-decoration: underline;}
+
+#subnav a {
+    color: #0066ff;
+    text-decoration: none;
+}
+#subnav a:link    {color: #0066ff;}
+#subnav a:visited {color: #0066ff;}
+#subnav a:hover   {color: #80848a; text-decoration: underline;}
+
+#content {
+    width:725px;
+    margin: 0 0 0 40px;
+    float: left;
+    padding-top: 0px;
+    background: #fff;
+}
+#content p {
+    width:700px;
+    float: left;
+}
+#content img {
+    padding-right: 10px;
+}
+
+#content .callouttext {
+    width:133px;
+    margin:0;
+    float: right;
+    color: #81848a;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    line-height: 160%;
+}
+
+
+/* Tables
+---------------------------------------------------------------------*/
+#content table p { width:auto; float: none;}
+
+table { 
+	width: 100%;
+	color: #000;
+  border: 1px solid #92bdff;
+	margin: 0 0 1.5em;
+}
+
+th {
+    color:#0e2c5a;
+	margin: 0;
+	padding: .5em .45em 1em;
+	text-align: left;
+    border-right: 1px solid #92bdff;
+	border-bottom:  1px solid #ccc;
+	line-height:1.15em;
+	background:#eaf6ff;
+	vertical-align:top;
+}
+td {
+	margin: 0;
+	border: 1px solid #ddd;
+	text-align: left;
+	border-bottom:  1px solid #a9c9e5;
+	vertical-align:top;
+}
+table td {color:#000;border-bottom:1px solid #ccc;padding:.3em .5em;}
+
+table td a          {color: blue; text-decoration: none; display: block; }
+table td a:link     {color: #00356e;}
+table td a:visited  {color: #00356e;}
+table td a:hover    {color: blue; text-decoration: underline;}
+
+
+
+
+
+/* Blog
+---------------------------------------------------------------------------*/
+
+#content ul {
+    padding: 0;
+    margin: 0 0 1em .75em;
+    float:left;
+}
+#content ul li {
+    margin: 0 0 0 1em;
+}
+
+/* app banner
+-----------------------------------------------------------------------------*/
+#extensionNav {text-align: center; background: #62785e; padding: .15em 0 .2em; margin: 0;}
+#extensionNav .group {display:inline; padding:0 1em; border-right:1px solid #aaa;}
+#extensionNav .last {border:0;}
+#extensionNav .group span {display:none;}
+#extensionNav .group li {display:inline;}
+#extensionNav li li {font-size:1em;}
+#extensionNav a {padding: 0 .4em; color: #fff; text-decoration: none;}
+#extensionNav ul {display:inline; font-size:inherit;}
+#extensionNav a:hover { text-decoration: underline;}
+
+/* app banner custom
+-----------------------------------------------------------------------------*/
+#extensionNav {background: #2f3b3e;font-size: 85%;}
+#extensionNav a {color: #aaa;}
+#extensionNav a:hover {color: #fff;}
+
+
+#content ul {
+    float:none;
+    clear:left;
+}
+#content li {
+    float:none;
+    clear:left;
+}
+
+
+
+.byline {
+    font-size: 100%;
+    color: #666;
+    margin-bottom: .75em;
+    padding-bottom:0;
+}

@@ -1,0 +1,90 @@
+/*  
+Theme Name: AbouteX
+Theme URI: 
+Description: 
+Version: 0.1
+Author: Ben MacNeill / North Carolina State University
+*/
+
+/* the browser font-size default is 16pt. multiple by 62.5% to reset font size to 1em.
+1em is now equal to 10pt. 1.2em is 12pt, 1.6em is 16pt, etc. (unless nested) */
+body {font-size: 62.5%;}
+
+/* reset all margins, padding, and borders */
+* { margin: 0; padding: 0; }
+img { border: 0; }
+
+/* Put it back on certain elements */
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, form, fieldset, table, ul, ol {
+	margin: 0 0 1em;
+}
+.clear {clear:both;}
+
+/* default text sizes */
+p, li, dt, dd {font-size:1.3em;}
+h1 { font-size: 2.4em; color: #f47b29;}
+h2 { font-size: 2.1em; color: #F57B29;}
+h3 { font-size: 1.8em; color: #003073;}
+h4 { font-size: 1.5em; color: #003073;}
+h5 { font-size: 1.4em; color: #003073;}
+h6 { font-size: 1.3em; color: #003073;}
+
+a:link		{ color: #666666; }
+a:visited	{ color: #666666; }
+a:hover		{ color: #F3A24D;}
+
+h2 a {color:#666;text-decoration:none; font-weight:normal;}
+h2 a:visited {color:#666;text-decoration:none;}
+h2 {margin-bottom:.5em;}
+body, html {font-family: "Arial", "sans-serif"; color: #000;}
+
+p, li {margin: .5em 0 2em; line-height:1.4em;}
+ol {margin:1em 3em;}
+ol li {margin: 0 0 .75em;padding:0;}
+
+li {margin:0;padding:0;}
+
+/* Layout */
+#wrapper {width:800px;margin: 25px auto 0;padding:0;text-align:left;background: #fff;}
+#header {position:relative;background:#fff;}
+#header p {margin:0 0 .5em;padding:0;}
+#header #logo {float:left;border:none;display:none;}
+#header #actions {float:right;list-style:none;position:absolute;bottom:0;right:0;}
+#header #actions li {float:left;}
+#sidebar {float:left;width:188px;list-style:none;background:#eee;padding:10px 0;}
+#sidebar li {margin:0 0 .15em;line-height:1.1em;padding:.4em 10px;}
+#sidebar li.first {margin-bottom:.5em;padding-bottom:.25em;}
+#body {clear:both;padding:0 0 0;margin:0;}
+#content {float:right;width:570px;position:relative;border:1px solid #bbb;padding:20px;}
+#footer {clear:both; color: #F57B29;text-align:right;}
+
+
+
+.pdf {background: #fff url("images/pdficon_small.gif") no-repeat  left center;padding-left:20px;margin:0 0  0 0;}
+.files {background: #fff url("images/files.gif") no-repeat  left center;padding-left:20px;margin:0 20px 0 0;}
+
+#content p {padding:0 0 0;margin:0 0 1.5em;}
+#content ul {padding:0 0 .25em 1.5em;margin:0 0 2em 1em;}
+p#callout {float:right;background:#f8d2b8;color:#666;width:200px;padding:10px 20px;font-size:1.6em;margin-left:20px;line-height:1.8em;}
+
+#sidebar li a {text-decoration:none;font-weight:bold;}
+#sidebar li a:visited {text-decoration:none;}
+#sidebar li a:hover {text-decoration:underline;}
+img {border:1px solid #ddd;padding:1em;}
+#logo img {border:0;padding:0;}
+
+#gs-graphicstandards #identity,
+#gs-logo-usage #logo-usage,
+#gs-logo-color #logo-color,
+#gs-single-color #single-color,
+#gs-black-and-white #black-and-white,
+#gs-isolation #isolation,
+#gs-minimum #minimum,
+#gs-donts #donts,
+#gs-scaling #scaling,
+#gs-typography #typography,
+#gs-email-signatures #email-signatures,
+#gs-be-grow-create-icon #be-grow-create-icon {background:#ccc;}
+
+#content ul li {margin-bottom:.75em;}
+code {font-size:1.2em; color:#333;font-family:courier;display:block;}
