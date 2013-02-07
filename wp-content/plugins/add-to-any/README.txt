@@ -1,16 +1,16 @@
 === Share Buttons by Lockerz / AddToAny ===
 Contributors: micropat
-Tags: sharing, share, sharethis, bookmarking, social, social bookmarking, social bookmarks, bookmark, bookmarks, save, Post, posts, page, pages, images, image, admin, statistics, stats, links, plugin, widget, email, e-mail, seo, button, delicious, google buzz, buzz, google, digg, reddit, facebook, facebook like, like, myspace, twitter, tweet, +1, plus 1, google plus, google plus one, plus one, pinterest, messenger, stumbleupon, technorati, addthis, sexybookmarks, sociable, sharedaddy, shareaholic, icon, icons, wpmu, addtoany, lockerz
+Tags: sharing, share, sharethis, bookmarking, social, social bookmarking, social bookmarks, bookmark, bookmarks, save, Post, posts, page, pages, images, image, admin, statistics, stats, links, plugin, widget, email, e-mail, seo, button, delicious, google buzz, buzz, google, linkedin, digg, reddit, facebook, facebook like, like, myspace, twitter, tweet, +1, plus 1, google plus, google plus one, plus one, pinterest, messenger, stumbleupon, technorati, addthis, sexybookmarks, sociable, sharedaddy, shareaholic, icon, icons, wpmu, addtoany, lockerz
 Requires at least: 2.8
-Tested up to: 3.3
-Stable tag: 0.9.9.9.9
+Tested up to: 3.4
+Stable tag: 1.0.3
 
-Help people share, bookmark, and email your posts & pages using any service, such as Facebook, Twitter, Google, StumbleUpon, Digg and many more.
+Help people share, bookmark, and email your posts & pages using any service, such as Facebook, Twitter, Google, StumbleUpon, LinkedIn and many more.
 
 == Description ==
 
 The WordPress plugin to help people **share**, **bookmark**, and **email** your posts and pages using any service, such as Facebook, Twitter, StumbleUpon, Google, Digg, Delicious, and well over 100 more sharing and social bookmarking sites. 
-New: **Pinterest Pin It Button** in addition to the **Facebook Like Button**, **Twitter Tweet Button**, and **Google +1 Button**.
+New: **Pinterest Pin It Button** in addition to the **Facebook Like Button**, **Twitter Tweet Button**, **Google+ Share Button** and **Google +1 Button**.
 
 This sharing plugin comes with a customizable Smart Menu, which places the services visitors use at the top of the menu, based on each visitor's browsing and usage history.
 
@@ -29,7 +29,7 @@ Standalone **share icons** let you optimize your blog posts & pages for specific
 * Easily customizable for beginners or advanced users, and highly extensible for developers and designers
 * Many more publisher and user features!
 
-After **years of active development**, over **2.1 million downloads**, and **ongoing support from the community**, this plugin still strives to be the best WordPress plugin for sharing. We hope it's perfect for everyone by version 1.0.
+After **years of active development**, over **2.2 million downloads**, and **ongoing support from the community**, this plugin still strives to be the best WordPress plugin for sharing. Enjoy!
 
 <a href="http://www.addtoany.com/share_save" title="Share">Share this</a> plugin
 
@@ -50,7 +50,7 @@ See also:
 
 = Where are the options? =
 
-In your Admin panel, go to `Settings` > `AddToAny`.  Among other options, you can choose which button, individual icons and advanced sharing buttons (Facebook Like Button, Twitter Tweet Button, Google +1 Button) to display, and where and how to display them.
+In your Admin panel, go to `Settings` > `AddToAny`.  Among other options, you can choose which button, individual icons and advanced sharing buttons (Facebook Like Button, Twitter Tweet Button, Google+ Share Button, Google +1 Button) to display, and where and how to display them.
 
 To place the buttons as a "widget" in your theme (if your theme supports WordPress Widgets), go to `Appearance` > `Widgets`, then drag AddToAny to an available Widget Area and click `Save`.
 
@@ -169,15 +169,17 @@ To change the title, description and/or image on Facebook, you will need to modi
 
 For more technical information on setting your pages up for Facebook sharing, see "Step 2 - Get Open Graph Tags" in <a href="http://developers.facebook.com/docs/reference/plugins/like/">Facebook's documentation</a>.
 
-= Why does the Facebook Like Button, Twitter Tweet Button, or Google +1 Button have so much whitespace to the right of it? =
+= Why does the Facebook Like Button, Twitter Tweet Button, Google+ Share Button, or Google +1 Button have so much whitespace to the right of it? =
 
-The minimum width for the Facebook Like Button is 90 pixels. This is required to display the total number of Likes to the right of the button.  See Facebook's <a href="http://developers.facebook.com/docs/reference/plugins/like">Like Button documentation</a> for details.
+The minimum width for the Facebook Like Button is 90 pixels. This is required to display the total number of Likes to the right of the button.  See Facebook's <a href="http://developers.facebook.com/docs/reference/plugins/like">Like Button documentation</a> for details
 
-It's not recommended, but you can change the width of the Facebook Like Button using CSS code, for instance: `.facebook_like { width:50px !important; }`
+It's not recommended, but you can change the width of the Facebook Like Button using CSS code, for instance: `.a2a_button_facebook_like { width:50px !important; }`
 
-The Twitter Tweet Button with 'total count' enabled is 130 pixels. You can change the width using CSS code, for instance: `.twitter_tweet { width:100px !important; }`
+The Twitter Tweet Button with 'total count' enabled is 130 pixels. You can change the width using CSS code, for instance: `.a2a_button_twitter_tweet { width:100px !important; }`
 
-The Google +1 Button with 'total count' enabled is 90 pixels. You can change the width using CSS code, for instance: `.google_plusone { width:65px !important; }`
+The Google +1 Button with 'total count' enabled is 90 pixels. You can change the width using CSS code, for instance: `.a2a_button_google_plusone { width:65px !important; }`
+
+The Google+ Share Button width can be changed using CSS code, for instance: `.a2a_button_google_plus_share { width:57px !important; }`
 
 = Does the plugin output W3C valid code? =
 
@@ -218,6 +220,23 @@ Upload the plugin directory (including all files and directories within) to the 
 5. Color chooser for your universal sharing menu
 
 == Changelog ==
+
+= 1.0.3 =
+* Update Twitter logo
+
+= 1.0.2 =
+* Add new Google+ Share button
+* Update <a href="http://wordpress.org/extend/plugins/add-to-any/faq/">FAQ</a> for resizing advanced 3rd party buttons
+
+= 1.0.1 =
+* Fix markup output for advanced 3rd party buttons when displayed as WordPress widget
+
+= 1.0 =
+* After 5 years of development: Version One Point Oh!
+* Load advanced 3rd party buttons faster (Facebook Like, Twitter Tweet, Google +1)
+ * Use A2A Kit for speed, extensibility, measurability
+* Adjust CSS to accommodate external resources for advanced 3rd party buttons
+* Lithuanian translation (by Vincent G. from <a href="http://www.host1free.com/">Host1Free</a>)
 
 = .9.9.9.9 =
 * Fix hardcoded fallbacks for sharing endpoints
