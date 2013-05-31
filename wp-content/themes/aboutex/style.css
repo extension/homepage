@@ -651,3 +651,4 @@ address {margin:0 0 1.5em 2em; padding:.5em;}
 address p {margin:0;  line-height:1.3em !important; font-size:1.5em !important;}
 
 img.fluid {width:100%;height:auto;}
+img.border {padding:4px;border:2px solid #ccc; margin-bottom:1em;}
