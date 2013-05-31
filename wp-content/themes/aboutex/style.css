@@ -649,3 +649,5 @@ td {
 
 address {margin:0 0 1.5em 2em; padding:.5em;}
 address p {margin:0;  line-height:1.3em !important; font-size:1.5em !important;}
+
+img.fluid {width:100%;}
