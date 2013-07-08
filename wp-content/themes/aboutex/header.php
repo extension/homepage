@@ -4,24 +4,17 @@
 <meta charset="utf-8" />
 <head profile="http://gmpg.org/xfn/11">
 
-<title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Blog Archive <?php } ?> <?php wp_title(); ?></title>
+<title><?php single_post_title(); ?> - <?php bloginfo('name'); ?></title>
 
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 
-
-<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<meta name="description" content="<?php echo get_the_excerpt(); ?>" />
-<?php endwhile; endif; elseif(is_home()) : ?>
-<meta name="description" content="<?php bloginfo('description'); ?>" />
-<?php endif; ?>
-
-
-<meta name="description" content="<?php if ( is_single() ) {
-        single_post_title('', true); 
-    } else {
-        bloginfo('name'); echo " - "; bloginfo('description');
-    }
-    ?>" />
+<?php if (is_single() ) { ?>
+  <?php if (have_posts()) : while (have_posts()) : the_post();  ?>
+    <meta name="description" content="<?php echo get_the_excerpt(); ?>" />
+  <?php endwhile; endif; ?>
+<?php } else { ?>
+  <meta name="description" content="<?php bloginfo('description'); ?>" />
+<?php } ?>
 
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" type="text/css" media="screen" />
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery-1.4.2.min.js"></script>
