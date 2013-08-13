@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Share Buttons by Lockerz / AddToAny
-Plugin URI: http://share.lockerz.com/
-Description: Help people share, bookmark, and email your posts & pages using any service, such as Facebook, Twitter, Google, StumbleUpon, LinkedIn and many more.  [<a href="options-general.php?page=add-to-any.php">Settings</a>]
-Version: 1.0.3
+Plugin Name: Share Buttons by AddToAny
+Plugin URI: http://www.addtoany.com/
+Description: Sharing buttons for your pages from the universal sharing platform, including Facebook, Twitter, Google+, Pinterest, StumbleUpon and many more.  [<a href="options-general.php?page=add-to-any.php">Settings</a>]
+Version: 1.1.3
 Author: micropat
-Author URI: http://share.lockerz.com/
+Author URI: http://www.addtoany.com/
 */
 
 if( !isset($A2A_locale) )
@@ -292,7 +292,7 @@ function ADDTOANY_SHARE_SAVE_BUTTON( $args = array() ) {
 	
 	$button_html = $html_container_open . $html_wrap_open . '<a class="a2a_dd' . $button_class . ' addtoany_share_save" href="http://www.addtoany.com/share_save' .$button_href_querystring . '"' . $button_id
 		. $style . $button_target
-		. '>' . $button . '</a>' . $html_wrap_close . $html_container_close;
+		. '>' . $button . '</a>';
 	
 	// If not a feed
 	if( ! $is_feed ) {
@@ -315,6 +315,9 @@ function ADDTOANY_SHARE_SAVE_BUTTON( $args = array() ) {
 		$button_html .= $javascript_load_early;
 		$_addtoany_init = TRUE;
 	}
+	
+	// Closing tags come after <script> to validate in case the container is a list element
+	$button_html .= $html_wrap_close . $html_container_close;
 	
 	if ( $output_later )
 		return $button_html;
@@ -915,7 +918,7 @@ function A2A_SHARE_SAVE_options_page() {
 	
 	<h2><?php _e( 'AddToAny: Share/Save ', 'add-to-any' ) . _e( 'Settings' ); ?></h2>
 
-    <form method="post" action="">
+    <form id="addtoany_admin_form" method="post" action="">
     
 	<?php wp_nonce_field('add-to-any-update-options'); ?>
     
@@ -1189,15 +1192,15 @@ function A2A_SHARE_SAVE_admin_head() {
 			
 			for(var i=0, service_name; i < services_size; i++){
 				if(services_array[i]!='') { // Exclude dummy icon
-					jQuery('form:first').append('<input name="A2A_SHARE_SAVE_active_services[]" type="hidden" value="'+services_array[i]+'"/>');
+					jQuery('#addtoany_admin_form').append('<input name="A2A_SHARE_SAVE_active_services[]" type="hidden" value="'+services_array[i]+'"/>');
 					
 					// Special service options?
 					service_name = services_array[i].substr(7);
 					if (service_name == 'facebook_like' || service_name == 'twitter_tweet' || service_name == 'google_plusone' || service_name == 'google_plus_share') {
 						if ((service_name == 'twitter_tweet' || service_name == 'google_plusone' || service_name == 'google_plus_share') && jQuery('#' + services_array[i] + '_show_count').is(':checked'))
-							jQuery('form:first').append('<input name="addtoany_' + service_name + '_show_count" type="hidden" value="1"/>');
+							jQuery('#addtoany_admin_form').append('<input name="addtoany_' + service_name + '_show_count" type="hidden" value="1"/>');
 						if ((service_name == 'facebook_like') && jQuery('#' + services_array[i] + '_verb').val() == 'recommend')
-							jQuery('form:first').append('<input name="addtoany_' + service_name + '_verb" type="hidden" value="recommend"/>');
+							jQuery('#addtoany_admin_form').append('<input name="addtoany_' + service_name + '_verb" type="hidden" value="recommend"/>');
 					}
 				}
 			}
@@ -1278,7 +1281,7 @@ function A2A_SHARE_SAVE_admin_head() {
 		jQuery('#addtoany_services_selectable li').bind('click', moveToSortableList);
         
         // Form submit = get sortable list
-        jQuery('form').submit(function(){to_input('#addtoany_services_sortable')});
+        jQuery('#addtoany_admin_form').submit(function(){to_input('#addtoany_services_sortable')});
         
         // Auto-select active services
         <?php
@@ -1360,7 +1363,7 @@ function A2A_SHARE_SAVE_admin_head() {
 	#addtoany_services_sortable li.dummy, #addtoany_services_sortable li.dummy:hover{cursor:auto;background-color:transparent;}
 	#addtoany_services_sortable img{width:16px;height:16px;border:0;vertical-align:middle;}
 	#addtoany_services_sortable .addtoany_special_service img{width:auto;height:20px;float:left;}
-	#addtoany_services_sortable .addtoany_special_service span.down_arrow{background:url(<?php echo admin_url( '/images/menu-bits.gif' ); ?>) no-repeat -2px -110px;float:right;height:30px;;margin:-5px 0 -6px 5px;width:20px;}
+	#addtoany_services_sortable .addtoany_special_service span.down_arrow{background:url(<?php echo admin_url( '/images/arrows.png' ); ?>) no-repeat 5px 9px;float:right;height:29px;;margin:-6px 0 -6px 4px;width:26px;}
 	#addtoany_services_sortable .addtoany_special_service div.special_options{display:none;font-size:11px;margin-top:9px;}
 	#addtoany_services_sortable .addtoany_special_service_options_selected{border:1px solid #AAA;background-color:#FFF;}
 	#addtoany_services_sortable .addtoany_special_service_options_selected span.down_arrow{display:none;}
