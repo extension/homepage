@@ -1,45 +1,43 @@
-=== Share Buttons by Lockerz / AddToAny ===
+=== Share Buttons by AddToAny ===
 Contributors: micropat
-Tags: sharing, share, sharethis, bookmarking, social, social bookmarking, social bookmarks, bookmark, bookmarks, save, Post, posts, page, pages, images, image, admin, statistics, stats, links, plugin, widget, email, e-mail, seo, button, delicious, google buzz, buzz, google, linkedin, digg, reddit, facebook, facebook like, like, myspace, twitter, tweet, +1, plus 1, google plus, google plus one, plus one, pinterest, messenger, stumbleupon, technorati, addthis, sexybookmarks, sociable, sharedaddy, shareaholic, icon, icons, wpmu, addtoany, lockerz
+Tags: sharing, share, sharethis, bookmarking, social, social bookmarking, social bookmarks, bookmark, bookmarks, save, Post, posts, page, pages, images, image, admin, statistics, stats, links, plugin, widget, email, e-mail, seo, button, delicious, google buzz, buzz, google, linkedin, digg, reddit, facebook, facebook like, like, myspace, twitter, tweet, +1, plus 1, google plus, google plus one, plus one, pinterest, messenger, stumbleupon, technorati, lockerz, addthis, sexybookmarks, sociable, sharedaddy, shareaholic, icon, icons, wpmu, addtoany
 Requires at least: 2.8
-Tested up to: 3.4
-Stable tag: 1.0.3
+Tested up to: 3.7
+Stable tag: 1.1.3
 
-Help people share, bookmark, and email your posts & pages using any service, such as Facebook, Twitter, Google, StumbleUpon, LinkedIn and many more.
+Sharing buttons for your pages from the universal sharing platform, including Facebook, Twitter, Google+, Pinterest, StumbleUpon and many more.
 
 == Description ==
 
-The WordPress plugin to help people **share**, **bookmark**, and **email** your posts and pages using any service, such as Facebook, Twitter, StumbleUpon, Google, Digg, Delicious, and well over 100 more sharing and social bookmarking sites. 
-New: **Pinterest Pin It Button** in addition to the **Facebook Like Button**, **Twitter Tweet Button**, **Google+ Share Button** and **Google +1 Button**.
+The WordPress plugin to help people **share**, **bookmark**, and **email** your posts and pages using any service, such as Facebook, Twitter, Pinterest, Google, Reddit, StumbleUpon, LinkedIn, and well over 100 more sharing and social bookmarking sites. 
+Advanced buttons include the **Facebook Like Button**, **Twitter Tweet Button**, **Google+ Share Button**, **Google+ Share Button** and **Google +1 Button**.
 
-This sharing plugin comes with a customizable Smart Menu, which places the services visitors use at the top of the menu, based on each visitor's browsing and usage history.
+This sharing plugin lets you customize the AddToAny universal Smart Menu, which places the services visitors use at the top of the menu, based on each visitor's usage history.
 
-<a href="http://share.lockerz.com/" title="Sharing button widget">Share Button</a> (demo)
+<a href="http://www.addtoany.com/" title="Sharing button widget">Share Button</a> (demo)
 
-The Email tab makes it easy to share via Google Gmail, Yahoo! Mail, Hotmail, AOL, and any other web-based emailer or desktop program.
+The Email tab makes it easy to share via Google Gmail, Yahoo! Mail, Hotmail (Outlook.com), AOL Mail, and any other web-based emailer or desktop program.
 
 Standalone **share icons** let you optimize your blog posts & pages for specific social sites.  Choose from over 100 individual services.
 
-* Smart Menu & <a href="http://share.lockerz.com/buttons/customize/standalone_services">Kit</a>
-* Individual share links (like Sociable)
-* Includes all <a href="http://share.lockerz.com/services/">services</a>
-* Google Analytics integration (<a href="http://share.lockerz.com/ext/google_analytics/">access guide</a>)
+* Smart Menu & Kit with individual share links
+* Choose exactly where you want AddToAny to appear
+* Google Analytics integration (<a href="http://www.addtoany.com/ext/google_analytics/">access guide</a>)
 * WordPress optimized with asynchronous script loading
 * Localized in English, Chinese, Spanish, Arabic, French, Portuguese, Japanese, Italian, Dutch, Danish, Catalan, Persian, Russian, Turkish, Albanian, Romanian, Belarusian, Greek, Irish
 * Easily customizable for beginners or advanced users, and highly extensible for developers and designers
 * Many more publisher and user features!
 
-After **years of active development**, over **2.2 million downloads**, and **ongoing support from the community**, this plugin still strives to be the best WordPress plugin for sharing. Enjoy!
+After **years of active development**, over **2.4 million downloads**, and **ongoing support from the community**, this plugin still strives to be the best WordPress plugin for sharing. We love feedback.
 
 <a href="http://www.addtoany.com/share_save" title="Share">Share this</a> plugin
 
 See also:
 
-* The standard <a href="http://share.lockerz.com/buttons/">Share button</a> widget
-* The <a href="http://share.lockerz.com/buttons/for/wordpress_com" title="WordPress.com sharing button widget">Share button for WordPress.com</a> blogs
+* The standard <a href="http://www.addtoany.com/buttons/">Share button</a> widget
 * The <a href="/extend/plugins/add-to-any-subscribe/" title="WordPress RSS Subscribe widget plugin">Subscribe button</a> plugin
 
-<a href="http://share.lockerz.com/blog/">Lockerz Share Blog</a> | <a href="http://share.lockerz.com/privacy">Privacy Policy</a>
+<a href="http://www.addtoany.com/blog/">AddToAny Blog</a> | <a href="http://www.addtoany.com/privacy">Privacy Policy</a>
 
 == Installation ==
 
@@ -205,7 +203,7 @@ Go to `Settings` > `AddToAny` > uncheck `Use inline CSS` and place the CSS code 
 
 = Why does the menu appear behind embedded objects (like Flash)? =
 
-Please read <a href="http://share.lockerz.com/buttons/customize/show_over_embeds">this document</a> for an explanation and possible fix. For WordPress, an easier fix is to have the plugin <a href="http://share.lockerz.com/buttons/customize/hide_embeds">hide intersecting embedded objects</a>. Just copy & paste the recommended code into the Additional Options box in `Settings` > `AddToAny`, then save changes.
+Please read <a href="http://www.addtoany.com/buttons/customize/show_over_embeds">this document</a> for an explanation and possible fix. For WordPress, an easier fix is to have the plugin <a href="http://www.addtoany.com/buttons/customize/hide_embeds">hide intersecting embedded objects</a>. Just copy & paste the recommended code into the Additional Options box in `Settings` > `AddToAny`, then save changes.
 
 = For a WordPress Multisite Network (MS), how can I set the plugin as a "Must-Use" plugin to automatically execute for all blogs? =
 
@@ -220,6 +218,40 @@ Upload the plugin directory (including all files and directories within) to the 
 5. Color chooser for your universal sharing menu
 
 == Changelog ==
+
+= 1.1.3 =
+* Fix validation and semantics of script tag placement, particularly when button is contained in a list element
+
+= 1.1.2 =
+* Fix settings page conflict with certain features of the Jetpack plugin and other plugins & themes
+ * Fix saving of 3rd party button options (for Facebook Like, Twitter Tweet, Google +1)
+ * Fix service sorting
+* Add Pocket (formerly Read It Later)
+* Remove Read It Later (now Pocket)
+* Remove HelloTxt
+* Update Slashdot icon
+
+= 1.1.1 =
+* Add Pinboard
+* Add Buffer
+* Add Diaspora
+* Add Kindle It
+* Add Mail.Ru
+* Add Odnoklassniki
+* Update Pinterest icon
+* Update Google icon
+* Update Google+ icon
+* Remove Google Reader
+* Remove Posterous
+* Remove Sphere
+* Remove Tipd
+* Remove Vodpod
+
+= 1.1 =
+* Fix settings page conflict with certain features of the Jetpack plugin and other plugins & themes
+* Fix settings page's down arrow icon for advanced 3rd party buttons (Like, Tweet, etc.)
+* Update branding
+* Update buttons
 
 = 1.0.3 =
 * Update Twitter logo
