@@ -31,7 +31,6 @@ $post_name = $post_obj->post_name;
             <h2><a href="<?php bloginfo('url'); ?>/graphicstandards">eXtension Graphic Standards Guidelines</a></h2>
             <ul id="actions">
                 <li class="files"><a href="<?php bloginfo('template_directory'); ?>/images/standards/eXtension_logos.zip">Download Logos</a> (2.1 MB)</li>
-                <li class="pdf"><a href="<?php bloginfo('template_directory'); ?>/images/standards/eXtension_GS.pdf">Download pdf</a></li>
             </ul>
             <br class="clear"/>
         </div>
