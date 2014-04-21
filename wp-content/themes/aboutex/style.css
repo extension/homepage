@@ -250,7 +250,7 @@ a.more:hover {text-decoration: underline;}
 #quicklinks ul li {margin:0 0 1.2em; line-height:120%; list-style:disc;}
 
 #col3 {float:left; width:235px;}
-#aae_slug {background:#f47a29; float:left; padding:20px; }
+#aae_slug {background:#fff; float:left; padding:0 20px 10px;}
 #latest_posts {float:left; width:225px; padding:25px; background:#ddd;}
 #latest_posts a {color:#555; font-size:1.0em;}
 #latest_posts a:hover {color:#000;}

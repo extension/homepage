@@ -45,7 +45,7 @@ Template Name: Sitehome
       <h3>Quick Links</h3>
       <?php quicklink_menu(8); ?>
     </div>
-    <p id="aae_slug"><a href="http://www.extension.org/ask" class="button white primary">Ask an Expert</a>Submit a question to experts from universities across the country</p>
+    <p id="aae_slug"><a href="https://ask.extension.org/ask"><img src="<?php bloginfo('template_directory'); ?>/images/Ask_An_Expert_logo_color.png" width="180" height="110.52" alt="Ask an Expert" /></a>Submit a question to experts from universities across the country</p>
   </div>
 </div>
 
