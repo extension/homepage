@@ -2,5 +2,3 @@
 /.htaccess
 /wp-content/uploads.bundle
 /capatross_logs
-/.ruby-gemset
-/.ruby-version
