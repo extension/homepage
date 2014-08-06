@@ -1,11 +1,16 @@
 set :deploy_to, '/services/apache/vhosts/about.demo.extension.org/wordpress/'
 server 'about.demo.extension.org', :app, :web, :db, :primary => true
+if(branch = ENV['BRANCH'])
+  set :branch, branch
+else
+  set :branch, 'master'
+end
 
-namespace :deploy do  
+namespace :deploy do
   # Link up various configs (valid after an update code invocation)
   task :link_and_copy_configs, :roles => :app do
     run <<-CMD
-    rm -rf #{release_path}/config/database.yml && 
+    rm -rf #{release_path}/config/database.yml &&
     rm -rf #{release_path}/wp-config.php &&
     ln -nfs /services/config/#{application}demo/wordpress/wp-config.php #{release_path}/wp-config.php &&
     ln -nfs /services/config/#{application}demo/wordpress/.htaccess #{release_path}/.htaccess &&
