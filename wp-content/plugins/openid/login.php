@@ -21,7 +21,7 @@ add_action( 'init', 'openid_login_errors' );
  * @param mixed $user authenticated user object, or WP_Error or null
  */
 function openid_authenticate($user) {
-	if ( array_key_exists('openid_identifier', $_POST) && $_POST['openid_identifier'] ) {
+	if ( !array_key_exists('finish_openid', $_REQUEST) && $_GET['loggedout']!='true' ) {
 
 		$redirect_to = array_key_exists('redirect_to', $_REQUEST) ? $_REQUEST['redirect_to'] : null;
 		#openid_start_login($_POST['openid_identifier'], 'login', $redirect_to);
