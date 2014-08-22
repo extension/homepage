@@ -17,10 +17,15 @@ set :port, 24
 
 after "deploy:update_code", "deploy:link_and_copy_configs"
 after "deploy:update_code", "deploy:cleanup"
-
+after 'deploy',             'deploy:restart'
 
 namespace :deploy do
 
+   # Override default restart task
+   desc "Restart Apache"
+   task :restart, :roles => :app do
+     invoke_command '/usr/sbin/service apache2 restart', via: 'sudo'
+   end
 
   # Link up various configs (valid after an update code invocation)
   task :link_and_copy_configs, :roles => :app do
@@ -39,5 +44,20 @@ namespace :deploy do
     task t, :roles => :app do ; end
   end
 
+
+   # Override default web enable/disable tasks
+   namespace :web do
+
+      desc "Put Apache in maintenancemode by touching the maintenancemode file"
+      task :disable, :roles => :app do
+        invoke_command "touch /services/maintenance/#{vhost}.maintenancemode"
+      end
+
+      desc "Remove Apache from maintenancemode by removing the maintenancemode file"
+      task :enable, :roles => :app do
+        invoke_command "rm -f /services/maintenance/#{vhost}.maintenancemode"
+      end
+
+   end
 
 end
