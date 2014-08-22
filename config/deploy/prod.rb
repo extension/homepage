@@ -1,2 +1,3 @@
-set :deploy_to, '/services/apache/vhosts/about.extension.org/wordpress/'
-server 'about.extension.org', :app, :web, :db, :primary => true
+set :deploy_to, "/services/about/"
+set :vhost, 'about.extension.org'
+server vhost, :app, :web, :db, :primary => true
