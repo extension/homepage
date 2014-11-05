@@ -188,6 +188,10 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Google Gmail",
 		"icon" => "gmail",
 	),
+	"hacker_news" => array(
+		"name" => "Hacker News",
+		"icon" => "y18",
+	),
 	"hatena" => array(
 		"name" => "Hatena",
 		"icon" => "hatena",
@@ -216,6 +220,10 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Kindle It",
 		"icon" => "kindle",
 	),
+	"line" => array(
+		"name" => "Line",
+		"icon" => "line",
+	),
 	"linkagogo" => array(
 		"name" => "LinkaGoGo",
 		"icon" => "linkagogo",
@@ -239,6 +247,10 @@ $A2A_SHARE_SAVE_services = array(
 	"meneame" => array(
 		"name" => "Meneame",
 		"icon" => "meneame",
+	),
+	"mixi" => array(
+		"name" => "Mixi",
+		"icon" => "mixi",
 	),
 	"myspace" => array(
 		"name" => "MySpace",
