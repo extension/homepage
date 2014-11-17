@@ -30,7 +30,6 @@ namespace :deploy do
   # Link up various configs (valid after an update code invocation)
   task :link_and_copy_configs, :roles => :app do
     run <<-CMD
-    rm -rf #{release_path}/config/database.yml &&
     rm -rf #{release_path}/wp-config.php &&
     ln -nfs /services/about/shared/config/wp-config.php #{release_path}/wp-config.php &&
     ln -nfs /services/about/shared/config/.htaccess #{release_path}/.htaccess &&
@@ -40,7 +39,7 @@ namespace :deploy do
   end
 
   [:start, :stop].each do |t|
-    desc "#{t} task is a no-op with mod_rails"
+    desc "#{t} task is a no-op with this application"
     task t, :roles => :app do ; end
   end
 
