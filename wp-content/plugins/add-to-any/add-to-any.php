@@ -3,7 +3,7 @@
 Plugin Name: Share Buttons by AddToAny
 Plugin URI: https://www.addtoany.com/
 Description: Share buttons for your pages including AddToAny's universal sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp and many more.  [<a href="options-general.php?page=add-to-any.php">Settings</a>]
-Version: 1.4
+Version: 1.5.2
 Author: AddToAny
 Author URI: https://www.addtoany.com/
 */
@@ -63,7 +63,7 @@ function A2A_SHARE_SAVE_link_vars( $linkname = false, $linkurl = false ) {
 	// Set linkname
 	if ( ! $linkname ) {
 		if ( isset( $post ) ) {
-			$linkname = get_the_title( $post->ID );
+			$linkname = strip_tags( get_the_title( $post->ID ) );
 		}
 		else {
 			$linkname = '';
@@ -113,8 +113,10 @@ function ADDTOANY_SHARE_SAVE_KIT( $args = false ) {
 	// a2a_kit_size_32 if no icon size, or no_small_icons arg is true
 	} elseif ( ! isset( $options['icon_size'] ) || isset( $args['no_small_icons'] ) && true == $args['no_small_icons'] ) {
 		$icon_size = ' a2a_kit_size_32';
+	// a2a_kit_size_16
 	} elseif ( isset( $options['icon_size'] ) && $options['icon_size'] == '16' ) {
 		$icon_size = '';
+	// a2a_kit_size_## custom icon size
 	} else {
 		$icon_size = ' a2a_kit_size_' . $options['icon_size'] . '';
 	}
@@ -285,7 +287,7 @@ function ADDTOANY_SHARE_SAVE_ICONS( $args = array() ) {
 			}
 			
 			$link = $html_wrap_open . "<a$class_attr href=\"$url\" title=\"$name\" rel=\"nofollow\" target=\"_blank\">";
-			$link .= ( $large_icons && ! isset( $custom_icons ) ) ? "" : "<img src=\"$src\" width=\"$width\" height=\"$height\" alt=\"$name\"/>";
+			$link .= ( $large_icons && ! isset( $custom_icons ) && ! $custom_service ) ? "" : "<img src=\"$src\" width=\"$width\" height=\"$height\" alt=\"$name\"/>";
 			$link .= "</a>" . $html_wrap_close;
 		}
 		
@@ -460,6 +462,10 @@ function ADDTOANY_SHARE_SAVE_BUTTON( $args = array() ) {
 function ADDTOANY_SHARE_SAVE_SPECIAL( $special_service_code, $args = array() ) {
 	// $args array = output_later, linkname, linkurl
 	
+	if ( is_feed() ) {
+		return;
+	}
+	
 	$options = get_option( 'addtoany_options' );
 	
 	$linkname = ( isset( $args['linkname'] ) ) ? $args['linkname'] : FALSE;
@@ -532,7 +538,8 @@ if ( ! function_exists( 'A2A_menu_locale' ) ) {
 	BookmarkInstructions: "' . __( "Press Ctrl+D or \u2318+D to bookmark this page", "add-to-any" ) . '",
 	AddToYourFavorites: "' . __( "Add to your favorites", "add-to-any" ) . '",
 	SendFromWebOrProgram: "' . __( "Send from any email address or email program", "add-to-any" ) . '",
-	EmailProgram: "' . __( "Email program", "add-to-any" ) . '"
+	EmailProgram: "' . __( "Email program", "add-to-any" ) . '",
+	More: "' . __( "More&#8230;", "add-to-any" ) . '"
 };
 ';
 		return $A2A_locale;
@@ -922,7 +929,7 @@ function A2A_SHARE_SAVE_stylesheet() {
 	// Use stylesheet?
 	if ( ! isset( $options['inline_css'] ) || $options['inline_css'] != '-1' && ! is_admin() ) {
 	
-		wp_enqueue_style( 'A2A_SHARE_SAVE', $A2A_SHARE_SAVE_plugin_url_path . '/addtoany.min.css', false, '1.8' );
+		wp_enqueue_style( 'A2A_SHARE_SAVE', $A2A_SHARE_SAVE_plugin_url_path . '/addtoany.min.css', false, '1.9' );
 	
 		// wp_add_inline_style requires WP 3.3+
 		if ( '3.3' <= get_bloginfo( 'version' ) ) {

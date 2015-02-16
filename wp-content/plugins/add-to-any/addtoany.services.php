@@ -42,10 +42,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "AOL Mail",
 		"icon" => "aol",
 	),
-	"allvoices" => array(
-		"name" => "Allvoices",
-		"icon" => "allvoices",
-	),
 	"amazon_wish_list" => array(
 		"name" => "Amazon Wish List",
 		"icon" => "amazon",
@@ -54,10 +50,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "App.net",
 		"icon" => "app_net",
 	),
-	"arto" => array(
-		"name" => "Arto",
-		"icon" => "arto",
-	),
 	"baidu" => array(
 		"name" => "Baidu",
 		"icon" => "baidu",
@@ -65,10 +57,6 @@ $A2A_SHARE_SAVE_services = array(
 	"balatarin" => array(
 		"name" => "Balatarin",
 		"icon" => "balatarin",
-	),
-	"bebo" => array(
-		"name" => "Bebo",
-		"icon" => "bebo",
 	),
 	"bibsonomy" => array(
 		"name" => "BibSonomy",
@@ -176,10 +164,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "FriendFeed",
 		"icon" => "friendfeed",
 	),
-	"funp" => array(
-		"name" => "FunP",
-		"icon" => "funp",
-	),
 	"google_bookmarks" => array(
 		"name" => "Google Bookmarks",
 		"icon" => "google",
@@ -208,13 +192,9 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Jamespot",
 		"icon" => "jamespot",
 	),
-	"jumptags" => array(
-		"name" => "Jumptags",
-		"icon" => "jumptags",
-	),
-	"khabbr" => array(
-		"name" => "Khabbr",
-		"icon" => "khabbr",
+	"kakao" => array(
+		"name" => "Kakao",
+		"icon" => "kakao",
 	),
 	"kindle_it" => array(
 		"name" => "Kindle It",
@@ -223,14 +203,6 @@ $A2A_SHARE_SAVE_services = array(
 	"line" => array(
 		"name" => "Line",
 		"icon" => "line",
-	),
-	"linkagogo" => array(
-		"name" => "LinkaGoGo",
-		"icon" => "linkagogo",
-	),
-	"linkatopia" => array(
-		"name" => "Linkatopia",
-		"icon" => "linkatopia",
 	),
 	"livejournal" => array(
 		"name" => "LiveJournal",
@@ -276,10 +248,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "NewsVine",
 		"icon" => "newsvine",
 	),
-	"nowpublic" => array(
-		"name" => "NowPublic",
-		"icon" => "nowpublic",
-	),
 	"odnoklassniki" => array(
 		"name" => "Odnoklassniki",
 		"icon" => "odnoklassniki",
@@ -288,17 +256,9 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Oknotizie",
 		"icon" => "oknotizie",
 	),
-	"orkut" => array(
-		"name" => "Orkut",
-		"icon" => "orkut",
-	),
 	"outlook_com" => array(
 		"name" => "Outlook.com",
 		"icon" => "outlook_com",
-	),
-	"phonefavs" => array(
-		"name" => "PhoneFavs",
-		"icon" => "phonefavs",
 	),
 	"pinboard" => array(
 		"name" => "Pinboard",
@@ -317,6 +277,10 @@ $A2A_SHARE_SAVE_services = array(
 		"icon" => "print",
 		"href" => "javascript:print()",
 	),
+	"print" => array(
+		"name" => "Print",
+		"icon" => "print",
+	),
 	"printfriendly" => array(
 		"name" => "PrintFriendly",
 		"icon" => "printfriendly",
@@ -331,7 +295,11 @@ $A2A_SHARE_SAVE_services = array(
 	),
 	"qq" => array(
 		"name" => "QQ",
-		"icon" => "qq",
+		"icon" => "qzone",
+	),
+	"qzone" => array(
+		"name" => "Qzone",
+		"icon" => "qzone",
 	),
 	"rediff" => array(
 		"name" => "Rediff MyPage",
@@ -357,10 +325,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Springpad",
 		"icon" => "springpad",
 	),
-	"startaid" => array(
-		"name" => "StartAid",
-		"icon" => "startaid",
-	),
 	"stumpedia" => array(
 		"name" => "Stumpedia",
 		"icon" => "stumpedia",
@@ -372,10 +336,6 @@ $A2A_SHARE_SAVE_services = array(
 	"symbaloo_feeds" => array(
 		"name" => "Symbaloo Feeds",
 		"icon" => "symbaloo",
-	),
-	"technotizie" => array(
-		"name" => "Technotizie",
-		"icon" => "technotizie",
 	),
 	"tuenti" => array(
 		"name" => "Tuenti",
@@ -409,10 +369,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "WhatsApp",
 		"icon" => "whatsapp",
 	),
-	"wists" => array(
-		"name" => "Wists",
-		"icon" => "wists",
-	),
 	"wordpress" => array(
 		"name" => "WordPress",
 		"icon" => "wordpress",
@@ -424,10 +380,6 @@ $A2A_SHARE_SAVE_services = array(
 	"xing" => array(
 		"name" => "XING",
 		"icon" => "xing",
-	),
-	"xerpi" => array(
-		"name" => "Xerpi",
-		"icon" => "xerpi",
 	),
 	"yahoo_bookmarks" => array(
 		"name" => "Yahoo Bookmarks",
@@ -448,6 +400,10 @@ $A2A_SHARE_SAVE_services = array(
 	"youmob" => array(
 		"name" => "YouMob",
 		"icon" => "youmob",
+	),
+	"yummly" => array(
+		"name" => "Yummly",
+		"icon" => "yummly",
 	),
 	"dihitt" => array(
 		"name" => "diHITT",
