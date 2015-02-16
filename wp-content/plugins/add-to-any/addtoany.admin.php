@@ -410,6 +410,10 @@ function A2A_SHARE_SAVE_options_page() {
 				<label><input type="radio" name="A2A_SHARE_SAVE_icon_size" value="32"<?php if ( ! isset( $options['icon_size'] ) || '32' == $options['icon_size'] ) echo ' checked="checked"'; ?>> <?php _e('Large', 'add-to-any'); ?></label>
 				<br>
 				<label><input type="radio" name="A2A_SHARE_SAVE_icon_size" value="16"<?php if ( isset( $options['icon_size'] ) && '16' == $options['icon_size'] ) echo ' checked="checked"'; ?>> <?php _e('Small', 'add-to-any'); ?></label>
+				<br>
+				<label><input type="radio" name="A2A_SHARE_SAVE_icon_size"<?php if ( isset( $options['icon_size'] ) && ! in_array( $options['icon_size'], array( '32', '16' ) ) ) echo ' value="' . $options['icon_size'] . '" checked="checked"'; ?>> <?php _e('Custom', 'add-to-any'); ?></label>
+				<input class="addtoany_icon_size_custom small-text" id="A2A_SHARE_SAVE_icon_size_custom" maxlength="3" type="text" onclick="document.getElementsByName('A2A_SHARE_SAVE_icon_size')[2].checked=true" value="<?php if ( isset( $options['icon_size'] ) && ! in_array( $options['icon_size'], array( '32', '16' ) ) ) echo $options['icon_size']; ?>">
+				<label class="addtoany_icon_size_custom" for="A2A_SHARE_SAVE_icon_size_custom">pixels</label>
 			</fieldset></td>
 			</tr>
 			
@@ -771,7 +775,23 @@ function A2A_SHARE_SAVE_admin_head() {
 					jQuery('input[name="A2A_SHARE_SAVE_button"]:radio:visible:first').attr('checked', true);
 			};
 			
-			if ( jQuery('input[name="A2A_SHARE_SAVE_icon_size"]:checked').val() == '32' ) {
+			var icon_size_value = jQuery('input[name="A2A_SHARE_SAVE_icon_size"]:checked').val();
+			
+			if ( '16' == icon_size_value ) {
+				// Hide large universal buttons
+				jQuery('.addtoany_icon_size_large').hide('fast');
+				// Show small universal button
+				jQuery('.addtoany_icon_size_small').show('fast', select_proper_radio);
+				
+				// Switch to small standalone icons
+				jQuery('#addtoany_services_sortable li').not('.dummy, .addtoany_3p_button, #addtoany_show_services').html(function() {
+					return jQuery(this).data('a2a_16_icon_html');
+				});
+				
+				// Adjust the Add/Remove Services button
+				jQuery('#addtoany_show_services').removeClass('addtoany_line_height_32');
+			}
+			else {
 				// Hide small universal buttons
 				jQuery('.addtoany_icon_size_small').hide('fast');
 				// Show large universal button
@@ -785,19 +805,9 @@ function A2A_SHARE_SAVE_admin_head() {
 				// Adjust the Add/Remove Services button
 				jQuery('#addtoany_show_services').addClass('addtoany_line_height_32');
 			}
-			else {
-				// Hide small universal buttons
-				jQuery('.addtoany_icon_size_large').hide('fast');
-				// Show large universal button
-				jQuery('.addtoany_icon_size_small').show('fast', select_proper_radio);
-				
-				// Switch to small standalone icons
-				jQuery('#addtoany_services_sortable li').not('.dummy, .addtoany_3p_button, #addtoany_show_services').html(function() {
-					return jQuery(this).data('a2a_16_icon_html');
-				});
-				
-				// Adjust the Add/Remove Services button
-				jQuery('#addtoany_show_services').removeClass('addtoany_line_height_32');
+			
+			if ( 0 < icon_size_value.length && 16 != icon_size_value && 32 != icon_size_value ) {
+				jQuery('.addtoany_icon_size_custom').show('fast');
 			}
 		};
 		
@@ -806,6 +816,11 @@ function A2A_SHARE_SAVE_admin_head() {
 		// Display buttons/icons of the selected icon size
 		jQuery('input[name="A2A_SHARE_SAVE_icon_size"]').bind('change', function(e){
 			show_appropriate_universal_buttons();
+		});
+		
+		// Set value on radio from custom text input
+		jQuery('#A2A_SHARE_SAVE_icon_size_custom').bind('change', function(e){
+			jQuery('input[name="A2A_SHARE_SAVE_icon_size"]').eq(2).val( jQuery('#A2A_SHARE_SAVE_icon_size_custom').val() );
 		});
 		
 		// Toggle child options of 'Display in posts'
@@ -900,7 +915,9 @@ function A2A_SHARE_SAVE_admin_head() {
 			}
 			
 			var icon_size = jQuery('input:radio[name=A2A_SHARE_SAVE_icon_size]:checked').val();
-				new_service = this_service.toggleClass('addtoany_selected')
+			icon_size = ('16' == icon_size) ? '16' : '32';
+			
+			var new_service = this_service.toggleClass('addtoany_selected')
 					.unbind('click', moveToSortableList)
 					.bind('click', moveToSelectableList)
 					.clone();
@@ -1033,7 +1050,7 @@ function A2A_SHARE_SAVE_admin_head() {
 		});
 		
 		// Adjust the Add/Remove Services button for large or small icons
-		if ( jQuery('input:radio[name=A2A_SHARE_SAVE_icon_size]:checked').val() == '32' )
+		if ( jQuery('input:radio[name=A2A_SHARE_SAVE_icon_size]:checked').val() != '16' )
 			jQuery('#addtoany_show_services').addClass('addtoany_line_height_32');
 		
 		// TBD
@@ -1048,6 +1065,10 @@ function A2A_SHARE_SAVE_admin_head() {
 	.ui-sortable-placeholder{background-color:transparent;border:1px dashed #AAA !important;}
 	.addtoany_admin_list{list-style:none;padding:0;margin:0;}
 	.addtoany_admin_list li{-webkit-border-radius:9px;-moz-border-radius:9px;border-radius:9px;}
+	
+	.addtoany_icon_size_custom,
+	  /* Override WP display */
+	  .form-table td fieldset label.addtoany_icon_size_custom{display:none;}
 	
 	#addtoany_services_selectable{clear:left;display:none;}
 	#addtoany_services_selectable li{cursor:pointer;float:left;width:150px;font-size:11px;margin:0;padding:6px;border:1px solid transparent;_border-color:#FAFAFA/*IE6*/;overflow:hidden;}
