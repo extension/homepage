@@ -3,7 +3,7 @@
 Plugin Name: Share Buttons by AddToAny
 Plugin URI: https://www.addtoany.com/
 Description: Share buttons for your pages including AddToAny's universal sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp and many more.  [<a href="options-general.php?page=add-to-any.php">Settings</a>]
-Version: 1.5.2
+Version: 1.5.6
 Author: AddToAny
 Author URI: https://www.addtoany.com/
 */
@@ -712,7 +712,8 @@ function A2A_SHARE_SAVE_head_script() {
 			. "}"
 		. "};"
 		
-		. "a2a_config.tracking_callback=['ready',wpa2a.script_onready];"
+		. "a2a_config.callbacks=a2a_config.callbacks||[];"
+		. "a2a_config.callbacks.push({ready:wpa2a.script_onready});"
 		. A2A_menu_locale()
 		. $script_configs
 		
@@ -872,8 +873,16 @@ function A2A_SHARE_SAVE_add_to_content( $content ) {
 		"is_kit" => ( $is_feed ) ? false : true,
 	);
 	
+	// If a Sharing Header is set
+	if ( isset( $options['header'] ) && '' != $options['header'] ) {
+		$html_header = '<div class="addtoany_header">' . stripslashes( $options['header'] ) . '</div>';
+	} else {
+		$html_header = '';
+	}
+	
 	if ( ! $is_feed ) {
 		$container_wrap_open = '<div class="addtoany_share_save_container %s">'; // Contains placeholder
+		$container_wrap_open .= $html_header;
 		$container_wrap_close = '</div>';
 	} else { // Is feed
 		$container_wrap_open = '<p>';
