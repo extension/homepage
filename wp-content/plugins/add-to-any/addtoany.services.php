@@ -34,17 +34,21 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "LinkedIn",
 		"icon" => "linkedin",
 	),
+	"whatsapp" => array(
+		"name" => "WhatsApp",
+		"icon" => "whatsapp",
+	),
 	"aim" => array(
 		"name" => "AIM",
 		"icon" => "aim",
 	),
-	"aol_mail" => array(
-		"name" => "AOL Mail",
-		"icon" => "aol",
-	),
 	"amazon_wish_list" => array(
 		"name" => "Amazon Wish List",
 		"icon" => "amazon",
+	),
+	"aol_mail" => array(
+		"name" => "AOL Mail",
+		"icon" => "aol",
 	),
 	"app_net" => array(
 		"name" => "App.net",
@@ -70,17 +74,13 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Blinklist",
 		"icon" => "blinklist",
 	),
-	"blip" => array(
-		"name" => "Blip",
-		"icon" => "blip",
+	"blogger_post" => array(
+		"name" => "Blogger Post",
+		"icon" => "blogger",
 	),
 	"blogmarks" => array(
 		"name" => "BlogMarks",
 		"icon" => "blogmarks",
-	),
-	"blogger_post" => array(
-		"name" => "Blogger Post",
-		"icon" => "blogger",
 	),
 	"browser" => array(
 		"name" => "Bookmark/Favorites",
@@ -112,10 +112,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "CiteULike",
 		"icon" => "citeulike",
 	),
-	"dzone" => array(
-		"name" => "DZone",
-		"icon" => "dzone",
-	),
 	"delicious" => array(
 		"name" => "Delicious",
 		"icon" => "delicious",
@@ -136,9 +132,17 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Digg",
 		"icon" => "digg",
 	),
+	"dihitt" => array(
+		"name" => "diHITT",
+		"icon" => "dihitt",
+	),
 	"diigo" => array(
 		"name" => "Diigo",
 		"icon" => "diigo",
+	),
+	"dzone" => array(
+		"name" => "DZone",
+		"icon" => "dzone",
 	),
 	"email" => array(
 		"name" => "Email",
@@ -179,10 +183,6 @@ $A2A_SHARE_SAVE_services = array(
 	"hatena" => array(
 		"name" => "Hatena",
 		"icon" => "hatena",
-	),
-	"iwiw" => array(
-		"name" => "IWIW",
-		"icon" => "iwiw",
 	),
 	"instapaper" => array(
 		"name" => "Instapaper",
@@ -228,10 +228,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "MySpace",
 		"icon" => "myspace",
 	),
-	"nujij" => array(
-		"name" => "NUjij",
-		"icon" => "nujij",
-	),
 	"netlog" => array(
 		"name" => "Netlog",
 		"icon" => "netlog",
@@ -247,6 +243,10 @@ $A2A_SHARE_SAVE_services = array(
 	"newsvine" => array(
 		"name" => "NewsVine",
 		"icon" => "newsvine",
+	),
+	"nujij" => array(
+		"name" => "NUjij",
+		"icon" => "nujij",
 	),
 	"odnoklassniki" => array(
 		"name" => "Odnoklassniki",
@@ -305,6 +305,10 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Rediff MyPage",
 		"icon" => "rediff",
 	),
+	"renren" => array(
+		"name" => "Renren",
+		"icon" => "renren",
+	),
 	"segnalo" => array(
 		"name" => "Segnalo",
 		"icon" => "segnalo",
@@ -349,13 +353,13 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "TypePad Post",
 		"icon" => "typepad",
 	),
-	"vk" => array(
-		"name" => "VK",
-		"icon" => "vk",
-	),
 	"viadeo" => array(
 		"name" => "Viadeo",
 		"icon" => "viadeo",
+	),
+	"vk" => array(
+		"name" => "VK",
+		"icon" => "vk",
 	),
 	"wanelo" => array(
 		"name" => "Wanelo",
@@ -364,10 +368,6 @@ $A2A_SHARE_SAVE_services = array(
 	"webnews" => array(
 		"name" => "Webnews",
 		"icon" => "webnews",
-	),
-	"whatsapp" => array(
-		"name" => "WhatsApp",
-		"icon" => "whatsapp",
 	),
 	"wordpress" => array(
 		"name" => "WordPress",
@@ -404,10 +404,6 @@ $A2A_SHARE_SAVE_services = array(
 	"yummly" => array(
 		"name" => "Yummly",
 		"icon" => "yummly",
-	),
-	"dihitt" => array(
-		"name" => "diHITT",
-		"icon" => "dihitt",
 	),
 
 );

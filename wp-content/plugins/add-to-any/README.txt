@@ -3,7 +3,7 @@ Contributors: micropat, addtoany
 Tags: sharing, share, share this, bookmarking, social, share button, share buttons, share links, social share, social sharing, social bookmarking, social bookmarks, socialize, bookmark, bookmarks, save, Post, posts, page, pages, images, image, admin, statistics, stats, links, plugin, shortcode, sidebar, widget, responsive, email, e-mail, print, seo, button, delicious, google, tumblr, linkedin, digg, reddit, facebook, facebook share, facebook like, like, twitter, twitter button, twitter share, tweet, tweet button, +1, plus 1, google +1, google plus, google plus one, plus one, pinterest, pin, pin it, pinit, wanelo, buffer, stumbleupon, bitly, whatsapp, lockerz, addthis, sociable, sharedaddy, sharethis, shareaholic, icon, icons, vector, SVG, floating, floating buttons, wpmu, Add to Any, AddToAny
 Requires at least: 2.8
 Tested up to: 4.2
-Stable tag: 1.5.2
+Stable tag: 1.5.6
 
 Share buttons for WordPress including AddToAny's universal sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp and many more.
 
@@ -43,13 +43,14 @@ AddToAny's customizable platform and social share icons let you optimize your si
 
 * Loads asynchronously so your content always loads before or in parallel with AddToAny
 * Supports theme features such as HTML5 & XHTML, widgets, infinite scroll, post formats
+* Supports multilingual sites and multisite networks
 * No signup, no login, no account necessary
 
 = Mobile Optimized & Retina Ready =
 
 * AddToAny gives users the choice in sharing from a service's native app or from a web app. For example, choose between Twitter's native app or Twitter's mobile web app
 * Responsive Floating Share Buttons are mobile ready by default, and configurable breakpoints make floating buttons work with any theme
-* AddToAny's SVG icons are super-lightweight and pixel-perfect at any size
+* AddToAny's SVG icons are super-lightweight and pixel-perfect at any size, and AddToAny's responsive share menu fits on all displays
 
 = Customizable & Extensible =
 
@@ -62,13 +63,13 @@ AddToAny's customizable platform and social share icons let you optimize your si
 = Wide Support =
 
 * Over 8 years of active development
-* Over 3.5 million downloads
+* Over 3.7 million downloads
 * Translated into dozens of languages
 * Ongoing support from the community
 
 This plugin always strives to be the best WordPress plugin for sharing. Development is fueled by your praise and feedback.
 
-<a href="https://www.addtoany.com/share_save" title="Share">Share this</a> plugin
+<a href="https://www.addtoany.com/share_save" title="Share">Share</a> this plugin
 
 See also:
 
@@ -78,8 +79,15 @@ See also:
 <a href="https://www.addtoany.com/blog/">AddToAny Blog</a> | <a href="https://www.addtoany.com/privacy">Privacy Policy</a>
 
 == Installation ==
+In WordPress:
 
-1. Upload the `add-to-any` directory (including all files within) to the `/wp-content/plugins/` directory
+1. Go to `Plugins` > `Add New` > search for `addtoany`
+1. Press `Install Now` for the AddToAny plugin
+1. Press `Activate Plugin`
+
+To install manually instead:
+
+1. Upload the `add-to-any` directory to the `/wp-content/plugins/` directory
 1. Activate the plugin through the `Plugins` menu in WordPress
 1. Optional settings are available in `Settings` > `AddToAny`
 
@@ -99,15 +107,11 @@ Try temporarily switching themes and disabling other plugins to identify a poten
 
 Feel free to <a href="https://wordpress.org/support/plugin/add-to-any">post here</a>, where the community can hopefully help you. Describe the issue, what troubleshooting you have already done, provide a link to your site, and any other potentially relevant information.
 
-= Why isn't the universal drop-down menu appearing? =
+= The share buttons are not displaying for me. Why, and what should I try? =
 
-It's likely because your theme wasn't <a href="http://codex.wordpress.org/Theme_Development#Plugin_API_Hooks">coded properly</a>.  With many themes you can use the Theme Editor to edit your theme's `header.php` and `footer.php` files.
+Something on your own device/browser/connection is likely filtering out major social buttons.
 
-In `header.php` place the following line of code just before the `</head>` line:
-`<?php wp_head(); ?>`
-
-In `footer.php` place the following line of code just before the `</body>` line:
-`<?php wp_footer(); ?>`
+Try another web browser, device, and/or Internet connection to see if the buttons appear. Tools like browserling.com or browserstack.com will give you an idea of what other people are seeing. The usual cause for this uncommon issue is 3rd party browser add-on software that blocks ads and optionally filters out major social buttons. Some security apps and Internet connections have an option to filter social buttons. Usually a social filter option is disabled by default, but if you find that some software is inappropriately filtering AddToAny buttons, <a href="https://www.addtoany.com/contact/">let AddToAny know</a>.
 
 = Is there a shortcode for sharing? =
 
@@ -273,10 +277,6 @@ If you use the Facebook Like, Twitter Tweet or Google +1 buttons in an HTML5 the
 
 Regardless of circumstances for passing W3C tests, the plugin will always output semantically valid and robot-readable code, so publishers do not have to worry about search engine crawler errors due to invalid code. Both <a href="http://en.wikipedia.org/wiki/Web_standards">web standards</a> and <a href="http://en.wikipedia.org/wiki/Cross-browser">cross-browser</a> compatibility are taken seriously.
 
-= How can I move the plugin's inline CSS into my theme's main external stylesheet? =
-
-Go to `Settings` > `AddToAny` > uncheck `Use inline CSS` and place the CSS code in your theme's main stylesheet.
-
 = Why does the menu appear behind embedded objects (like Flash)? =
 
 Please read <a href="https://www.addtoany.com/buttons/customize/show_over_embeds">this document</a> for an explanation and possible fix. For WordPress, an easier fix is to have the plugin <a href="https://www.addtoany.com/buttons/customize/hide_embeds">hide intersecting embedded objects</a>. Just copy & paste the recommended code into the Additional Options box in `Settings` > `AddToAny`, then save changes.
@@ -287,14 +287,38 @@ Upload the plugin directory (including all files and directories within) to the 
 
 == Screenshots ==
 
-1. Large vector sharing buttons (SVG icons) are pixel-perfect on Retina and high-DPI dispays
-2. Share/Save sharing button features Facebook, Twitter, and a universal share icon
-3. Drop-down universal share menu that appears instantly when visitors use the share button
-4. Modal universal share menu that includes all services
+1. Vector sharing buttons (SVG icons) are pixel-perfect on Retina and high-PPI dispays
+2. Traditional Share/Save button features Facebook, Twitter, and a generic share icon
+3. Mini share menu that drops down when visitors use the universal share button
+4. Full universal share menu modal that includes all services
 5. Settings panel
-6. Color chooser for your universal share menu
+6. Color chooser for your share menus
 
 == Changelog ==
+
+= 1.5.6 =
+* Bulgarian translation (by <a href="http://melleum.com/">Artem Delik</a>)
+* Update French translation to resolve missing placement options
+
+= 1.5.5 =
+* Support multilingual sites using WPML, including Polylang
+
+= 1.5.4 =
+* New optional sharing header to easily place a label above the default share buttons
+ * Accepts HTML
+* Fix text width of counters where long numbers would break to a newline (thanks Chris)
+* Remove old Additional Options note in settings
+
+= 1.5.3 =
+* <a href="https://www.addtoany.com/buttons/customize/wordpress/events" title="Track shares, or change the shared URL">Share event handling</a> comes to the WordPress plugin!
+* This means you can track and modify the share with some JavaScripting
+ * Track shares with Adobe Analytics, Clicky, KISSmetrics, Mixpanel, Piwik, Webtrends, Woopra, custom analytics, etc.
+ * Google Analytics integration is automatic as always
+ * Modify the shared URL
+ * Modify the shared Title for services that accept a Title directly (i.e. Twitter, but not Facebook)
+* Update asynchronous loading to use new callbacks property
+* Add Renren
+* Remove blip, iwiw
 
 = 1.5.2 =
 * Localize More button string
@@ -507,7 +531,7 @@ Upload the plugin directory (including all files and directories within) to the 
 * Large sharing buttons (major new feature!)
  * Scalable vector icons (SVG icons)
  * Mobile ready
- * Retina and high-DPI ready
+ * Retina and high-PPI ready
  * Customizable through CSS code (effects, height & width, border-radius, and much more)
  * Support for older browsers (reverts gracefully to PNG)
  * Large icons are available for the most popular services right now. More services will roll out soon
@@ -1247,6 +1271,9 @@ Upload the plugin directory (including all files and directories within) to the 
 * PHP4 legacy and compatibility fixes
 
 == Upgrade Notice ==
+
+= 1.5.3 =
+Switch to the Large or Custom icon size if you haven't already - AddToAny's vector icons are way better than the traditional Small icons.
 
 = 1.4 =
 AddToAny share counters are now available for supported standalone buttons! For Facebook, Twitter, Pinterest, Reddit and Linkedin, click the down arrow and toggle the "Show count" checkbox.

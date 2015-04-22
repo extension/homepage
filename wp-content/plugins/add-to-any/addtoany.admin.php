@@ -262,6 +262,7 @@ function A2A_SHARE_SAVE_options_page() {
 			$new_options['icon_size'] = ( isset( $_POST['A2A_SHARE_SAVE_icon_size'] ) ) ? $_POST['A2A_SHARE_SAVE_icon_size'] : '';
 			$new_options['button'] = ( isset( $_POST['A2A_SHARE_SAVE_button'] ) ) ? $_POST['A2A_SHARE_SAVE_button'] : '';
 			$new_options['button_custom'] = ( isset( $_POST['A2A_SHARE_SAVE_button_custom'] ) ) ? $_POST['A2A_SHARE_SAVE_button_custom'] : '';
+			$new_options['header'] = ( isset( $_POST['A2A_SHARE_SAVE_header'] ) ) ? $_POST['A2A_SHARE_SAVE_header'] : '';
 			$new_options['additional_js_variables'] = ( isset( $_POST['A2A_SHARE_SAVE_additional_js_variables'] ) ) ? trim( $_POST['A2A_SHARE_SAVE_additional_js_variables'] ) : '';
 			$new_options['custom_icons'] = ( isset( $_POST['A2A_SHARE_SAVE_custom_icons'] ) && $_POST['A2A_SHARE_SAVE_custom_icons'] == 'url' ) ? 'url' : '-1';
 			$new_options['custom_icons_url'] = ( isset( $_POST['A2A_SHARE_SAVE_custom_icons_url'] ) ) ? trailingslashit( $_POST['A2A_SHARE_SAVE_custom_icons_url'] ) : '';
@@ -522,6 +523,15 @@ function A2A_SHARE_SAVE_options_page() {
 				
 			</fieldset></td>
 			</tr>
+
+			<tr valign="top">
+			<th scope="row"><?php _e('Sharing Header', 'add-to-any'); ?></th>
+			<td><fieldset>
+				<label>
+					<input name="A2A_SHARE_SAVE_header" type="text" class="code" placeholder="<?php esc_attr_e( 'Share this:' ); ?>" size="50" value="<?php if ( isset( $options['header'] ) ) echo esc_attr( stripslashes( $options['header'] ) ); ?>" />
+				</label>
+			</fieldset></td>
+			</tr>
 			
 			<tr valign="top">
 			<th scope="row"><?php _e('Placement', 'add-to-any'); ?></th>
@@ -573,7 +583,7 @@ function A2A_SHARE_SAVE_options_page() {
 				</div>
 			</fieldset></td>
 			</tr>
-			
+
 			<tr valign="top">
 			<th scope="row"><?php _e('Menu Options', 'add-to-any'); ?></th>
 			<td><fieldset>
@@ -594,6 +604,7 @@ function A2A_SHARE_SAVE_options_page() {
 				</p>
 			</fieldset></td>
 			</tr>
+
 			<tr valign="top">
 			<th scope="row"><?php _e('Additional Options', 'add-to-any'); ?></th>
 			<td><fieldset>
@@ -609,9 +620,6 @@ function A2A_SHARE_SAVE_options_page() {
 				<p>
 					<textarea name="A2A_SHARE_SAVE_additional_js_variables" id="A2A_SHARE_SAVE_additional_js_variables" class="code" style="width: 98%; font-size: 12px;" rows="6" cols="50"><?php if ( isset( $options['additional_js_variables'] ) ) echo stripslashes( $options['additional_js_variables'] ); ?></textarea>
 				</p>
-				<?php if ( isset( $options['additional_js_variables'] ) && $options['additional_js_variables'] != '' ) { ?>
-				<label for="A2A_SHARE_SAVE_additional_js_variables" class="setting-description"><?php _e("<strong>Note</strong>: If you're adding new code, be careful not to accidentally overwrite any previous code.</label>", 'add-to-any'); ?>
-				<?php } ?>	
 			</fieldset></td>
 			</tr>
 			<tr valign="top">
