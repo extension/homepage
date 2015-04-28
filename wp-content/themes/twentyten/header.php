@@ -30,7 +30,7 @@
 
 	// Add a page number if necessary:
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() )
-		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+		echo esc_html( ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) ) );
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -62,7 +62,7 @@
 				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 				<<?php echo $heading_tag; ?> id="site-title">
 					<span>
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 					</span>
 				</<?php echo $heading_tag; ?>>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
@@ -83,18 +83,27 @@
 					if ( is_singular() && current_theme_supports( 'post-thumbnails' ) &&
 							has_post_thumbnail( $post->ID ) &&
 							( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-							$image[1] >= HEADER_IMAGE_WIDTH ) :
+							$image[1] >= $header_image_width ) :
 						// Houston, we have a new header image!
 						echo get_the_post_thumbnail( $post->ID );
-					elseif ( get_header_image() ) : ?>
-						<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
+					elseif ( get_header_image() ) :
+						// Compatibility with versions of WordPress prior to 3.4.
+						if ( function_exists( 'get_custom_header' ) ) {
+							$header_image_width  = get_custom_header()->width;
+							$header_image_height = get_custom_header()->height;
+						} else {
+							$header_image_width  = HEADER_IMAGE_WIDTH;
+							$header_image_height = HEADER_IMAGE_HEIGHT;
+						}
+					?>
+						<img src="<?php header_image(); ?>" width="<?php echo esc_attr( $header_image_width ); ?>" height="<?php echo esc_attr( $header_image_height ); ?>" alt="" />
 					<?php endif; ?>
 			</div><!-- #branding -->
 
 			<div id="access" role="navigation">
-			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
+			  <?php /* Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
+				<?php /* Our navigation menu. If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 			</div><!-- #access -->
 		</div><!-- #masthead -->
