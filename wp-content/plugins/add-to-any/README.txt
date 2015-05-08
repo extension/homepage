@@ -2,8 +2,8 @@
 Contributors: micropat, addtoany
 Tags: sharing, share, share this, bookmarking, social, share button, share buttons, share links, social share, social sharing, social bookmarking, social bookmarks, socialize, bookmark, bookmarks, save, Post, posts, page, pages, images, image, admin, statistics, stats, links, plugin, shortcode, sidebar, widget, responsive, email, e-mail, print, seo, button, delicious, google, tumblr, linkedin, digg, reddit, facebook, facebook share, facebook like, like, twitter, twitter button, twitter share, tweet, tweet button, +1, plus 1, google +1, google plus, google plus one, plus one, pinterest, pin, pin it, pinit, wanelo, buffer, stumbleupon, bitly, whatsapp, lockerz, addthis, sociable, sharedaddy, sharethis, shareaholic, icon, icons, vector, SVG, floating, floating buttons, wpmu, Add to Any, AddToAny
 Requires at least: 2.8
-Tested up to: 4.2
-Stable tag: 1.5.6
+Tested up to: 4.3
+Stable tag: 1.5.6.1
 
 Share buttons for WordPress including AddToAny's universal sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp and many more.
 
@@ -63,7 +63,7 @@ AddToAny's customizable platform and social share icons let you optimize your si
 = Wide Support =
 
 * Over 8 years of active development
-* Over 3.7 million downloads
+* Over 3.8 million downloads
 * Translated into dozens of languages
 * Ongoing support from the community
 
@@ -79,7 +79,8 @@ See also:
 <a href="https://www.addtoany.com/blog/">AddToAny Blog</a> | <a href="https://www.addtoany.com/privacy">Privacy Policy</a>
 
 == Installation ==
-In WordPress:
+
+In WordPress:
 
 1. Go to `Plugins` > `Add New` > search for `addtoany`
 1. Press `Install Now` for the AddToAny plugin
@@ -103,7 +104,7 @@ To further customize AddToAny, see the <a href="https://www.addtoany.com/buttons
 
 = Something is wrong. What should I try first? =
 
-Try temporarily switching themes and disabling other plugins to identify a potential conflict. If you find a conflict, try contacting that theme or plugin author. If an issue persists on a default theme with all other plugins disabled, perform a google search across the WordPress forums using a query such as: <a href="https://www.google.com/#q=site:wordpress.org%2Fsupport+-reviews+addtoany+">site:wordpress.org/support -reviews addtoany [your issue issue here]</a>
+Try temporarily switching themes and deactivating other plugins to identify a potential conflict. If you find a conflict, try contacting that theme or plugin author. If an issue persists on a default theme with all other plugins deactivatd, perform a google search across the WordPress forums using a query such as: <a href="https://www.google.com/#q=site:wordpress.org%2Fsupport+-reviews+addtoany+">site:wordpress.org/support -reviews addtoany [your issue issue here]</a>
 
 Feel free to <a href="https://wordpress.org/support/plugin/add-to-any">post here</a>, where the community can hopefully help you. Describe the issue, what troubleshooting you have already done, provide a link to your site, and any other potentially relevant information.
 
@@ -295,6 +296,13 @@ Upload the plugin directory (including all files and directories within) to the 
 6. Color chooser for your share menus
 
 == Changelog ==
+
+= 1.5.7 =
+* <a href="https://www.addtoany.com/buttons/customize/wordpress/icon_color">Custom color share buttons</a> have arrived!
+* Remove Bookmark/Favorites (low browser support)
+* Remove duplicate Print service (old and redundant)
+* Remove FriendFeed
+* Remove Springpad
 
 = 1.5.6 =
 * Bulgarian translation (by <a href="http://melleum.com/">Artem Delik</a>)

@@ -82,12 +82,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "BlogMarks",
 		"icon" => "blogmarks",
 	),
-	"browser" => array(
-		"name" => "Bookmark/Favorites",
-		"icon" => "bookmark",
-		"href" => "javascript:if(document.all){window.external.AddFavorite('A2A_LINKURL','A2A_LINKNAME')}else{var b=a2a_config.localize.BookmarkInstructions || 'Press Ctrl+D to bookmark this page';alert(a2a_config.localize.BookmarkInstructions)}",
-		"href_js_esc" => "TRUE",
-	),
 	"bookmarks_fr" => array(
 		"name" => "Bookmarks.fr",
 		"icon" => "bookmarks_fr",
@@ -163,10 +157,6 @@ $A2A_SHARE_SAVE_services = array(
 	"folkd" => array(
 		"name" => "Folkd",
 		"icon" => "folkd",
-	),
-	"friendfeed" => array(
-		"name" => "FriendFeed",
-		"icon" => "friendfeed",
 	),
 	"google_bookmarks" => array(
 		"name" => "Google Bookmarks",
@@ -275,11 +265,11 @@ $A2A_SHARE_SAVE_services = array(
 	"print" => array(
 		"name" => "Print",
 		"icon" => "print",
-		"href" => "javascript:print()",
 	),
 	"print" => array(
 		"name" => "Print",
 		"icon" => "print",
+		"href" => "javascript:print()",
 	),
 	"printfriendly" => array(
 		"name" => "PrintFriendly",
@@ -324,10 +314,6 @@ $A2A_SHARE_SAVE_services = array(
 	"slashdot" => array(
 		"name" => "Slashdot",
 		"icon" => "slashdot",
-	),
-	"springpad" => array(
-		"name" => "Springpad",
-		"icon" => "springpad",
 	),
 	"stumpedia" => array(
 		"name" => "Stumpedia",
