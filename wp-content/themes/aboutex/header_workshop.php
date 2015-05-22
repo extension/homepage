@@ -26,7 +26,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 </head>
 <body <?php if (is_page('index')) echo 'id="home"'; ?>>
   
-  <script src="https://www.extension.org/javascripts/global_nav_internal.js" type="text/javascript"></script>
+  <script src="https://assets.extension.org/javascripts/global_nav_internal.js" type="text/javascript"></script>
 
 <div id="frame">
 <div id="header">
