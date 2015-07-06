@@ -33,7 +33,7 @@ Template Name: Sitehome
     </div>
 
     <div class="col-md-4">
-      <script type="text/javascript" src="http://www.extension.org/widgets/content/show?content_types=articles&escape=false&quantity=10&tags=front+page&width=auto"></script>
+      <script type="text/javascript" src="http://www.extension.org/widgets/content/show?content_types=articles&escape=false&quantity=10&tags=feature&width=auto"></script>
     </div>
 
     <div class="col-md-4">
