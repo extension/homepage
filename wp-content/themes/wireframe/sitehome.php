@@ -8,19 +8,20 @@ Template Name: Sitehome
 
   <div class="row">
     <div class="col-md-6">
+      <div class="well">
+
+        <?php $my_query = new WP_Query('showposts=1'); ?>
+        <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+          <h2><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+          <?php the_excerpt(); ?>
+        <?php endwhile; ?>
+      </div>
+    </div>
+    <div class="col-md-6">
       <h3>Featured News</h3>
       <div class="featured-news">
         <?php wp_nav_menu(array('menu_id' => 'homepage_links')); ?>
       </div>
-    </div>
-    <div class="col-md-6">
-      <h2>What is eXtension?</h2>
-      <p>eXtension is an Internet-based collaborative environment where Land Grant University content providers exchange objective, research-based knowledge to solve real challenges in real time.</p>
-      <p><a class="more" href="<?php bloginfo('url'); ?>/about/">Learn More...</a></p>
-
-      <p><a href="<?php bloginfo('url'); ?>/get-an-id" title="Get an ID" class="btn btn-default btn-lg">Get your eXtension ID</a></p>
-      <p><a href="<?php bloginfo('url'); ?>/get-started" title="Get Started" class="btn btn-default btn-lg">Getting Started with eXtension</a></p>
-
     </div>
 
   </div>
@@ -28,7 +29,13 @@ Template Name: Sitehome
     <div class="col-md-4">
       <h3>Latest Blog Posts</h3>
       <ul>
-      <?php get_archives('postbypost', '14', 'custom', '<li>', '</li>'); ?>
+        <?php
+  	$args = array( 'numberposts' => '12', 'offset' => '1' );
+  	$recent_posts = wp_get_recent_posts( $args );
+  	foreach( $recent_posts as $recent ){
+  		echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+  	}
+  ?>
       </ul>
     </div>
 
@@ -37,8 +44,9 @@ Template Name: Sitehome
     </div>
 
     <div class="col-md-4">
-      <h3>Quick Links</h3>
-      <?php quicklink_menu(8); ?>
+      <div class="well">
+        <script type="text/javascript" src="https://learn.extension.org/widgets/front_porch.js?limit=2"></script>
+      </div>
     </div>
   </div>
 
@@ -58,9 +66,8 @@ Template Name: Sitehome
     </div>
 
     <div class="col-md-4">
-      <div class="well">
-        <script type="text/javascript" src="https://learn.extension.org/widgets/front_porch.js?limit=2"></script>
-      </div>
+      <h3>Quick Links</h3>
+      <?php quicklink_menu(8); ?>
     </div>
 
   </div>

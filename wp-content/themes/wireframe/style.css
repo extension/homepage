@@ -8,14 +8,15 @@ Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:
-Text Domain: 
+Text Domain:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-.featured-news {font-size: 1.3em;}
+.featured-news {font-size: 1.4em;}
 .aae_qw_subhead {display:none;}
+.learn_widget_specific_title {display:none;}
 
 
 .entry-content p {font-size: 1.3em;}
