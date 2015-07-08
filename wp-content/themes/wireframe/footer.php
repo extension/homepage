@@ -13,7 +13,7 @@
 		</div><!-- .container -->
 	</div><!-- .site-content -->
 
-<div class="well">
+<div class="well resource-areas">
 	<div class="container">
 		<div class="row">
 			<h3>Resource Areas</h3>

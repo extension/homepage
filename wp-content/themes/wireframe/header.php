@@ -22,15 +22,16 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<p class="color-codes"><strong>COLOR CODES:</strong> <span class="hp-nav-item">navigation</span> &nbsp; <span  class="hp-reading-item">reading</span> &nbsp; <span class="hp-action-item">calls to action</span></p>
 	<script src="https://assets.extension.org/javascripts/global_nav_internal.js" type="text/javascript"></script>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
+	<!-- <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a> -->
+
 
 
 	<div class="container">
 	  <div class="row">
 	    <div class="col-md-12">
-
 
 					<header id="masthead" class="site-header" role="banner">
 						<div class="site-branding">
@@ -52,17 +53,17 @@
 							?>
 
 						</div><!-- .site-branding -->
-						<ul class="nav nav-pills">
-							<li><a href="<?php bloginfo('url'); ?>/get-an-id" title="Get an ID">Register</a></li>
-				    	<li class="last"><a href="<?php bloginfo('url'); ?>/get-started" title="Get an ID">Getting Started</a></li>
+						<ul class="nav nav-pills pull-right">
+							<li class="hp-action-item"><a href="<?php bloginfo('url'); ?>/get-an-id" title="Get an ID">Register</a></li>
+				    	<li class="hp-action-item"><a href="<?php bloginfo('url'); ?>/get-started" title="Get an ID">Getting Started</a></li>
 						</ul>
 
 						<ul class="nav nav-pills">
-					    <li><a <?php echo is_page('about') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/about" title="About Us">About Us</a></li>
-					    <li><a <?php if (is_home()) echo('class="current" '); ?> href="<?php bloginfo('url'); ?>/blog" title="Blog" >Blog</a></li>
-					    <li><a <?php echo is_page('tools') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/tools" title="Tools">eX Tools</a></li>
-					    <li><a <?php echo is_page('foundation') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/foundation" title="eXtension Foundation">eXtension Foundation</a></li>
-					    <li id="support" class="last"><a <?php echo is_page('foundation') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/foundation/donate/" title="Support eXtension">Support eXtension</a></li>
+					    <li class="hp-nav-item"><a <?php echo is_page('about') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/about" title="About Us">About Us</a></li>
+					    <li class="hp-nav-item"><a <?php if (is_home()) echo('class="current" '); ?> href="<?php bloginfo('url'); ?>/blog" title="Blog" >Blog</a></li>
+					    <li class="hp-nav-item"><a <?php echo is_page('tools') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/tools" title="Tools">eX Tools</a></li>
+					    <li class="hp-nav-item"><a <?php echo is_page('foundation') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/foundation" title="eXtension Foundation">eXtension Foundation</a></li>
+					    <li class="hp-action-item"><a <?php echo is_page('foundation') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/foundation/donate/" title="Support eXtension">Support eXtension</a></li>
 					  </ul>
 
 					</header><!-- .site-header -->

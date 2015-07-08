@@ -20,3 +20,16 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 
 .entry-content p {font-size: 1.3em;}
+.home-feature-image {width: 50%; outline: 2px solid #fff; margin-right: 20px; overflow:hidden;}
+.hp-action-items li {outline: 2px solid magenta; padding:5px; margin-bottom:1em; list-style:none;}
+.hp-action-item {outline: 2px solid magenta; padding:5px; margin-bottom:1em; list-style:none;}
+.hp-nav-item {outline: 2px solid blue; padding:5px; margin-bottom:1em; list-style:none;}
+
+.hp-reading-item {outline: 2px solid lime; padding:5px; margin-bottom:1em; list-style:none;}
+.quick-links li {outline: 2px solid lime; padding:5px; margin-bottom:1em; list-style:none;}
+
+.quick-links li:last-child {outline: 2px solid magenta;}
+.extension_global_nav {background:#fff !important;}
+.extension_global_nav li li {outline: 2px solid blue; padding:10px !important; margin-right:10px;margin-bottom:1em; list-style:none;}
+.color-codes {text-align:center; padding:20px; margin-bottom:20px;}
+.resource-areas li {outline: 2px solid blue; padding:5px; margin-bottom:1em; list-style:none;}
