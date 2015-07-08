@@ -137,12 +137,12 @@
 
 
 		<ul class="nav nav-pills">
-			<li><a href="<?php bloginfo('url'); ?>/sitemap" title="Site map" >site map</a></li>
-			<li><a href="<?php bloginfo('url'); ?>/contact" title="Contact Us" >contact us</a></li>
-			<li><a href="http://www.extension.org/main/termsofuse" title="Terms of Service" >terms of service</a></li>
-			<li class="flag"><a href="" >disclaimer</a></li>
-			<li class="last feed"><a href="<?php bloginfo('rss2_url'); ?>" title="feed for blog posts">posts</a></li>
-			<li><a href="<?php bloginfo('comments_rss2_url'); ?>" title="feed for blog comments">comments</a></li>
+			<li class="hp-nav-item"><a href="<?php bloginfo('url'); ?>/sitemap" title="Site map" >site map</a></li>
+			<li class="hp-nav-item"><a href="<?php bloginfo('url'); ?>/contact" title="Contact Us" >contact us</a></li>
+			<li class="hp-nav-item"><a href="http://www.extension.org/main/termsofuse" title="Terms of Service" >terms of service</a></li>
+			<li class="hp-nav-item"><a href="" >disclaimer</a></li>
+			<li class="hp-nav-item"><a href="<?php bloginfo('rss2_url'); ?>" title="feed for blog posts">posts feed</a></li>
+			<li class="hp-nav-item"><a href="<?php bloginfo('comments_rss2_url'); ?>" title="feed for blog comments">comments feed</a></li>
 		</ul>
 		<p>&copy; <?php echo date('Y'); ?> eXtension. All Right Reserved.</p>
 		<div class="site-info">

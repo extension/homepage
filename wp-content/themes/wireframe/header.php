@@ -22,7 +22,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<p class="color-codes"><strong>COLOR CODES:</strong> <span class="hp-nav-item">navigation</span> &nbsp; <span  class="hp-reading-item">reading</span> &nbsp; <span class="hp-action-item">calls to action</span></p>
+	<p class="color-codes">
+		<strong>COLOR CODES:</strong> &nbsp;
+		<span class="hp-nav-item">navigation</span> &nbsp;
+		<span class="hp-alert-item">alerts</span> &nbsp;
+		<span class="hp-resource-item">resources</span> &nbsp;
+		<span class="hp-action-item">calls to action</span>
+	</p>
 	<script src="https://assets.extension.org/javascripts/global_nav_internal.js" type="text/javascript"></script>
 <div id="page" class="hfeed site">
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a> -->
@@ -53,9 +59,10 @@
 							?>
 
 						</div><!-- .site-branding -->
-						<ul class="nav nav-pills pull-right">
-							<li class="hp-action-item"><a href="<?php bloginfo('url'); ?>/get-an-id" title="Get an ID">Register</a></li>
-				    	<li class="hp-action-item"><a href="<?php bloginfo('url'); ?>/get-started" title="Get an ID">Getting Started</a></li>
+						<ul class="nav nav-pills pull-right hp-action-nav">
+							<li class="hp-action-item"><a href="<?php bloginfo('url'); ?>/get-started" title="Get an ID">Getting Started</a></li>
+							<li class="hp-action-item"><a href="<?php bloginfo('url'); ?>/get-an-id" title="Get an ID" class="btn btn-default btn-lg">Register</a></li>
+
 						</ul>
 
 						<ul class="nav nav-pills">
