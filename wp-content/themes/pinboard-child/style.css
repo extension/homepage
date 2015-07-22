@@ -1,0 +1,17 @@
+/*
+Theme Name: eXtension www (Pinboard Child)
+Theme URI: https://www.extension.com
+Description: pinboard-esque theme
+Version: 1.0
+Author: eXtension
+Author URI: https://www.extension.com/
+Template: Pinboard
+Tags: blue, gray, silver, white, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+
+License: GNU General Public License v2.0
+License URI: license.txt
+*/
+
+#site-title img {width:196px;}
+#content_widget h3, #content_widget p {display:none;}
+#content_widget {border:none !important;}
