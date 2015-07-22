@@ -3,7 +3,7 @@
 Plugin Name: Share Buttons by AddToAny
 Plugin URI: https://www.addtoany.com/
 Description: Share buttons for your pages including AddToAny's universal sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp and many more.  [<a href="options-general.php?page=add-to-any.php">Settings</a>]
-Version: 1.5.7
+Version: 1.6.1
 Author: AddToAny
 Author URI: https://www.addtoany.com/
 */
@@ -175,7 +175,8 @@ function ADDTOANY_SHARE_SAVE_ICONS( $args = array() ) {
 	// $args array: output_later, html_container_open, html_container_close, html_wrap_open, html_wrap_close, linkname, linkurl
 	
 	global $A2A_SHARE_SAVE_plugin_url_path, 
-		$A2A_SHARE_SAVE_services;
+		$A2A_SHARE_SAVE_services,
+		$A2A_FOLLOW_services;
 	
 	$linkname = ( isset( $args['linkname'] ) ) ? $args['linkname'] : FALSE;
 	$linkurl = ( isset( $args['linkurl'] ) ) ? $args['linkurl'] : FALSE;
@@ -192,21 +193,13 @@ function ADDTOANY_SHARE_SAVE_ICONS( $args = array() ) {
 		'html_container_close' => '',
 		'html_wrap_open'       => '',
 		'html_wrap_close'      => '',
+		'is_follow'            => false,
 		'no_universal_button'  => false,
+		'buttons'              => array(),
 	);
 	
 	$args = wp_parse_args( $args, $defaults );
 	extract( $args );
-	
-	// Make available services extensible via plugins, themes (functions.php), etc.
-	$A2A_SHARE_SAVE_services = apply_filters( 'A2A_SHARE_SAVE_services', $A2A_SHARE_SAVE_services );
-	
-	$service_codes = ( is_array( $A2A_SHARE_SAVE_services ) ) ? array_keys( $A2A_SHARE_SAVE_services ) : array();
-	
-	// Include Facebook Like and Twitter Tweet etc. unless no_special_services arg is true
-	if ( ! isset( $no_special_services ) || false == $no_special_services ) {
-		array_unshift( $service_codes, 'facebook_like', 'twitter_tweet', 'google_plusone', 'google_plus_share', 'pinterest_pin' );
-	}
 	
 	$options = get_option( 'addtoany_options' );
 	
@@ -219,18 +212,44 @@ function ADDTOANY_SHARE_SAVE_ICONS( $args = array() ) {
 	if ( isset( $options['custom_icons'] ) && $options['custom_icons'] == 'url' && isset( $options['custom_icons_url'] ) ) {
 		// Custom icons expected at a specified URL, i.e. //example.com/blog/uploads/addtoany/icons/custom/
 		$icons_dir = $options['custom_icons_url'];
+		$icons_type = ( isset( $options['custom_icons_type'] ) ) ? $options['custom_icons_type'] : 'png';
 		$custom_icons = true;
 	} else {
 		// Packaged 16px icons
 		$icons_dir = $A2A_SHARE_SAVE_plugin_url_path . '/icons/';
+		$icons_type = 'png';
 	}
 	
-	// Use default services if services have not been selected yet
-	$active_services = ( isset( $options['active_services'] ) ) ? $options['active_services'] : array( 'facebook', 'twitter', 'google_plus' );
+	// If Follow kit
+	if ( $is_follow ) {
+		// Make available services extensible via plugins, themes (functions.php), etc.
+		$services = apply_filters( 'A2A_FOLLOW_services', $A2A_FOLLOW_services );
+		$service_codes = ( is_array( $services ) ) ? array_keys( $services ) : array();
+		
+		// Services set by "buttons" arg
+		$active_services = ! empty ( $buttons ) ? array_keys( $buttons ) : array();
+	// Else Share kit
+	} else {
+		// Make available services extensible via plugins, themes (functions.php), etc.
+		$services = apply_filters( 'A2A_SHARE_SAVE_services', $A2A_SHARE_SAVE_services );
+		$service_codes = ( is_array( $services ) ) ? array_keys( $services ) : array();
+		
+		// Include Facebook Like and Twitter Tweet etc. unless no_special_services arg is true
+		if ( ! isset( $no_special_services ) || false == $no_special_services ) {
+			array_unshift( $service_codes, 'facebook_like', 'twitter_tweet', 'google_plusone', 'google_plus_share', 'pinterest_pin' );
+		}
+	
+		// Use default services if services have not been selected yet
+		$active_services = ( isset( $options['active_services'] ) ) ? $options['active_services'] : array( 'facebook', 'twitter', 'google_plus' );
+		// Services set by "buttons" arg? Then use "buttons" arg instead
+		$active_services = ! empty ( $buttons ) ? $buttons : $active_services;
+	}
 	
 	$ind_html = "" . $html_container_open;
 	
 	foreach( $active_services as $active_service ) {
+		
+		$custom_service = false;
 		
 		if ( ! in_array( $active_service, $service_codes ) )
 			continue;
@@ -240,12 +259,23 @@ function ADDTOANY_SHARE_SAVE_ICONS( $args = array() ) {
 			$special_args['output_later'] = true;
 			$link = ADDTOANY_SHARE_SAVE_SPECIAL( $active_service, $special_args );
 		} else {
-			$service = $A2A_SHARE_SAVE_services[ $active_service ];
+			$service = $services[ $active_service ];
 			$safe_name = $active_service;
 			$name = $service['name'];
 			
-			// If HREF specified, presume custom service (except if it's "print")
-			if ( isset( $service['href'] ) && $safe_name != 'print' ) {
+			// If Follow kit and HREF specified
+			if ( $is_follow && isset( $service['href'] ) ) {
+				$follow_id = $buttons[ $active_service ]['id'];
+				if ( 'feed' == $safe_name ) {
+					// For "feed" service, stored ID value is actually the URL
+					$href = $follow_id;
+				} else {
+					// For all other services, replace
+					$href = str_replace( '${id}', $follow_id, $service['href'] );
+				}
+				$href = ( 'feed' == $safe_name ) ? $follow_id : $href ;
+			// Else if Share Kit and HREF specified, presume custom service
+			} elseif ( isset( $service['href'] ) ) {
 				$custom_service = true;
 				$href = $service['href'];
 				if ( isset( $service['href_js_esc'] ) ) {
@@ -258,12 +288,11 @@ function ADDTOANY_SHARE_SAVE_ICONS( $args = array() ) {
 				$href = str_replace( "A2A_LINKURL", $href_linkurl, $href );
 				$href = str_replace( "A2A_LINKNAME", $href_linkname, $href );
 				$href = str_replace( " ", "%20", $href );
-			} else {
-				$custom_service = false;
 			}
 			
 			// AddToAny counter enabled?
-			$counter_enabled = ( ! isset( $is_floating ) // Disable counters on floating buttons for now
+			$counter_enabled = ( ! $is_follow // Disable counters on Follow Kits
+				&& ! isset( $is_floating ) // Disable counters on floating buttons for now
 				&& in_array( $active_service, array( 'facebook', 'twitter', 'pinterest', 'linkedin', 'reddit' ) )
 				&& isset( $options['special_' . $active_service . '_options'] )
 				&& isset( $options['special_' . $active_service . '_options']['show_count'] ) 
@@ -272,22 +301,23 @@ function ADDTOANY_SHARE_SAVE_ICONS( $args = array() ) {
 	
 			$icon_url = ( isset( $service['icon_url'] ) ) ? $service['icon_url'] : false;
 			$icon = ( isset( $service['icon'] ) ) ? $service['icon'] : 'default'; // Just the icon filename
-			$width = ( isset( $service['icon_width'] ) ) ? $service['icon_width'] : '16';
-			$height = ( isset( $service['icon_height'] ) ) ? $service['icon_height'] : '16';
+			$width_attr = ( isset( $service['icon_width'] ) ) ? ' width="' . $service['icon_width'] . '"' : ' width="16"';
+			$height_attr = ( isset( $service['icon_height'] ) ) ? ' height="' . $service['icon_height'] . '"' : ' height="16"';
 			
-			$url = ( $custom_service ) ? $href : "http://www.addtoany.com/add_to/" . $safe_name . "?linkurl=" . $linkurl_enc . "&amp;linkname=" . $linkname_enc;
-			$src = ( $icon_url ) ? $icon_url : $icons_dir . $icon . ".png";
+			$url = ( isset( $href ) ) ? $href : "http://www.addtoany.com/add_to/" . $safe_name . "?linkurl=" . $linkurl_enc . "&amp;linkname=" . $linkname_enc;
+			$src = ( $icon_url ) ? $icon_url : $icons_dir . $icon . '.' . $icons_type;
 			$counter = ( $counter_enabled ) ? ' a2a_counter' : '';
 			$class_attr = ( $custom_service ) ? '' : ' class="a2a_button_' . $safe_name . $counter . '"';
+			$rel_nofollow = $is_follow ? '' : ' rel="nofollow"'; // ($is_follow indicates a Follow Kit. 'nofollow' is for search crawlers. Different things)
 			
-			// Remove all dimension values if using custom icons
+			// Remove dimension attributes if using custom icons
 			if ( isset( $custom_icons ) ) {
-				$width = '';
-				$height = '';
+				$width_attr = '';
+				$height_attr = '';
 			}
 			
-			$link = $html_wrap_open . "<a$class_attr href=\"$url\" title=\"$name\" rel=\"nofollow\" target=\"_blank\">";
-			$link .= ( $large_icons && ! isset( $custom_icons ) && ! $custom_service ) ? "" : "<img src=\"$src\" width=\"$width\" height=\"$height\" alt=\"$name\"/>";
+			$link = $html_wrap_open . "<a$class_attr href=\"$url\" title=\"$name\"$rel_nofollow target=\"_blank\">";
+			$link .= ( $large_icons && ! isset( $custom_icons ) && ! $custom_service ) ? "" : "<img src=\"$src\"" . $width_attr . $height_attr . " alt=\"$name\"/>";
 			$link .= "</a>" . $html_wrap_close;
 		}
 		
@@ -412,8 +442,10 @@ function ADDTOANY_SHARE_SAVE_BUTTON( $args = array() ) {
 				. "url:location.href}";
 			$_addtoany_targets[] = $button_config;
 		} else {
-			$button_config = "\n{title:'". esc_js($linkname) . "',"
-				. "url:'" . $linkurl . "'}";
+			// wp_json_encode available since 4.1
+			$linkname_sanitized = function_exists( 'wp_json_encode' ) ? wp_json_encode ( $linkname ) : json_encode( $linkname );
+			$button_config = "\n{title:". $linkname_sanitized . ','
+				. 'url:"' . $linkurl . '"}';
 			$_addtoany_targets[] = $button_config;
 		}
 		
@@ -424,7 +456,7 @@ function ADDTOANY_SHARE_SAVE_BUTTON( $args = array() ) {
 					. $button_config
 				. ");\n";
 			
-			if ( ! $_addtoany_init) {
+			if ( ! $_addtoany_init ) {
 				// Catch post-load event to support infinite scroll (and more?)
 				$javascript_button_config .= "\nif('function'===typeof(jQuery))"
 					. "jQuery(document).ready(function($){"
@@ -439,7 +471,7 @@ function ADDTOANY_SHARE_SAVE_BUTTON( $args = array() ) {
 		}
 		else $javascript_button_config = '';
 		
-		if ( ! $_addtoany_init) {
+		if ( ! $_addtoany_init ) {
 			$javascript_load_early = "\n<script type=\"text/javascript\"><!--\n"
 				. "wpa2a.script_load();"
 				. "\n//--></script>\n";
@@ -546,6 +578,38 @@ if ( ! function_exists( 'A2A_menu_locale' ) ) {
 	}
 }
 
+function ADDTOANY_FOLLOW_KIT( $args = array() ) {
+	// Args are passed on to ADDTOANY_SHARE_SAVE_KIT
+	$defaults = array(
+		'linkname' => '',
+		'linkurl' => '',
+		'linkname_enc' => '',
+		'linkurl_enc' => '',
+		'use_current_page' => true,
+		'output_later' => false,
+		'is_follow' => true,
+		'is_kit' => true,
+		'no_special_services' => true,
+		'no_universal_button' => true,
+		//'no_small_icons' => true,
+		'kit_additional_classes' => '',
+		'kit_style' => '',
+		'services' => array(),
+	);
+	
+	$args = wp_parse_args( $args, $defaults );
+	
+	// Add a2a_follow className to Kit classes
+	$args['kit_additional_classes'] = 'a2a_follow';
+	
+	$follow_html = ADDTOANY_SHARE_SAVE_KIT( $args );
+	
+	if ( isset( $args['output_later'] ) && $args['output_later'] == true )
+		return $follow_html;
+	else
+		echo $follow_html;
+}
+
 function ADDTOANY_SHARE_SAVE_FLOATING( $args = array() ) {
 	$options = get_option( 'addtoany_options' );
 	
@@ -567,7 +631,7 @@ function ADDTOANY_SHARE_SAVE_FLOATING( $args = array() ) {
 		}
 	}
 
-	// Args are just passed on to ADDTOANY_SHARE_SAVE_KIT for now
+	// Args are passed on to ADDTOANY_SHARE_SAVE_KIT
 	$defaults = array(
 		'linkname' => '',
 		'linkurl' => '',
@@ -826,6 +890,7 @@ function A2A_SHARE_SAVE_add_to_content( $content ) {
 	$options = get_option( 'addtoany_options' );
 	$sharing_disabled = get_post_meta( get_the_ID(), 'sharing_disabled', true );
 	$sharing_disabled = apply_filters( 'addtoany_sharing_disabled', $sharing_disabled );
+	$post_type = get_post_type( get_the_ID() );
 	
 	if ( ! $A2A_SHARE_SAVE_auto_placement_ready )
 		return $content;
@@ -857,6 +922,9 @@ function A2A_SHARE_SAVE_add_to_content( $content ) {
 			( is_search() && isset( $options['display_in_posts_on_archive_pages'] ) && $options['display_in_posts_on_archive_pages'] == '-1' ) || 
 			// Posts in feed
 			( $is_feed && isset( $options['display_in_feed'] ) && $options['display_in_feed'] == '-1' ) ||
+			
+			// Custom post types
+			( $post_type && isset( $options['display_in_cpt_' . $post_type] ) && $options['display_in_cpt_' . $post_type] == '-1' ) ||
 			
 			// Pages
 			// Individual pages
@@ -1078,14 +1146,15 @@ function A2A_SHARE_SAVE_add_menu_link() {
 
 add_filter( 'admin_menu', 'A2A_SHARE_SAVE_add_menu_link' );
 
-function A2A_SHARE_SAVE_widget_init() {
+function A2A_SHARE_SAVE_widgets_init() {
 	global $A2A_SHARE_SAVE_plugin_dir;
 	
-	include_once( $A2A_SHARE_SAVE_plugin_dir . '/addtoany.widget.php' );
+	include_once( $A2A_SHARE_SAVE_plugin_dir . '/addtoany.widgets.php' );
 	register_widget( 'A2A_SHARE_SAVE_Widget' );
+	register_widget( 'A2A_Follow_Widget' );
 }
 
-add_action( 'widgets_init', 'A2A_SHARE_SAVE_widget_init' );
+add_action( 'widgets_init', 'A2A_SHARE_SAVE_widgets_init' );
 
 // Place in Option List on Settings > Plugins page 
 function A2A_SHARE_SAVE_actlinks( $links, $file ) {
