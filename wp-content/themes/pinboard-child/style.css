@@ -19,6 +19,15 @@ License URI: license.txt
 
 
 
+@media screen and (max-width: 760px) {
+  .extension_global_nav {display:none;}
+  #site-title .home {
+    /*font-size: 12px;*/
+    display: none;
+  }
+}
+
+
 /* bootstrap button */
 
 .btn {
