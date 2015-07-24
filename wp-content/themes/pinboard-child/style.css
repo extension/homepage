@@ -17,7 +17,7 @@ License URI: license.txt
 #content_widget {border:none !important;}
 .widget-area a:hover {color:#000;}
 
-
+#wrapper {max-width:100%;}
 
 @media screen and (max-width: 760px) {
   .extension_global_nav {display:none;}
