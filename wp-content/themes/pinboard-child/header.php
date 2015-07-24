@@ -16,14 +16,12 @@
 	<div id="wrapper">
 		<header id="header">
 			<<?php pinboard_title_tag( 'site' ); ?> id="site-title">
-				<?php if ( ( '' != get_header_image() ) &&  ( false != get_header_image() ) ) : ?>
 					<a href="<?php echo home_url( '/' ); ?>" rel="home">
-						<img src="<?php header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>" width="<?php echo ( pinboard_get_option( 'retina_header' ) ? absint( get_custom_header()->width / 2 ) : get_custom_header()->width ); ?>" height="<?php echo ( pinboard_get_option( 'retina_header' ) ? absint( get_custom_header()->height / 2 ) : get_custom_header()->height ); ?>" />
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/eXtension_logo_600x240.png" alt="<?php bloginfo( 'name' ); ?>" />
 					</a>
-				<?php endif; ?>
 				<a class="home" href="<?php echo home_url( '/' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			</<?php pinboard_title_tag( 'site' ); ?>>
-			
+
 			<?php get_sidebar( 'header' ); ?>
 			<div class="clear"></div>
 			<nav id="access">
