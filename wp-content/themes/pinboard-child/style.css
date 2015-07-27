@@ -15,9 +15,12 @@ License URI: license.txt
 #site-title img {width:196px;}
 #content_widget h3, #content_widget p {display:none;}
 #content_widget {border:none !important;}
-.widget-area a:hover {color:#000;}
+.widget-area a.btn {color:#fff !important;}
+.widget-area a.btn:hover {color:#fff !important;}
 
 #wrapper {max-width:100%;}
+#sidebar {color: #aaa;}
+
 
 @media screen and (max-width: 760px) {
   .extension_global_nav {display:none;}
@@ -546,3 +549,7 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
 }
+
+
+
+.btn {white-space: normal;}
