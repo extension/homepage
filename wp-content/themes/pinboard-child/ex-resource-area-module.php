@@ -1,3 +1,4 @@
+<div class="resource-areas">
 <h3>Resource Areas</h3>
 
 <div class="column fourcol">
@@ -108,4 +109,5 @@
 	<li><a href="http://www.extension.org/youth_agriculture">Ag Zone</a></li>
 	<li><a href="http://www.extension.org/science_for_youth">Science for Youth</a></li>
 	</ul>
+</div>
 </div>

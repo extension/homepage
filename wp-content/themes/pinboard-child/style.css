@@ -20,7 +20,8 @@ License URI: license.txt
 
 #wrapper {max-width:100%;}
 #sidebar {color: #aaa;}
-
+.resource-areas ul li {padding:.1em; font-size:1.1em;}
+.resource-areas ul {padding-bottom:1em;}
 
 @media screen and (max-width: 760px) {
   .extension_global_nav {display:none;}
