@@ -266,8 +266,16 @@ function A2A_SHARE_SAVE_options_page() {
 			$new_options['additional_js_variables'] = ( isset( $_POST['A2A_SHARE_SAVE_additional_js_variables'] ) ) ? trim( $_POST['A2A_SHARE_SAVE_additional_js_variables'] ) : '';
 			$new_options['custom_icons'] = ( isset( $_POST['A2A_SHARE_SAVE_custom_icons'] ) && $_POST['A2A_SHARE_SAVE_custom_icons'] == 'url' ) ? 'url' : '-1';
 			$new_options['custom_icons_url'] = ( isset( $_POST['A2A_SHARE_SAVE_custom_icons_url'] ) ) ? trailingslashit( $_POST['A2A_SHARE_SAVE_custom_icons_url'] ) : '';
+			$new_options['custom_icons_type'] = ( isset( $_POST['A2A_SHARE_SAVE_custom_icons_type'] ) ) ? $_POST['A2A_SHARE_SAVE_custom_icons_type'] : 'png';
 			$new_options['inline_css'] = ( isset( $_POST['A2A_SHARE_SAVE_inline_css'] ) && $_POST['A2A_SHARE_SAVE_inline_css'] == '1') ? '1' : '-1';
 			$new_options['cache'] = ( isset( $_POST['A2A_SHARE_SAVE_cache'] ) && $_POST['A2A_SHARE_SAVE_cache'] == '1' ) ? '1' : '-1';
+			
+			$custom_post_types = array_values( get_post_types( array( 'public' => true, '_builtin' => false ), 'objects' ) );
+			foreach ( $custom_post_types as $custom_post_type_obj ) {
+				$placement_name = $custom_post_type_obj->name;
+				$new_options['display_in_cpt_' . $placement_name] = ( isset( $_POST['A2A_SHARE_SAVE_display_in_cpt_' . $placement_name] ) 
+					&& $_POST['A2A_SHARE_SAVE_display_in_cpt_' . $placement_name] == '1' ) ? '1' : '-1';
+			}
 			
 			// Schedule cache refresh?
 			if ( isset( $_POST['A2A_SHARE_SAVE_cache'] ) && $_POST['A2A_SHARE_SAVE_cache'] == '1' ) {
@@ -577,6 +585,20 @@ function A2A_SHARE_SAVE_options_page() {
 					<input name="A2A_SHARE_SAVE_display_in_pages" type="checkbox"<?php if ( ! isset( $options['display_in_pages'] ) || $options['display_in_pages'] != '-1' ) echo ' checked="checked"'; ?> value="1"/>
 					<?php printf(__('Display at the %s of pages', 'add-to-any'), position_in_content( $options, false )); ?>
 				</label>
+				
+			<?php 
+				$custom_post_types = array_values( get_post_types( array( 'public' => true, '_builtin' => false ), 'objects' ) );
+				foreach ( $custom_post_types as $custom_post_type_obj ) :
+					$placement_label = $custom_post_type_obj->labels->name;
+					$placement_name = $custom_post_type_obj->name;
+			?>
+				<br/>
+				<label>
+					<input name="A2A_SHARE_SAVE_display_in_cpt_<?php echo $placement_name; ?>" type="checkbox"<?php if ( ! isset( $options['display_in_cpt_' . $placement_name] ) || $options['display_in_cpt_' . $placement_name] != '-1' ) echo ' checked="checked"'; ?> value="1"/>
+					<?php printf(__('Display at the %s of %s', 'add-to-any'), position_in_content( $options, false ), esc_html( $placement_label ) ); ?>
+				</label>
+			<?php endforeach; ?>
+				
 				<br/><br/>
 				<div class="setting-description">
 					<?php _e("See <a href=\"widgets.php\" title=\"Theme Widgets\">Widgets</a> and <a href=\"options-general.php?page=add-to-any.php&action=floating\" title=\"AddToAny Floating Share Buttons\">Floating</a> for additional placement options. For advanced placement, see <a href=\"http://wordpress.org/plugins/add-to-any/faq/\">the FAQs</a>.", "add-to-any"); ?>
@@ -630,6 +652,7 @@ function A2A_SHARE_SAVE_options_page() {
 				<?php _e('Use custom icons. URL:', 'add-to-any'); ?>
 				</label>
 				<input name="A2A_SHARE_SAVE_custom_icons_url" type="text" class="code" size="50" style="vertical-align:middle" placeholder="//example.com/blog/uploads/addtoany/icons/custom/" value="<?php if ( isset( $options['custom_icons_url'] ) ) echo $options['custom_icons_url']; ?>" />
+				<input name="A2A_SHARE_SAVE_custom_icons_type" type="text" class="code" size="5" style="vertical-align:middle" maxlength="4" placeholder="png" value="<?php if ( isset( $options['custom_icons_type'] ) ) echo $options['custom_icons_type']; else echo 'png'; ?>" title="<?php esc_attr_e("Filename extension", "add-to-any"); ?>" />
 				<p class="description">
 					<?php _e("Specify the URL of the directory containing your custom icons. For example, a URL of <code>//example.com/blog/uploads/addtoany/icons/custom/</code> containing <code>facebook.png</code> and <code>twitter.png</code>. Be sure that custom icon filenames match the icon filenames in <code>plugins/add-to-any/icons</code>. For AddToAny's Universal Button, select Image URL and specify the URL of your AddToAny universal share icon (<a href=\"#\" onclick=\"document.getElementsByName('A2A_SHARE_SAVE_button_custom')[0].focus();return false\">above</a>).", "add-to-any"); ?>
 				</p>
@@ -995,7 +1018,7 @@ function A2A_SHARE_SAVE_admin_head() {
 		foreach ($active_services as $service) {
 			if ( $admin_services_saved )
 				$service = substr( $service, 7 ); // Remove a2a_wp_
-			$active_services_quoted .= '"' . esc_js( $service ) . '"';
+			$active_services_quoted .= json_encode( $service );
 			if ( $service != $active_services_last )
 				$active_services_quoted .= ',';
 			
