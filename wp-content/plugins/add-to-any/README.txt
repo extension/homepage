@@ -1,9 +1,9 @@
 === Share Buttons by AddToAny ===
 Contributors: micropat, addtoany
-Tags: sharing, share, share this, bookmarking, social, share button, share buttons, share links, social share, social sharing, social bookmarking, social bookmarks, socialize, bookmark, bookmarks, save, Post, posts, page, pages, images, image, admin, statistics, stats, links, plugin, shortcode, sidebar, widget, responsive, email, e-mail, print, seo, button, delicious, google, tumblr, linkedin, digg, reddit, facebook, facebook share, facebook like, like, twitter, twitter button, twitter share, tweet, tweet button, +1, plus 1, google +1, google plus, google plus one, plus one, pinterest, pin, pin it, pinit, wanelo, buffer, stumbleupon, bitly, whatsapp, lockerz, addthis, sociable, sharedaddy, sharethis, shareaholic, icon, icons, vector, SVG, floating, floating buttons, wpmu, Add to Any, AddToAny
+Tags: sharing, share, share this, bookmarking, social, share button, share buttons, share links, social share, social sharing, social bookmarking, social bookmarks, socialize, bookmark, bookmarks, save, Post, posts, page, pages, images, image, admin, statistics, stats, links, plugin, shortcode, sidebar, widget, responsive, email, e-mail, print, seo, button, delicious, google, tumblr, linkedin, digg, reddit, facebook, facebook share, facebook like, like, twitter, twitter button, twitter share, tweet, tweet button, +1, google +1, google plus, pinterest, pin, pin it, pinit, wanelo, buffer, stumbleupon, bitly, whatsapp, instagram, behance, flickr, foursquare, vimeo, youtube, feed, rss, lockerz, addthis, sociable, sharedaddy, sharethis, shareaholic, icon, icons, vector, SVG, floating, floating buttons, wpml, wpmu, Add to Any, AddToAny
 Requires at least: 2.8
 Tested up to: 4.3
-Stable tag: 1.5.6.1
+Stable tag: 1.6.2
 
 Share buttons for WordPress including AddToAny's universal sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp and many more.
 
@@ -13,14 +13,13 @@ The WordPress sharing plugin to help people share, save, and email your posts an
 
 AddToAny's customizable platform and social share icons let you optimize your site's blog posts & pages for the best social sharing engagement.
 
-= Share Buttons =
+= Share Buttons & Follow Buttons =
 
 * **Counters** — fast & official share counts in the same style
 * **Floating** share buttons — responsive & customizable, vertical & horizontal
-* **Vector** sharing buttons (SVG sharing icons)
+* **Vector** share & follow buttons (SVG icons)
 * **Universal** Share Button and Smart Menu
-* Individual share links
-* Custom share icons
+* Individual share links and custom share icons
 * Choose from over 100 services
 * 3rd party buttons include the Facebook Like Button, Twitter Tweet Button, Pinterest Pin It Button, Google+ Share Button and Google +1 Button
 * Universal email sharing makes it easy to share via Gmail, Yahoo! Mail, Outlook.com (Hotmail), AOL Mail, and any other web and native apps
@@ -63,7 +62,7 @@ AddToAny's customizable platform and social share icons let you optimize your si
 = Wide Support =
 
 * Over 8 years of active development
-* Over 3.8 million downloads
+* Over 4 million downloads
 * Translated into dozens of languages
 * Ongoing support from the community
 
@@ -100,7 +99,7 @@ In your Admin panel, go to `Settings` > `AddToAny`. Among other options, you can
 
 To place the buttons as a "widget" in your theme (if your theme supports WordPress Widgets), go to `Appearance` > `Widgets`, then drag AddToAny to an available Widget Area and click `Save`.
 
-To further customize AddToAny, see the <a href="https://www.addtoany.com/buttons/customize/wordpress">WordPress sharing documentation</a> for the AddToAny plugin. Many customizations will have you copy & paste one (or just a few) lines of JavaScript code into "Additional Options" box. The Additional Options box is in `Settings` > `AddToAny`.
+To further customize AddToAny, see the <a href="https://www.addtoany.com/buttons/customize/wordpress">WordPress sharing documentation</a> for the AddToAny plugin. Many customizations will have you copy & paste one or more lines of JavaScript code into "Additional Options" box. The Additional Options box is in `Settings` > `AddToAny`.
 
 = Something is wrong. What should I try first? =
 
@@ -140,14 +139,12 @@ Since 2006, AddToAny is trusted across the web to always route to each service's
 
 Upload sharing icons in a single directory to a public location, and make sure the icon filenames match the icon filenames packaged in the AddToAny plugin. In your Admin panel, go to `Settings` > `AddToAny` > `Advanced Options` > check the "Use custom icons" checkbox and specify the URL to your custom icons directory (including the trailing `/`). For AddToAny's universal button, go to Universal Button, select `Image URL` and specify the exact location of your AddToAny universal share icon (including the filename).
 
-= How can I add both the universal button and the individual icons to another area of my theme? =
+= How can I place the share buttons in a specific area of my site? =
 
 In the Theme Editor, place this code block where you want the button and individual icons to appear in your theme:
-
 `<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>`
 
-If you want to customize the shared URL and title for the universal button and standalone services, use the following code as a template:
-
+If you want to customize the shared URL and title, use the following code as a template:
 `<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { 
 	ADDTOANY_SHARE_SAVE_KIT( array( 'linkname' => 'Example Page', 'linkurl' => 'http://example.com/page.html' ) );
 } ?>`
@@ -162,51 +159,8 @@ If you want to hardcode the shared current URL and modify the title (server-side
 	ADDTOANY_SHARE_SAVE_KIT( array( 'linkname' => ( is_home() ? get_bloginfo( 'description' ) : wp_title( '', false ) ), 'linkurl' => ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'] ) );
 } ?>`
 
-= How can I add just the universal button to another area of my theme? =
-
-In the Theme Editor, you will place this line of code where you want the button to appear in your theme:
-
-`<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_BUTTON' ) ) { ADDTOANY_SHARE_SAVE_BUTTON(); } ?>`
-
-If you want to customize the shared URL and title for this button, use the following code as a template:
-
-`<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_BUTTON' ) ) { 
-	ADDTOANY_SHARE_SAVE_BUTTON( array( 'linkname' => 'Example Page', 'linkurl' => 'http://example.com/page.html' ) );
-} ?>`
-
-= How can I add just the individual icons to another area of my theme? =
-
-In the Theme Editor, place this line of code where you want the individual icons to appear in your theme (within an HTML list):
-
-`<?php echo '<div class="a2a_kit a2a_kit_size_32 addtoany_list">';
-if ( function_exists( 'ADDTOANY_SHARE_SAVE_ICONS' ) ) { ADDTOANY_SHARE_SAVE_ICONS(); }
-echo '</div>'; ?>`
-
-If you want to customize the shared URL and title for these icons, use the following code as a template:
-
-`<?php
-if ( function_exists( 'ADDTOANY_SHARE_SAVE_ICONS' ) ) {
-	echo '<div class="a2a_kit a2a_kit_size_32 addtoany_list">';
-	ADDTOANY_SHARE_SAVE_ICONS( array(
-		'linkname' => 'Example Page', 'linkurl' => 'http://example.com/page.html'
-	) );
-	echo '</div>';
-} ?>`
-
-(If you are using the small icons, remove `a2a_kit_size_32` from the line `<div class="a2a_kit a2a_kit_size_32 addtoany_list">` so that you have `<div class="a2a_kit addtoany_list">`.)
-
-Or you can place the icons as individual links without styling:
-
-`<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_ICONS' ) ) { ADDTOANY_SHARE_SAVE_ICONS(); } ?>`
-
-If you want to customize the shared URL and title for these icons, use the following code as a template:
-
-`<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_ICONS' ) ) {
-	ADDTOANY_SHARE_SAVE_ICONS( array( 'linkname' => 'Example Page', 'linkurl' => 'http://example.com/page.html' ) );
-} ?>`
-
 = How can I add a new custom standalone service? =
-You can create a plugin or customize the following PHP sample code to add to your theme's function.php file:
+You can create a plugin or customize the following example PHP code to add to your theme's function.php file:
 
 `function addtoany_add_services( $services ) {
 	$services['example_service'] = array(
@@ -245,9 +199,30 @@ An older method was to insert the following tag into the page or post (HTML tab)
 
 Go to `Settings` > `AddToAny` > uncheck `Display at the top or bottom of posts on archive pages`. Archive pages include Category, Tag, Author, Date, and also Search pages.
 
+= How can I programmatically remove the button(s)? =
+
+In your theme's `functions.php`, you can add a filter to disable AddToAny sharing.
+
+Disable AddToAny sharing in specific categories, for example:
+`function addtoany_disable_sharing_in_some_categories() {
+	// Examples of in_category usage: https://codex.wordpress.org/Function_Reference/in_category
+	if ( in_category( array( 'my_category_1_slug', 'my_category_2_slug' ) ) ) {
+		return true;
+	}
+}
+add_filter( 'addtoany_sharing_disabled', 'addtoany_disable_sharing_in_some_categories' );`
+
+Disable AddToAny sharing on a custom post type, for example:
+`function addtoany_disable_sharing_on_my_custom_post_type() {
+	if ( 'my_custom_post_type' == get_post_type() ) {
+		return true;
+	}
+}
+add_filter( 'addtoany_sharing_disabled', 'addtoany_disable_sharing_on_my_custom_post_type' );`
+
 = How can I position a vertical floating share buttons bar relative to content? =
 
-In settings, disable the default placement of the Vertical Buttons. In your theme's file(s), find the parent element that you want to position the vertical bar to (the parent element should have a specified width), then add the following PHP sample code as a child of that parent element:
+In settings, disable the default placement of the Vertical Buttons. In your theme's file(s), find the parent element that you want to position the vertical bar to (the parent element should have a specified width), then add the following example PHP code as a child of that parent element:
 
 `<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_FLOATING' ) ) {
 	ADDTOANY_SHARE_SAVE_FLOATING( array(
@@ -258,7 +233,7 @@ In settings, disable the default placement of the Vertical Buttons. In your them
 
 = Why does the Facebook Like Button, Twitter Tweet Button, Pinterest Pin It Button, Google+ Share Button, or Google +1 Button have so much whitespace to the right of it? =
 
-The minimum width for the Facebook Like Button is 90 pixels. This is required to display the total number of Likes to the right of the button.  See Facebook's <a href="http://developers.facebook.com/docs/reference/plugins/like">Like Button documentation</a> for details
+The minimum width for the Facebook Like Button is 90 pixels. This is required to display the total number of Likes to the right of the button.  See Facebook's <a href="https://developers.facebook.com/docs/plugins/like-button">Like Button documentation</a> for details
 
 It's not recommended, but you can change the width of the Facebook Like Button using CSS code, for instance: `.a2a_button_facebook_like { width:50px !important; }`
 
@@ -276,11 +251,22 @@ Yes, this plugin outputs 100% W3C valid HTML5 & XHTML and W3C valid CSS 3 by def
 
 If you use the Facebook Like, Twitter Tweet or Google +1 buttons in an HTML5 theme, note that the button iframes use the `scrolling` attribute, which is valid XHTML but the attribute has been deprecated in HTML5. It's needed to prevent scrollbars from appearing over the Like, Tweet, and +1 buttons inside of the iframes.
 
-Regardless of circumstances for passing W3C tests, the plugin will always output semantically valid and robot-readable code, so publishers do not have to worry about search engine crawler errors due to invalid code. Both <a href="http://en.wikipedia.org/wiki/Web_standards">web standards</a> and <a href="http://en.wikipedia.org/wiki/Cross-browser">cross-browser</a> compatibility are taken seriously.
+Regardless of circumstances for passing W3C tests, the plugin will always output semantically valid and robot-readable code, so publishers do not have to worry about search engine crawler errors due to invalid code. Both <a href="https://en.wikipedia.org/wiki/Web_standards">web standards</a> and <a href="https://en.wikipedia.org/wiki/Cross-browser">cross-browser</a> compatibility are taken seriously.
+
+= How can I load the buttons after content insertion with AJAX and infinite scroll? =
+
+Fire the standard `post-load` event to have the plugin initiate AddToAny buttons:
+`jQuery( 'body' ).trigger( 'post-load' );`
+
+A few prerequisites:
+
+ * The request has an `HTTP_X_REQUESTED_WITH` header set to `xmlhttprequest`
+ * `jQuery` available
+ * AddToAny script blocks in the response need to execute, so don't use jQuery's `load` method *with a selector expression*. Selector expression usage with that method will cause script blocks in the response <a href="https://api.jquery.com/load/#script-execution">to be stripped out</a>
 
 = Why does the menu appear behind embedded objects (like Flash)? =
 
-Please read <a href="https://www.addtoany.com/buttons/customize/show_over_embeds">this document</a> for an explanation and possible fix. For WordPress, an easier fix is to have the plugin <a href="https://www.addtoany.com/buttons/customize/hide_embeds">hide intersecting embedded objects</a>. Just copy & paste the recommended code into the Additional Options box in `Settings` > `AddToAny`, then save changes.
+Please read <a href="https://www.addtoany.com/buttons/customize/show_over_embeds">this document</a> for an explanation and possible fix. For WordPress, an easier fix is to have the plugin <a href="https://www.addtoany.com/buttons/customize/wordpress/hide_embeds">hide intersecting embedded objects</a>.
 
 = For a WordPress Multisite Network (MS), how can I set the plugin as a "Must-Use" plugin to automatically execute for all blogs? =
 
@@ -288,7 +274,7 @@ Upload the plugin directory (including all files and directories within) to the 
 
 == Screenshots ==
 
-1. Vector sharing buttons (SVG icons) are pixel-perfect on Retina and high-PPI dispays
+1. AddToAny vector share buttons (SVG icons) are pixel-perfect on Retina and high-PPI dispays
 2. Traditional Share/Save button features Facebook, Twitter, and a generic share icon
 3. Mini share menu that drops down when visitors use the universal share button
 4. Full universal share menu modal that includes all services
@@ -296,6 +282,41 @@ Upload the plugin directory (including all files and directories within) to the 
 6. Color chooser for your share menus
 
 == Changelog ==
+
+= 1.6.2 =
+* Support AJAX loading from `admin-ajax.php`
+* Fix Google+ follow button URL by removing the hardcoded `+` (thanks foxtucker)
+ * Be sure to add the `+` to your `ID` if you have a Google+ custom URL.
+* Update CSS to fix alignment issues in some themes with button images and the Facebook Like button
+* Add small follow icons (Instagram, YouTube, Vimeo, Flickr, Foursquare, Behance, and RSS PNGs)
+* Add Known
+* Remove obsoleted detection of page.js versus feed.js
+
+= 1.6.1 =
+* Titles with special characters are sanitized differently
+ * Using `wp_json_encode` (or `json_encode`) instead of `esc_js` for sanitizing JavaScript strings (thanks Nigel Fish)
+* Fix issue where the new feed button pointed to an example URL instead of the saved URL (thanks debij)
+* Resolve Follow widget notice when widget is empty in debug mode
+
+= 1.6.0.1 =
+* Resolve notices in debug mode
+
+= 1.6 =
+* <a href="https://www.addtoany.com/buttons/customize/wordpress/follow_buttons">Follow buttons</a> have arrived for WordPress!
+* Includes Instagram, YouTube, Vimeo, Flickr, Foursquare, Behance, and RSS
+* Go to `Appearance` > `Customize` or `Appearance` > `Widgets` to setup your follow buttons
+
+= 1.5.9 =
+* Accept custom icons of all file types such as png, svg, gif, jpg, webp, etc.
+* Remove empty width and height attributes on custom icons for W3C validation
+* AddToAny is certified as multilingual-ready by <a href="https://wpml.org/">WPML</a>
+
+= 1.5.8 =
+* Toggle share buttons on custom post types in AddToAny settings
+ * Supports WooCommerce Product post types
+ * Supports bbPress Forum, Topic, Reply post types
+* Remove QQ (use Qzone)
+* Remove border from buttons that some themes add to links in posts
 
 = 1.5.7 =
 * <a href="https://www.addtoany.com/buttons/customize/wordpress/icon_color">Custom color share buttons</a> have arrived!
@@ -848,10 +869,10 @@ Upload the plugin directory (including all files and directories within) to the 
 * Major changes to plugin CSS stylesheet to support A2A Kit (official standalone services)
 * Standalone services are no longer list items within an unordered list container
 * Button is no longer a list item
-* Button/standalones now follow the HTML markup layout suggested by the <a href="https://www.addtoany.com/buttons/customize/standalone_services">AddToAny Kit</a>
+* Button/standalones now follow the HTML markup layout suggested by the <a href="https://www.addtoany.com/buttons/customize/wordpress/standalone_services">AddToAny Kit</a>
 
 = .9.9.6.5 =
-* Add class-names to use official <a href="https://www.addtoany.com/buttons/customize/standalone_services">Standalone Services Kit</a>
+* Add class-names to use official <a href="https://www.addtoany.com/buttons/customize/wordpress/standalone_services">Standalone Services Kit</a>
  * Google Analytics stats for individual services
 * Dutch translation (by Rene from <a href="http://wpwebshop.com/premium-wordpress-plugins/">WordPress Webshop</a>)
 
@@ -1279,6 +1300,12 @@ Upload the plugin directory (including all files and directories within) to the 
 * PHP4 legacy and compatibility fixes
 
 == Upgrade Notice ==
+
+= 1.6.2 =
+If you configured a Google+ follow button through an AddToAny Follow widget, the automatic `+` in your URL has been removed to permit default Google+ URLs which do not have a `+` preceding the ID number. Be sure to add the `+` back if you have a Google+ custom URL.
+
+= 1.6 =
+Follow buttons are now available! Look for the AddToAny Follow widget in Appearance > Customize or Appearance > Widgets.
 
 = 1.5.3 =
 Switch to the Large or Custom icon size if you haven't already - AddToAny's vector icons are way better than the traditional Small icons.
