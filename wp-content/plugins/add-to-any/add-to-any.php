@@ -3,7 +3,7 @@
 Plugin Name: Share Buttons by AddToAny
 Plugin URI: https://www.addtoany.com/
 Description: Share buttons for your pages including AddToAny's universal sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp and many more.  [<a href="options-general.php?page=add-to-any.php">Settings</a>]
-Version: 1.6.1
+Version: 1.6.2
 Author: AddToAny
 Author URI: https://www.addtoany.com/
 */
@@ -434,9 +434,12 @@ function ADDTOANY_SHARE_SAVE_BUTTON( $args = array() ) {
 	// Hook to disable script output
 	// Example: add_filter( 'addtoany_script_disabled', '__return_true' );
 	$script_disabled = apply_filters( 'addtoany_script_disabled', false );
+	// Doing AJAX? (the DOING_AJAX constant can be unreliable)
+	$ajax = ( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest' ) ? true : false;
 	
-	// If not a feed, not admin, and script is not disabled
-	if ( ! $is_feed && ! is_admin() && ! $script_disabled ) {
+	// If not a feed and script is not disabled,
+	// and not admin (unless doing AJAX, probably through admin-ajax.php)
+	if ( ! $is_feed && ! $script_disabled && ( ! is_admin() || $ajax ) ) {
 		if ($use_current_page) {
 			$button_config = "\n{title:document.title,"
 				. "url:location.href}";
@@ -450,7 +453,7 @@ function ADDTOANY_SHARE_SAVE_BUTTON( $args = array() ) {
 		}
 		
 		// If doing AJAX (the DOING_AJAX constant can be unreliable)
-		if ( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) == 'xmlhttprequest' ) {
+		if ( $ajax ) {
 			$javascript_button_config = "<script type=\"text/javascript\"><!--\n"
 				. "if(wpa2a.targets)wpa2a.targets.push("
 					. $button_config
@@ -468,15 +471,17 @@ function ADDTOANY_SHARE_SAVE_BUTTON( $args = array() ) {
 			}
 			
 			$javascript_button_config .= "\n//--></script>\n";
+		} else {
+			$javascript_button_config = '';
 		}
-		else $javascript_button_config = '';
 		
 		if ( ! $_addtoany_init ) {
 			$javascript_load_early = "\n<script type=\"text/javascript\"><!--\n"
 				. "wpa2a.script_load();"
 				. "\n//--></script>\n";
+		} else {
+			$javascript_load_early = "";
 		}
-		else $javascript_load_early = "";
 		
 		$button_html .= $javascript_load_early . $javascript_button_config;
 		$_addtoany_init = true;
@@ -755,10 +760,8 @@ function A2A_SHARE_SAVE_head_script() {
 				. "wpa2a.script_load=function(){};"
 			. "},"
 			. "script_onready:function(){"
-				. "if(a2a.type=='page'){" // Check a2a internal var to ensure script loaded is page.js not feed.js
-					. "wpa2a.script_ready=true;"
-					. "if(wpa2a.html_done)wpa2a.init();"
-				. "}"
+				. "wpa2a.script_ready=true;"
+				. "if(wpa2a.html_done)wpa2a.init();"
 			. "},"
 			. "init:function(){"
 				. "for(var i=0,el,target,targets=wpa2a.targets,length=targets.length;i<length;i++){"
@@ -1006,7 +1009,7 @@ function A2A_SHARE_SAVE_stylesheet() {
 	// Use stylesheet?
 	if ( ! isset( $options['inline_css'] ) || $options['inline_css'] != '-1' && ! is_admin() ) {
 	
-		wp_enqueue_style( 'A2A_SHARE_SAVE', $A2A_SHARE_SAVE_plugin_url_path . '/addtoany.min.css', false, '1.9' );
+		wp_enqueue_style( 'A2A_SHARE_SAVE', $A2A_SHARE_SAVE_plugin_url_path . '/addtoany.min.css', false, '1.10' );
 	
 		// wp_add_inline_style requires WP 3.3+
 		if ( '3.3' <= get_bloginfo( 'version' ) ) {

@@ -190,6 +190,10 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Kindle It",
 		"icon" => "kindle",
 	),
+	"known" => array(
+		"name" => "Known",
+		"icon" => "known",
+	),
 	"line" => array(
 		"name" => "Line",
 		"icon" => "line",

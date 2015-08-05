@@ -3,7 +3,7 @@ Contributors: micropat, addtoany
 Tags: sharing, share, share this, bookmarking, social, share button, share buttons, share links, social share, social sharing, social bookmarking, social bookmarks, socialize, bookmark, bookmarks, save, Post, posts, page, pages, images, image, admin, statistics, stats, links, plugin, shortcode, sidebar, widget, responsive, email, e-mail, print, seo, button, delicious, google, tumblr, linkedin, digg, reddit, facebook, facebook share, facebook like, like, twitter, twitter button, twitter share, tweet, tweet button, +1, google +1, google plus, pinterest, pin, pin it, pinit, wanelo, buffer, stumbleupon, bitly, whatsapp, instagram, behance, flickr, foursquare, vimeo, youtube, feed, rss, lockerz, addthis, sociable, sharedaddy, sharethis, shareaholic, icon, icons, vector, SVG, floating, floating buttons, wpml, wpmu, Add to Any, AddToAny
 Requires at least: 2.8
 Tested up to: 4.3
-Stable tag: 1.6.1
+Stable tag: 1.6.2
 
 Share buttons for WordPress including AddToAny's universal sharing button, Facebook, Twitter, Google+, Pinterest, WhatsApp and many more.
 
@@ -99,7 +99,7 @@ In your Admin panel, go to `Settings` > `AddToAny`. Among other options, you can
 
 To place the buttons as a "widget" in your theme (if your theme supports WordPress Widgets), go to `Appearance` > `Widgets`, then drag AddToAny to an available Widget Area and click `Save`.
 
-To further customize AddToAny, see the <a href="https://www.addtoany.com/buttons/customize/wordpress">WordPress sharing documentation</a> for the AddToAny plugin. Many customizations will have you copy & paste one (or just a few) lines of JavaScript code into "Additional Options" box. The Additional Options box is in `Settings` > `AddToAny`.
+To further customize AddToAny, see the <a href="https://www.addtoany.com/buttons/customize/wordpress">WordPress sharing documentation</a> for the AddToAny plugin. Many customizations will have you copy & paste one or more lines of JavaScript code into "Additional Options" box. The Additional Options box is in `Settings` > `AddToAny`.
 
 = Something is wrong. What should I try first? =
 
@@ -160,7 +160,7 @@ If you want to hardcode the shared current URL and modify the title (server-side
 } ?>`
 
 = How can I add a new custom standalone service? =
-You can create a plugin or customize the following PHP sample code to add to your theme's function.php file:
+You can create a plugin or customize the following example PHP code to add to your theme's function.php file:
 
 `function addtoany_add_services( $services ) {
 	$services['example_service'] = array(
@@ -222,7 +222,7 @@ add_filter( 'addtoany_sharing_disabled', 'addtoany_disable_sharing_on_my_custom_
 
 = How can I position a vertical floating share buttons bar relative to content? =
 
-In settings, disable the default placement of the Vertical Buttons. In your theme's file(s), find the parent element that you want to position the vertical bar to (the parent element should have a specified width), then add the following PHP sample code as a child of that parent element:
+In settings, disable the default placement of the Vertical Buttons. In your theme's file(s), find the parent element that you want to position the vertical bar to (the parent element should have a specified width), then add the following example PHP code as a child of that parent element:
 
 `<?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_FLOATING' ) ) {
 	ADDTOANY_SHARE_SAVE_FLOATING( array(
@@ -260,7 +260,7 @@ Fire the standard `post-load` event to have the plugin initiate AddToAny buttons
 
 A few prerequisites:
 
- * The response has an `HTTP_X_REQUESTED_WITH` header set to `xmlhttprequest`
+ * The request has an `HTTP_X_REQUESTED_WITH` header set to `xmlhttprequest`
  * `jQuery` available
  * AddToAny script blocks in the response need to execute, so don't use jQuery's `load` method *with a selector expression*. Selector expression usage with that method will cause script blocks in the response <a href="https://api.jquery.com/load/#script-execution">to be stripped out</a>
 
@@ -282,6 +282,15 @@ Upload the plugin directory (including all files and directories within) to the 
 6. Color chooser for your share menus
 
 == Changelog ==
+
+= 1.6.2 =
+* Support AJAX loading from `admin-ajax.php`
+* Fix Google+ follow button URL by removing the hardcoded `+` (thanks foxtucker)
+ * Be sure to add the `+` to your `ID` if you have a Google+ custom URL.
+* Update CSS to fix alignment issues in some themes with button images and the Facebook Like button
+* Add small follow icons (Instagram, YouTube, Vimeo, Flickr, Foursquare, Behance, and RSS PNGs)
+* Add Known
+* Remove obsoleted detection of page.js versus feed.js
 
 = 1.6.1 =
 * Titles with special characters are sanitized differently
@@ -1291,6 +1300,9 @@ Upload the plugin directory (including all files and directories within) to the 
 * PHP4 legacy and compatibility fixes
 
 == Upgrade Notice ==
+
+= 1.6.2 =
+If you configured a Google+ follow button through an AddToAny Follow widget, the automatic `+` in your URL has been removed to permit default Google+ URLs which do not have a `+` preceding the ID number. Be sure to add the `+` back if you have a Google+ custom URL.
 
 = 1.6 =
 Follow buttons are now available! Look for the AddToAny Follow widget in Appearance > Customize or Appearance > Widgets.
