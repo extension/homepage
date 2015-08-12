@@ -31,7 +31,16 @@ License URI: license.txt
   }
 }
 
+.widget-area a:hover {color: #21759B;}
 
+.learn-widget-wrapper {border:0 !important; padding:0 !important; background: none !important; font-size:1.1em;}
+.learn-widget-wrapper a {color: #000;}
+.learn-widget-header-general {display: none;}
+.learn-widget-header-specific {display: none;}
+.hp-resource-item-large {font-size: 16px; line-height:24px;}
+.learn-widget-see-more {display:none;}
+
+/*.widget-area {font-size:1.1em;}*/
 /* bootstrap button */
 
 .btn {
