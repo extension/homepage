@@ -31,6 +31,9 @@ License URI: license.txt
   }
 }
 
+body.custom-background {background-image: none !important;}
+
+
 .widget-area a:hover {color: #21759B;}
 
 .learn-widget-wrapper {border:0 !important; padding:0 !important; background: none !important; font-size:1.1em;}
