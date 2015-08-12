@@ -20,7 +20,7 @@
 <div id="exlw-2a2ea80c"></div>
 <!-- Learn -->
 
-    <p class="hp-action-item"><a class="btn btn-default btn-primary btn-lg" href="https://learn.extension.org/events/new">Create a Learn webinar</a></p>
+    <p class="hp-action-item"><a class="btn btn-default btn-primary btn-lg" href="https://learn.extension.org/events/new">Present a Learn webinar</a></p>
     <p class="hp-action-item"><a class="btn btn-default btn-primary btn-lg" href="https://learn.extension.org/widgets">Display upcoming Learn webinars on your site</a></p>
   </div>
 </aside>

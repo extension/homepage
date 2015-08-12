@@ -26,9 +26,11 @@ License URI: license.txt
 @media screen and (max-width: 760px) {
   .extension_global_nav {display:none;}
   #site-title .home {
-    /*font-size: 12px;*/
     display: none;
   }
+  #site-title {margin:10px 0 0 10px; text-align: left;}
+  #site-title img {margin:0;}
+  #access .nav-show, #access a.nav-show:hover {top: 15px; right: 10%;}
 }
 
 body.custom-background {background-image: none !important;}
