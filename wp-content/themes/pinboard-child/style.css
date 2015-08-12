@@ -40,6 +40,12 @@ License URI: license.txt
 .hp-resource-item-large {font-size: 16px; line-height:24px;}
 .learn-widget-see-more {display:none;}
 
+.aae_qw {border:0 !important; padding:0 !important; background: none !important; font-size:1.1em;}
+.aae_qw .aae_qw-header {display: none !important;}
+.aae_qw .aae_qw-see-more {display: none !important;}
+.aae_qw .aae_qw-view-response {display: none !important;}
+.aae_qw a {color: #000;}
+
 /*.widget-area {font-size:1.1em;}*/
 /* bootstrap button */
 
