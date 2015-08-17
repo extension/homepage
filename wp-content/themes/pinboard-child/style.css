@@ -15,9 +15,9 @@ License URI: license.txt
 #site-title img {width:196px;}
 #content_widget h3, #content_widget p {display:none;}
 #content_widget {border:none !important;}
-.widget-area a.btn {color:#fff !important;}
+.widget-area a.btn {color:#fff !important; display:block;}
 .widget-area a.btn:hover {color:#fff !important;}
-
+#header {background:#fff;}
 #wrapper {max-width:100%;}
 #sidebar {color: #aaa;}
 .resource-areas ul li {padding:.1em; font-size:1.1em;}

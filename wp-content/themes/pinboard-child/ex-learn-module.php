@@ -1,7 +1,7 @@
 <aside class="widget widget_text">
   <div class="textwidget">
-    <h2>Learn Webinars</h2>
-    <p class="hp-resource-item hp-resource-item-large"><a href="https://learn.extension.org/">Take charge of your professional development with Learn.extension.org</a></p>
+    <h2>Upcoming Webinars</h2>
+    <p class="hp-resource-item hp-resource-item-large"><a href="https://learn.extension.org/">Take charge of your professional development with learn.extension.org</a></p>
 
 <!-- Learn -->
 <script type="text/javascript">
@@ -20,7 +20,7 @@
 <div id="exlw-2a2ea80c"></div>
 <!-- Learn -->
 
-    <p class="hp-action-item"><a class="btn btn-default btn-primary btn-lg" href="https://learn.extension.org/events/new">Present a Learn webinar</a></p>
-    <p class="hp-action-item"><a class="btn btn-default btn-primary btn-lg" href="https://learn.extension.org/widgets">Display upcoming Learn webinars on your site</a></p>
+    <p class="hp-action-item"><a class="btn btn-default btn-primary btn-lg" href="https://learn.extension.org/events/new">Present a webinar</a></p>
+    <p class="hp-action-item"><a class="btn btn-default btn-primary btn-lg" href="https://learn.extension.org/widgets">Display upcoming webinars on your site</a></p>
   </div>
 </aside>
