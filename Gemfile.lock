@@ -13,12 +13,14 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    coderay (1.1.0)
     diff-lcs (1.2.5)
     grit (2.5.0)
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
       posix-spawn (~> 0.3.6)
     highline (1.6.21)
+    method_source (0.8.2)
     mime-types (1.25.1)
     mysql2 (0.3.16)
     net-scp (1.2.1)
@@ -29,18 +31,40 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     netrc (0.7.7)
+    php-serialize (1.1.0)
     posix-spawn (0.3.9)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     railsless-deploy (1.1.3)
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    ruby-wpdb (1.2.3)
+      mysql2 (~> 0.3)
+      php-serialize (~> 1.1)
+      pry (~> 0.9)
+      sequel (~> 4.2)
+      sequel_sluggable (~> 0.0.6)
+      thor (~> 0.18)
+    sequel (4.25.0)
+    sequel_sluggable (0.0.6)
+      sequel (>= 3.0.0)
+    slop (3.6.0)
     thor (0.19.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  capatross
+  capatross!
   capistrano (= 2.15.5)
   mysql2
   railsless-deploy
+  rest-client
+  ruby-wpdb
+  thor
+
+BUNDLED WITH
+   1.10.6
