@@ -88,7 +88,7 @@ class Redirector < Thor
     tags_hash = get_resource_area_tags("https://#{options[:host]}")
     resource_redirects = export_resource_area_tags_hash_to_redirection_directives(tags_hash,options[:host])
     if(!resource_redirects.nil?)
-      $stdout.puts "Redirecting the following resource areas: #{resource_redirects.values.flatten.join(', ')}"
+      $stdout.puts "Redirecting the following resource areas: #{tags_hash.values.flatten.join(', ')}"
       File.open(options[:resource_redirects_file], 'w') {|f| f.write(resource_redirects) }
     else
       $stderr.puts "resource_redirects are blank, not overwriting"
