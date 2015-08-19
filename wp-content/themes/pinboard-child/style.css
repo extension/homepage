@@ -42,7 +42,7 @@ body.custom-background {background-image: none !important;}
 .learn-widget-wrapper a {color: #000;}
 .learn-widget-header-general {display: none;}
 .learn-widget-header-specific {display: none;}
-.hp-resource-item-large {font-size: 16px; line-height:24px;}
+.hp-resource-item-large {font-size: 16px; line-height:24px; font-weight:bold}
 .learn-widget-see-more {display:none;}
 
 .aae_qw {border:0 !important; padding:0 !important; background: none !important; font-size:1.1em;}

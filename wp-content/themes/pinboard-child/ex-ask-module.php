@@ -20,10 +20,5 @@
     </script>
     <div id="aae-qw-413130fe"></div>
     <!-- End Ask an Expert -->
-
-
-    <p class="hp-resource-item"></p>
-    <p class="hp-action-item"><a class="btn btn-primary btn-default btn-lg" href="https://ask.extension.org/home/accept_questions">Enable question submission on your site</a></p>
-    <p class="hp-action-item"><a class="btn btn-primary btn-default btn-lg" href="https://ask.extension.org/widgets/">Display Ask an Expert answers on your site</a></p>
   </div>
 </aside>
