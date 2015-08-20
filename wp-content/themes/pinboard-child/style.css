@@ -14,7 +14,9 @@ License URI: license.txt
 
 #site-title img {width:196px;}
 #content_widget h3, #content_widget p {display:none;}
-#content_widget {border:none !important;}
+.textwidget #content_widget {border:none !important; background:transparent !important; font-family: 'Open Sans', sans-serif !important;}
+#content_widget ul {padding:0 !important;margin:0 !important; background:transparent !important;}
+.textwidget #content_widget li {line-height:1.62em;}
 .widget-area a.btn {color:#fff !important; display:block;}
 .widget-area a.btn:hover {color:#fff !important;}
 .widget-area a {color:#000; font-size:16px;}
