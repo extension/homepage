@@ -17,10 +17,15 @@ License URI: license.txt
 #content_widget {border:none !important;}
 .widget-area a.btn {color:#fff !important; display:block;}
 .widget-area a.btn:hover {color:#fff !important;}
+.widget-area a {color:#000; font-size:16px;}
+.widget-area a:hover {color: #21759B;}
+
+.resource-areas a {color:#21759B;}
+.resource-areas a:hover {color:#000;}
 #header {background:#fff;}
 #wrapper {max-width:100%;}
 #sidebar {color: #aaa;}
-.resource-areas ul li {padding:.1em; font-size:1.1em;}
+.resource-areas ul li {padding:.1em;}
 .resource-areas ul {padding-bottom:1em;}
 
 @media screen and (max-width: 760px) {
@@ -36,7 +41,7 @@ License URI: license.txt
 body.custom-background {background-image: none !important;}
 
 
-.widget-area a:hover {color: #21759B;}
+
 
 .learn-widget-wrapper {border:0 !important; padding:0 !important; background: none !important; font-size:1.1em;}
 .learn-widget-wrapper a {color: #000;}
