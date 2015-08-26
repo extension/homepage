@@ -30,6 +30,9 @@ License URI: license.txt
 .resource-areas ul li {padding:.1em;}
 .resource-areas ul {padding-bottom:1em;}
 
+.page-subnavigation {float:right; background: #e5e5e5; margin:-20px -20px 0 2em; padding:0; width: 24.9%;}
+.page-subnavigation li {margin:0;padding:1em; list-style:none; font-size:16px;}
+
 @media screen and (max-width: 760px) {
   .extension_global_nav {display:none;}
   #site-title .home {
