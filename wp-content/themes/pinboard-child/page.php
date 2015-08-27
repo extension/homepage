@@ -1,6 +1,3 @@
-
-
-
 <?php get_header(); ?>
 	<?php if( is_front_page() ) : ?>
 		<?php if( pinboard_get_option( 'slider' ) ) : ?>

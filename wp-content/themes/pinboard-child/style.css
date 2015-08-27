@@ -41,6 +41,7 @@ License URI: license.txt
   #site-title {margin:10px 0 0 10px; text-align: left;}
   #site-title img {margin:0;}
   #access .nav-show, #access a.nav-show:hover {top: 15px; right: 10%;}
+  .page-subnavigation {margin:-20px -20px 20px -20px; padding:20px; width: 100%;}
 }
 
 body.custom-background {background-image: none !important;}

@@ -5,6 +5,16 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 
+
+function posts_on_mobile_homepage( $query ) {
+  if ( wp_is_mobile() ) {
+    $query->set( 'posts_per_page', 3 );
+    // desktop number is set in Settings > Reading
+  }
+}
+add_action( 'pre_get_posts', 'posts_on_mobile_homepage' );
+
+
 // register_sidebar(
 // 		array(
 // 			'name' => 'Sidebar eXtension Modules',
