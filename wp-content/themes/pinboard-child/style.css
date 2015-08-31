@@ -30,6 +30,8 @@ License URI: license.txt
 .resource-areas ul li {padding:.1em;}
 .resource-areas ul {padding-bottom:1em;}
 .blog-archive-entry {float:left;}
+.blog-archive-entry .wp-post-image {width:40%; margin-right:40px; float:left;}
+.blog-archive-entry .entry-summary p {font-size: 18px; line-height: 30px;}
 
 .page-subnavigation {float:right; background: #e5e5e5; margin:-20px -20px 0 2em; padding:0; width: 24.9%;}
 .page-subnavigation li {margin:0;padding:1em; list-style:none; font-size:16px;}
