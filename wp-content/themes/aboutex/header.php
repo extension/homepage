@@ -32,7 +32,7 @@
 
 </head>
 <body <?php if (is_page('index')) echo 'id="home"'; ?>>
-  
+
   <script src="https://assets.extension.org/javascripts/global_nav_internal.js" type="text/javascript"></script>
 
 <div id="frame">
@@ -40,28 +40,24 @@
 <div id="header">
   <h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
   <ul id="user_actions">
-    <li><a href="<?php bloginfo('url'); ?>/get-an-id" title="Get an ID">Register</a></li>
     <li class="last"><a href="<?php bloginfo('url'); ?>/get-started" title="Get an ID">Getting Started</a></li>
   </ul>
-  
-  <div id="search">    
+
+  <div id="search">
     <?php include (TEMPLATEPATH . '/searchform.php'); ?>
   </div>
-  
+
   <ul id="nav">
     <li><a <?php echo is_page('about') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/about" title="About Us">About Us</a></li>
     <li><a <?php if (is_home()) echo('class="current" '); ?> href="<?php bloginfo('url'); ?>/blog" title="Blog" >Blog</a></li>
-    <li><a <?php echo is_page('tools') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/tools" title="Tools">eX Tools</a></li>
     <li><a href="http://www.extension.org/" title="extension.org">extension.org</a></li>
-    <li><a <?php echo is_page('foundation') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/foundation" title="eXtension Foundation">eXtension Foundation</a></li>
-    <li id="support" class="last"><a <?php echo is_page('foundation') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/foundation/donate/" title="Support eXtension">Support eXtension</a></li>
+    <li id="support" class="last"><a href="<?php bloginfo('url'); ?>/about/donate/" title="Support eXtension">Support eXtension</a></li>
   </ul>
 </div>
 
 <div id="mini_banner">
   <div id="mini_art"></div>
   <ul id="call_to_action">
-    <li><a href="<?php bloginfo('url'); ?>/get-an-id" title="Get an ID" class="button gray primary cat small">Get your eXtension ID</a></li>
-    <li><a href="<?php bloginfo('url'); ?>/get-started" title="Get Started" class="button gray secondary cat small">Getting Started with eXtension</a></li>
+    <li><a href="<?php bloginfo('url'); ?>/get-started" title="Get Started" class="button gray primary cat small">Getting Started with eXtension</a></li>
   </ul>
 </div>
