@@ -51,7 +51,6 @@
     <li><a <?php echo is_page('about') ? 'class="current"' : ""; ?> href="<?php bloginfo('url'); ?>/about" title="About Us">About Us</a></li>
     <li><a <?php if (is_home()) echo('class="current" '); ?> href="<?php bloginfo('url'); ?>/blog" title="Blog" >Blog</a></li>
     <li><a href="http://www.extension.org/" title="extension.org">extension.org</a></li>
-    <li id="support" class="last"><a href="<?php bloginfo('url'); ?>/about/donate/" title="Support eXtension">Support eXtension</a></li>
   </ul>
 </div>
 
