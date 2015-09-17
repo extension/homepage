@@ -17,7 +17,7 @@
 		<header id="header">
 			<<?php pinboard_title_tag( 'site' ); ?> id="site-title">
 					<a href="<?php echo home_url( '/' ); ?>" rel="home">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/eXtension_logo_600x240.png" alt="<?php bloginfo( 'name' ); ?>" />
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/eXtension_logo_600x300.png" alt="<?php bloginfo( 'name' ); ?>" />
 					</a>
 				<a class="home" href="<?php echo home_url( '/' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			</<?php pinboard_title_tag( 'site' ); ?>>
