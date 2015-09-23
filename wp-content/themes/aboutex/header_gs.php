@@ -29,9 +29,6 @@ $post_name = $post_obj->post_name;
             <p><a href="<?php echo get_option('home'); ?>/">Back to the About.eXtension site</a></p>
             <p id="logo"><img src="<?php bloginfo('template_directory'); ?>/images/standards/logo.gif" width="155" height="61" alt="eXtension logo"/></p>
             <h2><a href="<?php bloginfo('url'); ?>/graphicstandards">eXtension Graphic Standards Guidelines</a></h2>
-            <ul id="actions">
-                <li class="files"><a href="http://about.extension.org/wp-content/uploads/2015/02/eXtension_logos.zip">Download Logos</a> (2.1 MB)</li>
-            </ul>
             <br class="clear"/>
         </div>
         <div id="body">
@@ -47,6 +44,5 @@ $post_name = $post_obj->post_name;
             <li id="scaling"><a href="<?php bloginfo('url'); ?>/graphicstandards/scaling/">Scaling the Logo</a></li>
             <li id="typography"><a href="<?php bloginfo('url'); ?>/graphicstandards/typography/">Typography</a></li>
             <li id="email-signatures"><a href="<?php bloginfo('url'); ?>/graphicstandards/signature-blocks/">Signature Blocks</a></li>
-            <li id="be-grow-create-icon"><a href="<?php bloginfo('url'); ?>/graphicstandards/be-grow-create-icon/">Be Grow Create eXtension Icon</a></li>
             <li id="aae-button"><a href="<?php bloginfo('url'); ?>/graphicstandards/ask-an-expert-button/">Ask an Expert Button</a></li>
         </ul>
