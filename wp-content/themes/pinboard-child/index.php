@@ -1,9 +1,6 @@
 <?php get_header(); ?>
 	<?php if( is_home() && ! is_paged() ) : ?>
 		<?php get_template_part( 'brochure' ); ?>
-		<?php if( pinboard_get_option( 'slider' ) ) : ?>
-			<?php get_template_part( 'slider' ); ?>
-		<?php endif; ?>
 		<?php get_sidebar( 'wide' ); ?>
 		<?php get_sidebar( 'boxes' ); ?>
 	<?php elseif( ( is_home() && is_paged() ) || ( ! is_home() && pinboard_get_option( 'location' ) ) ) : ?>
