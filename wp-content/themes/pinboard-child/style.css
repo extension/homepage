@@ -12,6 +12,13 @@ License: GNU General Public License v2.0
 License URI: license.txt
 */
 
+#brochure {padding: 1.6%; background: #eee;}
+.sticky-brochure {padding:2em; font-size: 18pt; line-height: 30pt;}
+.sticky-brochure h1 {font-size: 36pt;}
+.sticky-brochure li {margin-bottom: 12pt;}
+.sticky-brochure .col1 {width: 45%; float: left; margin-right:8%;}
+.sticky-brochure .col2 {width: 45%; float: left;}
+
 #site-title img {width:196px;}
 #content_widget h3, #content_widget p {display:none;}
 .textwidget #content_widget {border:none !important; background:transparent !important; font-family: 'Open Sans', sans-serif !important;}
@@ -47,6 +54,8 @@ License URI: license.txt
   .page-subnavigation {margin:-20px -20px 20px -20px; padding:20px; width: 100%;}
   .entry-permalink {display:none !important;}
   .entry-category {display:none !important;}
+  .sticky-brochure .col1 {width: auto;}
+  .sticky-brochure .col2 {width: auto;}
 }
 
 body.custom-background {background-image: none !important;}

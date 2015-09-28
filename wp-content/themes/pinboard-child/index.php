@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 	<?php if( is_home() && ! is_paged() ) : ?>
+		<?php get_template_part( 'brochure' ); ?>
 		<?php if( pinboard_get_option( 'slider' ) ) : ?>
 			<?php get_template_part( 'slider' ); ?>
 		<?php endif; ?>
@@ -13,9 +14,10 @@
 			<?php if( is_category( pinboard_get_option( 'portfolio_cat' ) ) || ( is_category() && cat_is_ancestor_of( pinboard_get_option( 'portfolio_cat' ), get_queried_object() ) ) ) : ?>
 				<?php pinboard_category_filter( pinboard_get_option( 'portfolio_cat' ) ); ?>
 			<?php endif; ?>
-			<?php if( have_posts() ) : ?>
+			<?php $the_query = new WP_Query( array( 'post__not_in' => get_option( 'sticky_posts' ) ) ); ?>
+			<?php if( $the_query->have_posts() ) : ?>
 				<div class="entries">
-					<?php while( have_posts() ) : the_post(); ?>
+					<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						<?php get_template_part( 'content', get_post_format() ); ?>
 					<?php endwhile; ?>
 				</div><!-- .entries -->
