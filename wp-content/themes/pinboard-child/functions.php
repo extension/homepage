@@ -14,6 +14,11 @@ function posts_on_mobile_homepage( $query ) {
 }
 add_action( 'pre_get_posts', 'posts_on_mobile_homepage' );
 
+function remove_footer_admin () {
+  echo 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> | <a href="http://www.extension.org/main/termsofuse" target="_blank">Terms of Use</a>';
+}
+add_filter('admin_footer_text', 'remove_footer_admin');
+
 
 // register_sidebar(
 // 		array(
