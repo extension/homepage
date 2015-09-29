@@ -56,6 +56,8 @@ License URI: license.txt
   .entry-category {display:none !important;}
   .sticky-brochure .col1 {width: auto;}
   .sticky-brochure .col2 {width: auto;}
+  .sticky-brochure {padding:1em; font-size: 12pt; line-height: 18pt;}
+  .sticky-brochure h1 {font-size: 24pt; line-height:28pt;}
 }
 
 body.custom-background {background-image: none !important;}
