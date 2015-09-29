@@ -25,6 +25,11 @@ function kubrick_head() {
 		echo $head . $output . $foot;
 }
 
+function remove_footer_admin () {
+  echo 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> | <a href="http://www.extension.org/main/termsofuse" target="_blank">Terms of Use</a>';
+}
+add_filter('admin_footer_text', 'remove_footer_admin');
+
 add_action('wp_head', 'kubrick_head');
 
 function kubrick_header_image() {
@@ -413,12 +418,12 @@ function kubrick_theme_page() {
 		</div>
 	</div>
 </div>
-<?php } ?><?php 
+<?php } ?><?php
 // http://justintadlock.com/archives/2009/01/06/easy-navigation-menus-in-wordpress
 function quicklink_menu($cat_id = false) {
 
 	$bookmarks = get_bookmarks(array('category' => $cat_id));
-  
+
   $menu = '<ul>';
 	foreach($bookmarks as $bookmark) :
 		$menu .= '<li><a href="' . $bookmark->link_url . '" title="' . $bookmark->link_name . '" rel="' . $bookmark->link_rel . '">' . $bookmark->link_name . '</a></li>';
