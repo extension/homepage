@@ -11,8 +11,14 @@ Tags: blue, gray, silver, white, light, one-column, two-columns, three-columns, 
 License: GNU General Public License v2.0
 License URI: license.txt
 */
+ul.extension_global_nav {background:#C2C6CC !important; text-align: right !important;}
+ul.extension_global_nav li a {color:#5A6782 !important;}
+ul.extension_global_nav li a:hover {color: #1A294A !important;}
 
+#access {background: #00324D;}
+/*#access {background: #81858b;}*/
 #brochure {padding: 1.6%; background: #eee;}
+#wrapper {box-shadow:none;}
 .sticky-brochure {padding:2em; font-size: 18pt; line-height: 30pt;}
 .sticky-brochure h1 {font-size: 36pt;}
 .sticky-brochure li {margin-bottom: 12pt;}
@@ -31,7 +37,7 @@ License URI: license.txt
 
 .resource-areas a {color:#21759B;}
 .resource-areas a:hover {color:#000;}
-#header {background:#fff;}
+#header {background:#fff; border-top:#fff 2px solid;}
 #wrapper {max-width:100%;}
 #sidebar {color: #aaa;}
 .resource-areas ul li {padding:.1em;}
@@ -60,7 +66,7 @@ License URI: license.txt
   .sticky-brochure h1 {font-size: 24pt; line-height:28pt;}
 }
 
-body.custom-background {background-image: none !important;}
+body.custom-background {background-image: none !important; background-color:#fff !important;}
 
 
 
