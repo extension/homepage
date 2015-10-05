@@ -230,10 +230,6 @@ $A2A_SHARE_SAVE_services = array(
 		"name" => "Netvouz",
 		"icon" => "netvouz",
 	),
-	"newstrust" => array(
-		"name" => "NewsTrust",
-		"icon" => "newstrust",
-	),
 	"newsvine" => array(
 		"name" => "NewsVine",
 		"icon" => "newsvine",
@@ -427,7 +423,7 @@ $A2A_FOLLOW_services = array(
 	),
 	'google_plus' => array( 
 		'name' => 'Google+', 
-		'href' => 'https://plus.google.com/+${id}',	
+		'href' => 'https://plus.google.com/${id}',	
 		'icon' => 'google_plus', 
 	),
 	'linkedin' => array( 
