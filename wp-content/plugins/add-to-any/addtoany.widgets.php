@@ -22,7 +22,10 @@ class A2A_SHARE_SAVE_Widget extends WP_Widget {
 		self::widget( $args, NULL );
 	}
 
-	/** @see WP_Widget::widget */	
+	/**
+	 * @param array $args
+	 * @param array $instance
+	 */
 	public function widget( $args = array(), $instance ) {
 	
 		global $A2A_SHARE_SAVE_plugin_url_path;
@@ -51,14 +54,20 @@ class A2A_SHARE_SAVE_Widget extends WP_Widget {
 		echo $after_widget;
 	}
 	
-	/** @see WP_Widget::update */
+	/**
+	 * @param array $new_instance
+	 * @param array $old_instance
+	 * @return array
+	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		return $instance;
 	}
 	
-	/** @see WP_Widget::form */
+	/**
+	 * @param array $instance
+	 */
 	public function form( $instance ) {
 		$title = isset( $instance ) && ! empty( $instance['title'] ) ? __( $instance['title'] ) : '';
 		?>
@@ -87,7 +96,10 @@ class A2A_Follow_Widget extends WP_Widget {
 		parent::__construct( '', 'AddToAny Follow', $widget_ops );	
 	}
 
-	/** @see WP_Widget::widget */	
+	/**
+	 * @param array $args
+	 * @param array $instance
+	 */
 	public function widget( $args = array(), $instance ) {
 	
 		global $A2A_SHARE_SAVE_plugin_url_path;
@@ -128,7 +140,11 @@ class A2A_Follow_Widget extends WP_Widget {
 		echo $after_widget;
 	}
 	
-	/** @see WP_Widget::update */
+	/**
+	 * @param array $new_instance
+	 * @param array $old_instance
+	 * @return array
+	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags( $new_instance['title'] );
@@ -145,7 +161,9 @@ class A2A_Follow_Widget extends WP_Widget {
 		return $instance;
 	}
 	
-	/** @see WP_Widget::form */
+	/**
+	 * @param array $instance
+	 */
 	public function form( $instance ) {
 		$services = $this->get_follow_services();
 		
