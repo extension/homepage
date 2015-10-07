@@ -18,16 +18,3 @@ function remove_footer_admin () {
   echo 'Thank you for creating with <a href="https://wordpress.org/">WordPress</a> | <a href="http://www.extension.org/main/termsofuse" target="_blank">Terms of Use</a>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
-
-
-// register_sidebar(
-// 		array(
-// 			'name' => 'Sidebar eXtension Modules',
-//       'id'            => 'ex-sidebar-module-1',
-// 			'description' => 'Displays in the top of the sidebar.',
-// 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-// 			'after_widget' => '</aside><!-- .widget -->',
-// 			'before_title' => '<' . $title_tag . ' class="widget-title">',
-// 			'after_title' => '</' . $title_tag . '>'
-// 		)
-// 	);
