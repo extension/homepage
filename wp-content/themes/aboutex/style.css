@@ -652,3 +652,8 @@ address p {margin:0;  line-height:1.3em !important; font-size:1.5em !important;}
 
 img.fluid {width:100%;height:auto;}
 img.border {padding:4px;border:2px solid #ccc; margin-bottom:1em;}
+
+
+
+.letter {clear:both; font-family: verdana; white-space: normal; background:#fff; padding: 4em; border:2px solid #ddd;}
+.letter p, .letter ol, .letter li {font-size:11pt !important; float:none !important;}
