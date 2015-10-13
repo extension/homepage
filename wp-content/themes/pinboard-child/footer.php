@@ -4,29 +4,21 @@
 <div id="footer">
   <?php get_sidebar( 'footer-wide' ); ?>
   <div id="copyright">
-    <p class="copyright twocol"><?php pinboard_copyright_notice(); ?></p>
-    <?php if( pinboard_get_option( 'theme_credit_link' ) || pinboard_get_option( 'author_credit_link' )  || pinboard_get_option( 'wordpress_credit_link' ) ) : ?>
-      <p class="credits twocol">
-        <?php $theme_credit_link = '<a href="' . esc_url( 'https://www.onedesigns.com/themes/pinboard' ) . '" title="' . esc_attr( __( 'Pinboard Theme', 'pinboard' ) ) . '">' . __( 'Pinboard Theme', 'pinboard' ) . '</a>'; ?>
-        <?php $author_credit_link = '<a href="' . esc_url( 'https://www.onedesigns.com/' ) . '" title="' . esc_attr( __( 'One Designs', 'pinboard' ) ) . '">' . __( 'One Designs', 'pinboard' ) . '</a>'; ?>
-        <?php $wordpress_credit_link = '<a href="' . esc_url( 'https://wordpress.org/' ) . '" title="' . esc_attr( __( 'WordPress', 'pinboard' ) ) . '">' . __( 'WordPress', 'pinboard' ) . '</a>';; ?>
-        <?php if( pinboard_get_option( 'theme_credit_link' ) && pinboard_get_option( 'author_credit_link' ) && pinboard_get_option( 'wordpress_credit_link' ) ) : ?>
-          <?php echo sprintf( __( 'Powered by %1$s by %2$s and %3$s', 'pinboard' ), $theme_credit_link, $author_credit_link, $wordpress_credit_link ); ?>
-        <?php elseif( pinboard_get_option( 'theme_credit_link' ) && pinboard_get_option( 'author_credit_link' ) && ! pinboard_get_option( 'wordpress_credit_link' ) ) : ?>
-          <?php echo sprintf( __( 'Powered by %1$s by %2$s', 'pinboard' ), $theme_credit_link, $author_credit_link ); ?>
-        <?php elseif( pinboard_get_option( 'theme_credit_link' ) && ! pinboard_get_option( 'author_credit_link' ) && pinboard_get_option( 'wordpress_credit_link' ) ) : ?>
-          <?php echo sprintf( __( 'Powered by %1$s and %2$s', 'pinboard' ), $theme_credit_link, $wordpress_credit_link ); ?>
-        <?php elseif( ! pinboard_get_option( 'theme_credit_link' ) && pinboard_get_option( 'author_credit_link' ) && pinboard_get_option( 'wordpress_credit_link' ) ) : ?>
-          <?php echo sprintf( __( 'Powered by %1$s and %2$s', 'pinboard' ), $author_credit_link, $wordpress_credit_link ); ?>
-        <?php elseif( pinboard_get_option( 'theme_credit_link' ) && ! pinboard_get_option( 'author_credit_link' ) && ! pinboard_get_option( 'wordpress_credit_link' ) ) : ?>
-          <?php echo sprintf( __( 'Powered by %1$s', 'pinboard' ), $theme_credit_link ); ?>
-        <?php elseif( ! pinboard_get_option( 'theme_credit_link' ) && pinboard_get_option( 'author_credit_link' ) && ! pinboard_get_option( 'wordpress_credit_link' ) ) : ?>
-          <?php echo sprintf( __( 'Powered by %1$s', 'pinboard' ), $author_credit_link ); ?>
-        <?php elseif( ! pinboard_get_option( 'theme_credit_link' ) && ! pinboard_get_option( 'author_credit_link' ) && pinboard_get_option( 'wordpress_credit_link' ) ) : ?>
-          <?php echo sprintf( __( 'Powered by %1$s', 'pinboard' ), $wordpress_credit_link ); ?>
-        <?php endif; ?>
+    <p class="copyright twocol">
+
+      <ul class="inline noprint">
+        <li>&copy; <?php echo date('Y'); ?> eXtension. All rights reserved.</li>
+        <li><a href="http://www.extension.org/main/privacy">Privacy</a></li>
+        <li><a href="<?php echo home_url( '/' ); ?>/contact/">Contact Us</a></li>
+        <li><a href="http://www.extension.org/main/disclaimer">Disclaimer</a></li>
+        <li><a href="http://www.extension.org/main/termsofuse">Terms of Use</a></li>
+      </ul>
+
+
+    </p>
+    <p class="credits twocol">
+        <a class="theme-credit" href="https://www.onedesigns.com/themes/pinboard" title="Pinboard Theme">Parent theme credit: Pinboard</a>
       </p>
-    <?php endif; ?>
     <div class="clear"></div>
   </div><!-- #copyright -->
 </div><!-- #footer -->

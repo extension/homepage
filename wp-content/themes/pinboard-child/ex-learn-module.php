@@ -2,7 +2,7 @@
   <div class="textwidget">
     <h2>Upcoming Webinars</h2>
 
-    <p class="hp-resource-item hp-resource-item-large"><a href="https://learn.extension.org/">Take charge of your professional development with learn.extension.org</a></p>
+    <p class="hp-resource-item hp-resource-item-large">Take charge of your professional development with <a href="https://learn.extension.org/">learn.extension.org</a></p>
 
 <!-- Learn -->
 <script type="text/javascript">
