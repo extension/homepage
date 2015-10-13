@@ -22,7 +22,7 @@
 					<a href="<?php echo home_url( '/' ); ?>" rel="home">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/eXtension_logo_600x300.png" alt="<?php bloginfo( 'name' ); ?>" />
 					</a>
-				<a class="home" href="<?php echo home_url( '/' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<a class="home" href="<?php echo home_url( '/' ); ?>" rel="home"><?php bloginfo( 'description' ); ?></a>
 			</<?php pinboard_title_tag( 'site' ); ?>>
 
 			<?php get_sidebar( 'header' ); ?>
