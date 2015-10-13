@@ -19,6 +19,9 @@ License URI: license.txt
 #copyright a:hover {color: #fff;}
 #copyright .theme-credit {color:#666;}
 ul.extension_global_nav {background:#C2C6CC !important; text-align: right !important;}
+ul.extension_global_nav .nav-name {color:#00324D;
+   /*text-transform: uppercase; */
+   font-weight:bold;}
 ul.extension_global_nav li a {color:#5A6782 !important;}
 ul.extension_global_nav li a:hover {color: #1A294A !important;}
 
