@@ -1,0 +1,47 @@
+/*
+Theme Name: eX Wireframe: www
+Theme URI: https://extension.org
+Author:
+Author URI:
+Description: Simple themeless theme
+Version: 1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:
+Text Domain:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+.featured-news {font-size: 1.4em;}
+.aae_qw_subhead {display:none;}
+.learn_widget_specific_title {display:none;}
+
+
+.entry-content p {font-size: 1.3em;}
+.home-feature-image {width: 50%; outline: 2px solid #fff; margin-right: 20px; overflow:hidden;}
+.hp-action-items li {outline: 2px solid magenta; padding:5px; margin-bottom:1em; list-style:none;}
+.hp-action-item {outline: 2px solid magenta; padding:5px; margin-bottom:1em; list-style:none; background: #FFF7FF;}
+.hp-nav-item {outline: 2px solid blue; padding:5px; margin-bottom:1em; list-style:none;}
+.hp-alert-item {outline: 3px solid black; padding:5px; margin-bottom:1em; list-style:none;}
+
+.hp-resource-item {outline: 3px solid lime; padding:5px; margin-bottom:1em; list-style:none;}
+.quick-links li {outline: 2px solid lime; padding:5px; margin-bottom:1em; list-style:none;}
+
+/*.quick-links li:last-child {outline: 2px solid magenta;}*/
+.extension_global_nav {background:#fff !important;}
+.extension_global_nav li li {outline: 2px solid blue; padding:10px !important; margin-right:10px;margin-bottom:1em; list-style:none; }
+.extension_global_nav a {color:blue !important;}
+.color-codes {text-align:center; padding:20px 20px 30px; margin-bottom:30px; background:#eee;}
+.color-codes span {background:#fff;}
+.color-codes span.hp-action-item {background:#FFF7FF;}
+.resource-areas li {outline: 3px solid blue; padding:5px; margin-bottom:1em; list-style:none;}
+
+a {color:#555 !important;}
+.hp-nav-item a {color:blue !important;}
+.hp-action-nav li {margin-right:10px;}
+
+#content_widget h3, #content_widget p {display:none;}
+#content_widget {border:none !important;}
+.block-id {text-transform:capitalize; color:#999; padding:2px; display:block;}
