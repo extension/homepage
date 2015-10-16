@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<?php if( is_home() && ! is_paged() ) : ?>
-		<?php get_template_part( 'brochure' ); ?>
+
 		<?php get_sidebar( 'wide' ); ?>
 		<?php get_sidebar( 'boxes' ); ?>
 	<?php elseif( ( is_home() && is_paged() ) || ( ! is_home() && pinboard_get_option( 'location' ) ) ) : ?>
@@ -8,6 +8,7 @@
 	<?php endif; ?>
 	<div id="container">
 		<section id="content" <?php pinboard_content_class(); ?>>
+			<?php get_template_part( 'brochure' ); ?>
 			<?php if( is_category( pinboard_get_option( 'portfolio_cat' ) ) || ( is_category() && cat_is_ancestor_of( pinboard_get_option( 'portfolio_cat' ), get_queried_object() ) ) ) : ?>
 				<?php pinboard_category_filter( pinboard_get_option( 'portfolio_cat' ) ); ?>
 			<?php endif; ?>
