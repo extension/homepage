@@ -50,11 +50,11 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
   background: #eee;
 }
 #wrapper {box-shadow:none;}
-.sticky-brochure {padding:.4em 1.2em 0; font-size: 14pt; line-height: 22pt;}
-.sticky-brochure h2 {font-size: 22pt; line-height: 30pt;}
-.sticky-brochure li {margin-bottom: 12pt;}
-.sticky-brochure .col1 {width: 45%; float: left; margin-right:8%;}
-.sticky-brochure .col2 {width: 45%; float: left;}
+.sticky-brochure {padding:.4em 1.2em 0; font-size: 13pt; line-height: 18pt;}
+.sticky-brochure h2 {font-size: 17pt; line-height: 26pt;}
+.sticky-brochure li {margin-bottom: 10pt;}
+.sticky-brochure .col1 {width: 46%; float: left; margin-right:6%;}
+.sticky-brochure .col2 {width: 46%; float: left;}
 
 .textwidget p {color: #666;}
 .textwidget a {font-weight:bold; color: #4677B8 !important;}
