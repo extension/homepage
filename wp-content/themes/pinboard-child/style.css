@@ -50,8 +50,8 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
   background: #eee;
 }
 #wrapper {box-shadow:none;}
-.sticky-brochure {padding:2em; font-size: 16pt; line-height: 28pt;}
-.sticky-brochure h1 {font-size: 32pt;}
+.sticky-brochure {padding:.4em 1.2em 0; font-size: 14pt; line-height: 22pt;}
+.sticky-brochure h2 {font-size: 22pt; line-height: 30pt;}
 .sticky-brochure li {margin-bottom: 12pt;}
 .sticky-brochure .col1 {width: 45%; float: left; margin-right:8%;}
 .sticky-brochure .col2 {width: 45%; float: left;}
