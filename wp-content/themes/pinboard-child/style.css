@@ -11,9 +11,21 @@ Tags: blue, gray, silver, white, light, one-column, two-columns, three-columns, 
 License: GNU General Public License v2.0
 License URI: license.txt
 */
+/*#container.page {outline:solid 3px lime !important;}*/
+/*#container.post {outline:solid 3px red !important;}*/
+
 .document-template .entry {padding:3em 4em;}
 .document-template .entry-content {font-size:18px;}
+/*.document-label {margin-top:-2.7em;}*/
+.document-label span {font-size:16px; background: #e5e5e5; color: #999;  padding: .2em 1em; }
 #footer {border-top:none;}
+.related-post {font-size: 17px;}
+.related-post strong {text-transform:uppercase;}
+.edit-link {
+  /*float:right; */
+  color: #bbb;
+  font-size:14px;
+}
 
 #site-title a {color:#aaa !important;}
 .letter { font-family: verdana; white-space: normal; background:#fff; padding: 4em; border:2px solid #ddd;}
@@ -75,6 +87,7 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 
 @media screen and (max-width: 760px) {
   .extension_global_nav {display:none;}
+  .page-subnavigation {display:none;}
   #site-title .home {
     display: none;
   }
@@ -98,6 +111,15 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 
 @media screen and (max-width: 960px) {
 #site-title, #site-description {font-size:24px;}
+}
+
+@media screen and (min-width: 960px) {
+  #container.page .entry-content {font-size:18px !important;
+    /*outline:solid 3px lime !important;*/
+  }
+  #container.post .entry-content {font-size:18px !important;
+    /*outline:solid 3px blue !important;*/
+  }
 }
 
 body.custom-background {background-image: none !important; background-color:#fff !important;}

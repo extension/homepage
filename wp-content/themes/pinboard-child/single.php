@@ -1,38 +1,30 @@
 <?php get_header(); ?>
-	<div id="container" class="page">
+	<div id="container" class="post">
 		<section id="content" <?php pinboard_content_class(); ?>>
 			<?php if( have_posts() ) : the_post(); ?>
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 					<div class="entry">
-
-
-  <?php
-    if($post->post_parent) {
-      $parent_id = get_post_ancestors($post->ID);
-      $id = end($parent_id);
-    } else {
-      $id = $post->ID;
-    }
-  ?>
-
-<ul class="page-subnavigation">
-<?php wp_list_pages('title_li=&include=' . $id); ?>
-<?php wp_list_pages('title_li=&child_of=' . $id); ?>
-</ul>
-
-
-
 						<header class="entry-header">
 							<<?php pinboard_title_tag( 'post' ); ?> class="entry-title"><?php the_title(); ?></<?php pinboard_title_tag( 'post' ); ?>>
-
+							<?php pinboard_entry_meta(); ?>
 						</header><!-- .entry-header -->
 						<div class="entry-content">
+							<?php if( has_post_format( 'audio' ) ) : ?>
+								<p><?php pinboard_post_audio(); ?></p>
+							<?php elseif( has_post_format( 'video' ) ) : ?>
+								<p><?php pinboard_post_video(); ?></p>
+							<?php endif; ?>
 							<?php the_content(); ?>
-							<?php edit_post_link( __( '<p class="edit-link">Edit this page</p>', 'pinboard' ), '<span class="edit-link">', '</span>' ); ?>
 							<div class="clear"></div>
 						</div><!-- .entry-content -->
-						<?php wp_link_pages( array( 'before' => '<footer class="entry-utility"><p class="post-pagination">' . __( 'Pages:', 'pinboard' ), 'after' => '</p></footer><!-- .entry-utility -->' ) ); ?>
+						<footer class="entry-utility">
+							<?php wp_link_pages( array( 'before' => '<p class="post-pagination">' . __( 'Pages:', 'pinboard' ), 'after' => '</p>' ) ); ?>
+							<?php the_tags( '<div class="entry-tags">', ' ', '</div>' ); ?>
+							<?php pinboard_social_bookmarks(); ?>
+							<?php pinboard_post_author(); ?>
+						</footer><!-- .entry-utility -->
 					</div><!-- .entry -->
+					<?php comments_template(); ?>
 				</article><!-- .post -->
 			<?php else : ?>
 				<?php pinboard_404(); ?>
@@ -41,6 +33,5 @@
 		<?php if( ( 'no-sidebars' != pinboard_get_option( 'layout' ) ) && ( 'full-width' != pinboard_get_option( 'layout' ) ) ) : ?>
 			<?php get_sidebar(); ?>
 		<?php endif; ?>
-		<div class="clear"></div>
 	</div><!-- #container -->
 <?php get_footer(); ?>
