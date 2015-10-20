@@ -4,7 +4,7 @@
 
     <p class="hp-action-item"><a class="btn btn-primary btn-default btn-lg" href="http://www.extension.org/">Find Resources</a></p>
 
-    <p class="hp-action-item"><a class="btn btn-default btn-primary btn-lg" href="https://learn.extension.org/">Present webinars</a></p>
+    <p class="hp-action-item"><a class="btn btn-default btn-primary btn-lg" href="<?php echo home_url( '/' ); ?>get-started/webinars-using-learn/">Present webinars</a></p>
 
     <p class="hp-action-item"><a class="btn btn-default btn-primary btn-lg" href="<?php echo home_url( '/' ); ?>get-started/campus-getting-started/">Deliver courses</a></p>
 
