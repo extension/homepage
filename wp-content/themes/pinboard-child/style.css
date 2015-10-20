@@ -82,7 +82,7 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 .blog-archive-entry .wp-post-image {width:40%; margin-right:40px; float:left;}
 .blog-archive-entry .entry-summary p {font-size: 18px; line-height: 30px;}
 
-.page-subnavigation {float:right; background: #e5e5e5; margin:-20px -20px 0 2em; padding:0; width: 24.9%;}
+.page-subnavigation {float:right; background: #e5e5e5; margin:-20px -20px 20px 2em; padding:0; width: 24.9%;}
 .page-subnavigation li {margin:0;padding:1em; list-style:none; font-size:16px;}
 
 @media screen and (max-width: 760px) {
@@ -116,8 +116,16 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 @media screen and (min-width: 960px) {
   #container.page .entry-content {font-size:18px !important;
     /*outline:solid 3px lime !important;*/
+    padding:0 4em 3em 30px !important;
   }
-  #container.post .entry-content {font-size:18px !important;
+  #container.page .entry-header {
+    padding:20px 4em 0 30px !important;
+  }
+  /*#container.page .entry {padding:3em 5em 3em 4em !important;}*/
+  #container.post .entry {padding:3em 5em 3em 4em !important;}
+  #container.post .entry-content {
+    font-size:18px !important;
+
     /*outline:solid 3px blue !important;*/
   }
 }
