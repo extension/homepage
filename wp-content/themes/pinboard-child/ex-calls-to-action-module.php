@@ -12,6 +12,8 @@
 
     <p class="hp-action-item"><a class="btn btn-primary btn-default btn-lg" href="https://ask.extension.org/">Answer questions online</a></p>
 
+    <p class="hp-action-item"><a class="btn btn-primary btn-default btn-lg" href="https://search.extension.org/">CES Search</a></p>
+
     <h3 class="teaser">More coming soon...</h3>
 
   </div>
