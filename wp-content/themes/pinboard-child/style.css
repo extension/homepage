@@ -51,7 +51,7 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 }
 #wrapper {box-shadow:none;}
 .sticky-brochure {padding:.4em 1.2em 0; font-size: 13pt; line-height: 18pt;}
-.sticky-brochure h2 {font-size: 17pt; line-height: 26pt;}
+.sticky-brochure h2 {font-size: 17pt; line-height: 26pt; color: #f47B28;}
 .sticky-brochure li {margin-bottom: 10pt;}
 .sticky-brochure .col1 {width: 46%; float: left; margin-right:6%;}
 .sticky-brochure .col2 {width: 46%; float: left;}
@@ -76,6 +76,7 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 #header {background:#fff; border-top:#fff 2px solid;}
 #wrapper {max-width:100%;}
 #sidebar {color: #aaa;}
+#sidebar h2 {color: #f47B28;}
 .resource-areas ul li {padding:.1em;}
 .resource-areas ul {padding-bottom:1em;}
 .blog-archive-entry {float:left;}
@@ -276,8 +277,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #f47B28;
+  border-color: #f47B28;
 }
 .btn-primary:focus,
 .btn-primary.focus {
