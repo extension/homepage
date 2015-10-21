@@ -53,7 +53,7 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 .entry-title {color: #f47B28; line-height: 1.3em !important;}
 #wrapper {box-shadow:none;}
 .sticky-brochure {padding:.4em 1.2em 0; font-size: 13pt; line-height: 18pt;}
-.sticky-brochure h2 {font-size: 17pt; line-height: 26pt;}
+.sticky-brochure h2 {font-size: 17pt; line-height: 26pt; color: #f47B28;}
 .sticky-brochure li {margin-bottom: 10pt;}
 .sticky-brochure .col1 {width: 46%; float: left; margin-right:6%;}
 .sticky-brochure .col2 {width: 46%; float: left;}
@@ -76,7 +76,7 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 .resource-areas h3, .resource-areas h4 {color: #f47B28;}
 .resource-areas h3 {font-size: 32px;}
 .resource-areas h4 {font-size: 21px;}
-.resource-areas a {color:#21759B;}
+.resource-areas a {color:#333;}
 .resource-areas a:hover {color:#000;}
 #header {background:#fff; border-top:#fff 2px solid;}
 #wrapper {max-width:100%;}
