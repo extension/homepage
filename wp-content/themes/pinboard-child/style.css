@@ -16,6 +16,7 @@ License URI: license.txt
 
 .document-template .entry {padding:3em 4em;}
 .document-template .entry-content {font-size:18px;}
+.document-template .entry-title {color: #333;}
 /*.document-label {margin-top:-2.7em;}*/
 .document-label span {font-size:16px; background: #e5e5e5; color: #999;  padding: .2em 1em; }
 #footer {border-top:none;}
@@ -42,16 +43,17 @@ ul.extension_global_nav li a {color:#5A6782 !important;}
 ul.extension_global_nav li a:hover {color: #1A294A !important;}
 
 .teaser {background: #fff; padding: .25em 1em; color: #666;}
-#access {background: #00324D;}
+#access {background: #81858b;}
 /*#access {background: #81858b;}*/
 #brochure {
   padding: 1.6%;
   margin: 2.5%;
   background: #eee;
 }
+.entry-title {color: #f47B28; line-height: 1.3em !important;}
 #wrapper {box-shadow:none;}
 .sticky-brochure {padding:.4em 1.2em 0; font-size: 13pt; line-height: 18pt;}
-.sticky-brochure h2 {font-size: 17pt; line-height: 26pt;}
+.sticky-brochure h2 {font-size: 17pt; line-height: 26pt; color: #f47B28;}
 .sticky-brochure li {margin-bottom: 10pt;}
 .sticky-brochure .col1 {width: 46%; float: left; margin-right:6%;}
 .sticky-brochure .col2 {width: 46%; float: left;}
@@ -71,11 +73,15 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 .widget-area a {color:#000; font-size:16px;}
 .widget-area a:hover {color: #21759B;}
 
-.resource-areas a {color:#21759B;}
+.resource-areas h3, .resource-areas h4 {color: #f47B28;}
+.resource-areas h3 {font-size: 32px;}
+.resource-areas h4 {font-size: 21px;}
+.resource-areas a {color:#333;}
 .resource-areas a:hover {color:#000;}
 #header {background:#fff; border-top:#fff 2px solid;}
 #wrapper {max-width:100%;}
 #sidebar {color: #aaa;}
+#sidebar h2 {color: #f47B28;}
 .resource-areas ul li {padding:.1em;}
 .resource-areas ul {padding-bottom:1em;}
 .blog-archive-entry {float:left;}
@@ -276,8 +282,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #f47B28;
+  border-color: #f47B28;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -287,8 +293,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary:hover {
   color: #ffffff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #81858b;
+  border-color: #81858b;
 }
 .btn-primary:active,
 .btn-primary.active,
