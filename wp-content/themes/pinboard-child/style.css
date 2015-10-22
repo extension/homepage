@@ -14,6 +14,21 @@ License URI: license.txt
 /*#container.page {outline:solid 3px lime !important;}*/
 /*#container.post {outline:solid 3px red !important;}*/
 
+#header input#s {
+	width:180px;
+	background:#ececec url(images/search.png) right center no-repeat;
+	box-shadow:inset 1px 1px 5px 1px rgba(0, 0, 0, .1);
+	color:#333;
+	text-indent: 0;
+}
+#header input#s:focus {
+	width:180px;
+	background:#ececec url(images/search.png) right center no-repeat;
+	box-shadow:inset 1px 1px 5px 1px rgba(0, 0, 0, .1);
+	color:#333;
+	text-indent: 0;
+}
+
 .document-template .entry {padding:3em 4em;}
 .document-template .entry-content {font-size:18px;}
 .document-template .entry-title {color: #333;}
@@ -35,10 +50,8 @@ License URI: license.txt
 #copyright a {color: #bbb;}
 #copyright a:hover {color: #fff;}
 #copyright .theme-credit {color:#666;}
-ul.extension_global_nav {background:#C2C6CC !important; text-align: right !important;}
-ul.extension_global_nav .nav-name {color:#00324D;
-   /*text-transform: uppercase; */
-   font-weight:bold;}
+ul.extension_global_nav {background:#C2C6CC !important; text-align: right !important; padding-right:12px !important;}
+ul.extension_global_nav .nav-name {color:#00324D;font-weight:bold;}
 ul.extension_global_nav li a {color:#5A6782 !important;}
 ul.extension_global_nav li a:hover {color: #1A294A !important;}
 
@@ -113,6 +126,11 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
   h2 {font-size: 24px;}
   .document-template .entry {padding:1em 2em;}
   .document-template .entry-content {font-size:16px;}
+  #header input#s, #header input#s:focus {
+    width: 246px;
+    margin: 0;
+  }
+
 }
 
 @media screen and (max-width: 960px) {
