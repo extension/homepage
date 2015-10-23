@@ -13,15 +13,10 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 
 		<section id="content" <?php pinboard_content_class(); ?>>
-
 			<section id="brochure">
-
 					<article class="sticky-brochure">
-
-
 						<p class="get_wp_user_avatar"><?php echo get_wp_user_avatar('','medium'); ?></p>
 						<h1 class="entry-title"><?php echo $curauth->display_name; ?></h1>
-
 						<?php if ($curauth->description) { ?>
 
 							<?php echo $curauth->description; ?>
@@ -34,6 +29,8 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 				<div class="clear"></div>
 			</section><!-- #brochure -->
+
+			<h4 class="author-header">Posts by <?php echo $curauth->display_name; ?></h4>
 
 			<?php if( is_category( pinboard_get_option( 'portfolio_cat' ) ) || ( is_category() && cat_is_ancestor_of( pinboard_get_option( 'portfolio_cat' ), get_queried_object() ) ) ) : ?>
 				<?php pinboard_category_filter( pinboard_get_option( 'portfolio_cat' ) ); ?>

@@ -72,6 +72,10 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 .sticky-brochure .col1 {width: 46%; float: left; margin-right:6%;}
 .sticky-brochure .col2 {width: 46%; float: left;}
 
+.author-header {
+    /*padding: 1.6%;*/
+    margin: 0 2.5%;}
+
 .textwidget p {color: #666;}
 .textwidget a {font-weight:bold; color: #4677B8 !important;}
 /*.textwidget h2 {color: lime;}*/
