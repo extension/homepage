@@ -11,9 +11,8 @@ Tags: blue, gray, silver, white, light, one-column, two-columns, three-columns, 
 License: GNU General Public License v2.0
 License URI: license.txt
 */
-/*#container.page {outline:solid 3px lime !important;}*/
-/*#container.post {outline:solid 3px red !important;}*/
-
+.ask_an_expert_link {text-align:center;}
+.ask_an_expert_link img {width: 75%;}
 #header input#s {
 	width:180px;
 	background:#ececec url(images/search.png) right center no-repeat;
@@ -33,13 +32,11 @@ License URI: license.txt
 .document-template .entry {padding:3em 4em;}
 .document-template .entry-content {font-size:18px;}
 .document-template .entry-title {color: #333;}
-/*.document-label {margin-top:-2.7em;}*/
 .document-label span {font-size:16px; background: #e5e5e5; color: #999;  padding: .2em 1em; }
 #footer {border-top:none;}
 .related-post {font-size: 17px;}
 .related-post strong {text-transform:uppercase;}
 .edit-link {
-  /*float:right; */
   color: #bbb;
   font-size:14px;
 }
@@ -58,7 +55,6 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 
 .teaser {background: #fff; padding: .25em 1em; color: #666;}
 #access {background: #81858b;}
-/*#access {background: #81858b;}*/
 #brochure {
   padding: 1.6%;
   margin: 2.5%;
@@ -78,8 +74,6 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 
 .textwidget p {color: #666;}
 .textwidget a {font-weight:bold; color: #4677B8 !important;}
-/*.textwidget h2 {color: lime;}*/
-/*#content_widget*/
 #site-title, #site-description {line-height:32px;}
 #site-title img {width:196px;}
 #content_widget h3, #content_widget p {display:none;}

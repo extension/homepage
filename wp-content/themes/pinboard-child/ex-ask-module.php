@@ -1,9 +1,8 @@
 <aside class="widget widget_text">
   <div class="textwidget">
-    <a href="https://ask.extension.org/">
+    <p class="ask_an_expert_link"><a href="https://ask.extension.org/">
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Ask_An_Expert_logo_color.png" alt="<?php bloginfo( 'name' ); ?>" />
-    </a>
-
+    </a></p>
     <!-- Ask an Expert -->
     <script type="text/javascript">
       (function() {
