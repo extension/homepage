@@ -1,6 +1,6 @@
 <aside class="widget widget_text">
   <div class="textwidget">
-    <h2>Tools for CES Professionals</h2>
+    <h2>Tools for Extension Professionals</h2>
 
     <p class="hp-action-item"><a class="btn btn-primary btn-default btn-lg" href="http://www.extension.org/">Find Resource Articles</a></p>
 
