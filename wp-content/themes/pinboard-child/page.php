@@ -5,20 +5,26 @@
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 					<div class="entry">
 
-
   <?php
+		$additional_subnav_items = get_post_meta( get_the_ID(), 'add_to_subnav', true );
+		// var_dump($additional_subnav_items);
     if($post->post_parent) {
       $parent_id = get_post_ancestors($post->ID);
       $id = end($parent_id);
     } else {
       $id = $post->ID;
     }
+		$children = wp_list_pages("title_li=&child_of=" . $id . "&echo=0");
   ?>
 
-<ul class="page-subnavigation">
-<?php wp_list_pages('title_li=&include=' . $id); ?>
-<?php wp_list_pages('title_li=&child_of=' . $id); ?>
-</ul>
+<?php if ($children) { ?>
+	<ul class="page-subnavigation">
+		<?php wp_list_pages('title_li=&include=' . $id); ?>
+		<?php wp_list_pages('title_li=&child_of=' . $id); ?>
+		<?php if (!empty($additional_subnav_items)) {wp_list_pages('title_li=&include=' . $additional_subnav_items);} ?>
+
+	</ul>
+<?php } ?>
 
 
 
