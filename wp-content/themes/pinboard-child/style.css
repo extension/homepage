@@ -11,6 +11,15 @@ Tags: blue, gray, silver, white, light, one-column, two-columns, three-columns, 
 License: GNU General Public License v2.0
 License URI: license.txt
 */
+.new-banner {
+	background: #81858b;
+	/*background: #f47B28;*/
+	padding: 10px 20px 1px; color: #fff !important;}
+.new-banner h2 {color: #fff !important;}
+.new-banner p {color: #000 !important; font-size: 18px;}
+.widget-area .new-banner a.btn {color: #f47B28 !important;}
+.widget-area .new-banner a.btn:hover {color: #000 !important; background: #fff;}
+
 #sidebar h2 {line-height:1.2em;}
 .ask_an_expert_link {text-align:center;}
 .ask_an_expert_link img {width: 75%;}
