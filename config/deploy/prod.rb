@@ -1,3 +1,3 @@
-set :deploy_to, "/services/about/"
-set :vhost, 'about.extension.org'
+set :deploy_to, "/services/homepage/"
+set :vhost, 'extension.org'
 server vhost, :app, :web, :db, :primary => true
