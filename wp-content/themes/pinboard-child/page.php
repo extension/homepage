@@ -3,7 +3,7 @@
 		<section id="content" <?php pinboard_content_class(); ?>>
 			<?php if( have_posts() ) : the_post(); ?>
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-					<div class="entry">
+					<div id="top-of-page" class="entry">
 
   <?php
 		$additional_subnav_items = get_post_meta( get_the_ID(), 'add_to_subnav', true );
@@ -18,12 +18,12 @@
   ?>
 
 <?php if ($children) { ?>
-	<ul class="page-subnavigation">
+	<ul class="top-page-subnavigation page-subnavigation">
 		<?php wp_list_pages('title_li=&include=' . $id); ?>
 		<?php wp_list_pages('title_li=&child_of=' . $id); ?>
 		<?php if (!empty($additional_subnav_items)) {wp_list_pages('title_li=&include=' . $additional_subnav_items);} ?>
-
 	</ul>
+	<p id="top-subnav"><a href="#subnav">Related pages</a></p>
 <?php } ?>
 
 
@@ -38,6 +38,20 @@
 							<div class="clear"></div>
 						</div><!-- .entry-content -->
 						<?php wp_link_pages( array( 'before' => '<footer class="entry-utility"><p class="post-pagination">' . __( 'Pages:', 'pinboard' ), 'after' => '</p></footer><!-- .entry-utility -->' ) ); ?>
+
+						<?php if ($children) { ?>
+							<div id="subnav" class="bottom-page-subnavigation-wrapper">
+								<a class="bottom-subnav" href="#top-of-page">Back to top</a>
+							<h2 class="bottom-page-subnavigation-header">Related links</h2>
+							<ul class="bottom-page-subnavigation page-subnavigation">
+								<?php wp_list_pages('title_li=&include=' . $id); ?>
+								<?php wp_list_pages('title_li=&child_of=' . $id); ?>
+								<?php if (!empty($additional_subnav_items)) {wp_list_pages('title_li=&include=' . $additional_subnav_items);} ?>
+							</ul>
+						</div>
+						<?php } ?>
+
+
 					</div><!-- .entry -->
 				</article><!-- .post -->
 			<?php else : ?>
