@@ -141,7 +141,7 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
   .sticky-brochure h1 {font-size: 24pt; line-height:28pt;}
 	.top-page-subnavigation {display:none;}
 	.bottom-page-subnavigation li {padding:.75em 1em;border-bottom: 1px solid #fff;}
-	.bottom-page-subnavigation-header {color:#f47B28;color:#fff;padding: 0 10px 5px;font-size: 30px;}
+	.bottom-page-subnavigation-header {color:#444;padding: 10px 15px 10px;font-size: 20px;text-transform:uppercase;}
   #access:target .menu {margin-top:80px;}
   #access {background:transparent;}
   #site-title img {width:180px;}
