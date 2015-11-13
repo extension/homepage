@@ -11,6 +11,10 @@ Tags: blue, gray, silver, white, light, one-column, two-columns, three-columns, 
 License: GNU General Public License v2.0
 License URI: license.txt
 */
+.entry-title, #comments-title, #reply-title {
+	/*overflow:visible;*/
+	/*outline:1px solid red;*/
+}
 .new-banner {
 	background: #81858b;
 	/*background: #f47B28;*/
@@ -112,23 +116,32 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 
 .page-subnavigation {float:right; background: #e5e5e5; margin:-20px -20px 20px 2em; padding:0; width: 24.9%;}
 .page-subnavigation li {margin:0;padding:1em; list-style:none; font-size:16px;}
+.bottom-page-subnavigation-wrapper {display:none;}
+#top-subnav {display:none;}
 
 @media screen and (max-width: 760px) {
+	.entry-title {line-height: 1.2em !important; font-size: 30px !important;}
+	#top-subnav {display:block; padding-bottom:6px;}
+	#top-subnav a {display:block; float:right;}
   .extension_global_nav {display:none;}
-  .page-subnavigation {display:none;}
   #site-title .home {
     display: none;
   }
   #site-title {margin:10px 0 0 10px; text-align: left;}
   #site-title img {margin:0;}
   #access .nav-show, #access a.nav-show:hover {top: 15px; right: 10%;}
-  .page-subnavigation {margin:-20px -20px 20px -20px; padding:20px; width: 100%;}
+	.bottom-page-subnavigation-wrapper {display:block;margin-left:-1.75em; margin-right:-1.75em;background: #ccc;}
+	.page-subnavigation {padding:0 20px;width: 100%;}
+	.bottom-subnav {float:right; padding: 10px 15px;}
   .entry-permalink {display:none !important;}
   .entry-category {display:none !important;}
   .sticky-brochure .col1 {width: auto;}
   .sticky-brochure .col2 {width: auto;}
   .sticky-brochure {padding:1em; font-size: 12pt; line-height: 18pt;}
   .sticky-brochure h1 {font-size: 24pt; line-height:28pt;}
+	.top-page-subnavigation {display:none;}
+	.bottom-page-subnavigation li {padding:.75em 1em;border-bottom: 1px solid #fff;}
+	.bottom-page-subnavigation-header {color:#444;padding: 10px 15px 10px;font-size: 20px;text-transform:uppercase;}
   #access:target .menu {margin-top:80px;}
   #access {background:transparent;}
   #site-title img {width:180px;}
@@ -140,6 +153,8 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
     margin: 0;
   }
 	.get_wp_user_avatar {width: 100%; height:200px; float:none; margin-right:0; display:block; overflow:hidden;}
+	#container {margin:0;}
+	.entry {margin:0;}
 }
 
 @media screen and (max-width: 960px) {
