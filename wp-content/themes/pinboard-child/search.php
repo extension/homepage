@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-	<div id="container" class="page">
-		<section id="search" <?php pinboard_content_class(); ?>>
+	<div id="container" class="page search-container">
+		<section id="content" <?php pinboard_content_class(); ?>>
 			<h1>Search results</h1>
 
 
