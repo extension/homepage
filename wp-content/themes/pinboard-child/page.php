@@ -4,6 +4,7 @@
 			<?php if( have_posts() ) : the_post(); ?>
 				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 					<div id="top-of-page" class="entry">
+						<?php get_template_part("add-this"); ?>
 
   <?php
 		$additional_subnav_items = get_post_meta( get_the_ID(), 'add_to_subnav', true );
@@ -34,8 +35,14 @@
 						</header><!-- .entry-header -->
 						<div class="entry-content">
 							<?php the_content(); ?>
+
+							<?php if(is_page('contact')) { ?>
+							 <?php get_template_part("question-widget"); ?>
+							<?php } ?>
+
 							<?php edit_post_link( __( '<p class="edit-link">Edit this page</p>', 'pinboard' ), '<span class="edit-link">', '</span>' ); ?>
 							<div class="clear"></div>
+
 						</div><!-- .entry-content -->
 						<?php wp_link_pages( array( 'before' => '<footer class="entry-utility"><p class="post-pagination">' . __( 'Pages:', 'pinboard' ), 'after' => '</p></footer><!-- .entry-utility -->' ) ); ?>
 

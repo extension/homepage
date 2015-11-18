@@ -12,6 +12,7 @@ License: GNU General Public License v2.0
 License URI: license.txt
 */
 
+/*Google Analytics hacks*/
 #header .searchform {
 	float:right;
 	margin:60px 3.4% 0 3px;
@@ -24,6 +25,11 @@ License URI: license.txt
 .search-container h1 {padding:0 20px;}
 input.gsc-input {padding:6px !important;}
 .gsc-search-button input {height: 2em !important; padding: 0 10px !important; font-size: 14px !important;}
+
+/*Add This hack*/
+.atclear {clear: left !important;}
+.at-share-btn {margin: 6px !important;}
+.addthis_sharing_toolbox {margin-bottom: 20px;}
 
 .entry-title, #comments-title, #reply-title {
 	/*overflow:visible;*/
@@ -132,8 +138,11 @@ ul.extension_global_nav li a:hover {color: #1A294A !important;}
 .page-subnavigation li {margin:0;padding:1em; list-style:none; font-size:16px;}
 .bottom-page-subnavigation-wrapper {display:none;}
 #top-subnav {display:none;}
+.small-screen {display: none;}
 
 @media screen and (max-width: 760px) {
+	.small-screen {display: block;}
+	.large-screen {display: none;}
 	.entry-title {line-height: 1.2em !important; font-size: 30px !important;}
 	#top-subnav {display:block; padding-bottom:6px;}
 	#top-subnav a {display:block; float:right;}
