@@ -29,8 +29,7 @@ input.gsc-input {padding:6px !important;}
 /*Add This hack*/
 .atclear {clear: left !important;}
 .at-share-btn {margin: 6px !important;}
-.addthis_sharing_toolbox {margin-bottom: 20px;}
-.addthis_native_toolbox, .addthis_sharing_toolbox {border-top: 1px solid #ddd !important; padding-top:10px;;}
+.social-bookmarks {border-top: 1px solid #ddd !important; padding-top:10px; margin-bottom: 20px;}
 
 .entry-title, #comments-title, #reply-title {
 	/*overflow:visible;*/
