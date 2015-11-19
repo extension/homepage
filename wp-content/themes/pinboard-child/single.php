@@ -15,12 +15,14 @@
 								<p><?php pinboard_post_video(); ?></p>
 							<?php endif; ?>
 							<?php the_content(); ?>
+
+							<?php get_template_part("add-this"); ?>
+
 							<div class="clear"></div>
 						</div><!-- .entry-content -->
 						<footer class="entry-utility">
 							<?php wp_link_pages( array( 'before' => '<p class="post-pagination">' . __( 'Pages:', 'pinboard' ), 'after' => '</p>' ) ); ?>
 							<?php the_tags( '<div class="entry-tags">', ' ', '</div>' ); ?>
-							<?php pinboard_social_bookmarks(); ?>
 							<?php pinboard_post_author(); ?>
 						</footer><!-- .entry-utility -->
 					</div><!-- .entry -->
