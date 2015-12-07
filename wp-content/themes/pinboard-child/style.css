@@ -82,10 +82,6 @@ input.gsc-input {padding:6px !important;}
 #copyright a {color: #bbb;}
 #copyright a:hover {color: #fff;}
 #copyright .theme-credit {color:#666;}
-ul.extension_global_nav {background:#C2C6CC !important; text-align: right !important; padding-right:12px !important;}
-ul.extension_global_nav .nav-name {color:#00324D;font-weight:bold;}
-ul.extension_global_nav li a {color:#5A6782 !important;}
-ul.extension_global_nav li a:hover {color: #1A294A !important;}
 
 .teaser {background: #fff; padding: .25em 1em; color: #666;}
 #access {background: #81858b;}

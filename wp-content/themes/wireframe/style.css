@@ -29,10 +29,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .hp-resource-item {outline: 3px solid lime; padding:5px; margin-bottom:1em; list-style:none;}
 .quick-links li {outline: 2px solid lime; padding:5px; margin-bottom:1em; list-style:none;}
 
-/*.quick-links li:last-child {outline: 2px solid magenta;}*/
-.extension_global_nav {background:#fff !important;}
-.extension_global_nav li li {outline: 2px solid blue; padding:10px !important; margin-right:10px;margin-bottom:1em; list-style:none; }
-.extension_global_nav a {color:blue !important;}
 .color-codes {text-align:center; padding:20px 20px 30px; margin-bottom:30px; background:#eee;}
 .color-codes span {background:#fff;}
 .color-codes span.hp-action-item {background:#FFF7FF;}
