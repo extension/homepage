@@ -13,7 +13,7 @@
 
 <body <?php body_class() ?>>
 
-<script src="https://assets.extension.org/javascripts/dev-global_nav_public.js" type="text/javascript"></script>
+<script src="https://assets.extension.org/javascripts/global_shortcuts_bar_public.js" type="text/javascript"></script>
 
 
 	<div id="wrapper">
