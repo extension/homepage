@@ -176,6 +176,7 @@ input.gsc-input {padding:6px !important;}
 
 @media screen and (max-width: 960px) {
 #site-title, #site-description {font-size:24px;}
+#sidebar .onecol {width: 100%;}
 }
 
 @media screen and (min-width: 960px) {
