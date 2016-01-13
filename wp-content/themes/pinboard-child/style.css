@@ -60,7 +60,7 @@ input.gsc-input {padding:6px !important;}
 	text-indent: 0;
 }
 .muted {color: #aaa;}
-.get_wp_user_avatar {width: 200px; height: 200px; float:left; margin-right:2em;}
+.get_wp_user_avatar {width: 200px; height: 200px; float:left; margin-right:2em; overflow:hidden;}
 .document-template .entry {padding:3em 4em;}
 .document-template .entry-content {font-size:18px;}
 .document-template .entry-title {color: #333;}
