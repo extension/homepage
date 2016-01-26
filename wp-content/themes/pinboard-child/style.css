@@ -213,6 +213,7 @@ body.custom-background {background-image: none !important; background-color:#fff
 .aae_qw .aae_qw-see-more {display: none !important;}
 .aae_qw .aae_qw-view-response {display: none !important;}
 .aae_qw a {color: #000;}
+.index-subhead {margin: -12px 2.5% -12px; padding: 0; color:#f47B28; border-bottom: 1px solid #ccc;}
 
 /*.widget-area {font-size:1.1em;}*/
 /* bootstrap button */
