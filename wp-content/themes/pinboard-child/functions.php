@@ -12,6 +12,23 @@ function posts_on_mobile_homepage( $query ) {
     // desktop number is set in Settings > Reading
   }
 }
+
+function  news_widgets_init() {
+	$title_tag = pinboard_get_option( 'widget_title_tag' );
+
+	register_sidebar(
+		array(
+      'name' => 'News Sidebar ',
+      'id' => 'sidebar-news',
+			'description' => 'Displays in in the sidebar on the News page.',
+			'before_widget' => '<div class="column onecol"><aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside><!-- .widget --></div>',
+			'before_title' => '<' . $title_tag . ' class="widget-title">',
+			'after_title' => '</' . $title_tag . '>'
+		)
+	);
+}
+add_action( 'widgets_init', 'news_widgets_init' );
 add_action( 'pre_get_posts', 'posts_on_mobile_homepage' );
 
 function remove_footer_admin () {
