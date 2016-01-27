@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: News
+Template Name: Newsroom
 */
 
 // Which page of the blog are we on?
@@ -20,7 +20,7 @@ $more = 0;
 			<?php if( is_category( pinboard_get_option( 'portfolio_cat' ) ) || ( is_category() && cat_is_ancestor_of( pinboard_get_option( 'portfolio_cat' ), get_queried_object() ) ) ) : ?>
 				<?php pinboard_category_filter( pinboard_get_option( 'portfolio_cat' ) ); ?>
 			<?php endif; ?>
-			<h2 class="index-subhead">News</h2>
+			<h2 class="index-subhead">Newsroom</h2>
 			<?php if( have_posts() ) : ?>
 				<div class="entries">
 					<?php while( have_posts() ) : the_post(); ?>
