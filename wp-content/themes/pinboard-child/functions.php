@@ -12,6 +12,12 @@ function posts_on_mobile_homepage( $query ) {
     // desktop number is set in Settings > Reading
   }
 }
+function exclude_category( $query ) {
+  if ( is_home() ) {
+    $query->set( 'cat', '-147' );
+  }
+}
+add_action( 'pre_get_posts', 'exclude_category' );
 
 function  news_widgets_init() {
 	$title_tag = pinboard_get_option( 'widget_title_tag' );

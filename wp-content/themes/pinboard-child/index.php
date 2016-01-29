@@ -1,3 +1,8 @@
+<?php
+   if (is_home()) {
+      query_posts("cat=-147");
+   }
+?>
 <?php get_header(); ?>
 	<?php if( is_home() && ! is_paged() ) : ?>
 
