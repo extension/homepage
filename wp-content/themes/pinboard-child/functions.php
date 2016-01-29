@@ -14,7 +14,8 @@ function posts_on_mobile_homepage( $query ) {
 }
 function exclude_category( $query ) {
   if ( is_home() ) {
-    $query->set( 'cat', '-147' );
+    $newsroom_id = get_cat_ID('newsroom');
+    $query->set( 'cat', '-'.$newsroom_id );
   }
 }
 add_action( 'pre_get_posts', 'exclude_category' );

@@ -1,6 +1,7 @@
 <?php
    if (is_home()) {
-      query_posts("cat=-147");
+		 $newsroom_id = get_cat_ID('newsroom');
+		 query_posts("cat=-".$newsroom_id);
    }
 ?>
 <?php get_header(); ?>
