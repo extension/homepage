@@ -10,9 +10,6 @@ query_posts('cat=-0&paged='.$paged);
 // make posts print only the first part with a link to rest of the post.
 global $more;
 $more = 0;
-
-//load index to show blog
-// load_template(TEMPLATEPATH . '/index.php');
 ?>
 
 
@@ -35,7 +32,7 @@ $more = 0;
 			<?php endif; ?>
 		</section><!-- #content -->
 		<?php if( 'no-sidebars' != pinboard_get_option( 'layout' ) && 'full-width' != pinboard_get_option( 'layout' ) && ! is_category( pinboard_get_option( 'portfolio_cat' ) ) && ! ( is_category() && cat_is_ancestor_of( pinboard_get_option( 'portfolio_cat' ), get_queried_object() ) ) ) : ?>
-			<?php get_sidebar(); ?>
+			<?php get_sidebar('news-top'); ?>
 		<?php endif; ?>
 		<div class="clear"></div>
 	</div><!-- #container -->
