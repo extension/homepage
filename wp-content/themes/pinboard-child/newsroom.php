@@ -1,30 +1,30 @@
 <?php
-   if (is_home()) {
-		 $newsroom_id = get_cat_ID('newsroom');
-		 query_posts("cat=-".$newsroom_id);
-   }
-?>
-<?php get_header(); ?>
-	<?php if( is_home() && ! is_paged() ) : ?>
+/*
+Template Name: Newsroom
+*/
 
-		<?php get_sidebar( 'wide' ); ?>
-		<?php get_sidebar( 'boxes' ); ?>
-	<?php elseif( ( is_home() && is_paged() ) || ( ! is_home() && pinboard_get_option( 'location' ) ) ) : ?>
-		<?php pinboard_current_location(); ?>
-	<?php endif; ?>
+// Which page of the blog are we on?
+$paged = get_query_var('paged');
+query_posts('category_name='.get_the_title().'&paged='.$paged);
+
+// make posts print only the first part with a link to rest of the post.
+global $more;
+$more = 0;
+?>
+
+
+<?php get_header(); ?>
+
 	<div id="container">
 		<section id="content" <?php pinboard_content_class(); ?>>
-			<?php if( is_home() && ! is_paged() ) : ?>
-				<?php get_template_part( 'brochure' ); ?>
-			<?php endif ?>
 			<?php if( is_category( pinboard_get_option( 'portfolio_cat' ) ) || ( is_category() && cat_is_ancestor_of( pinboard_get_option( 'portfolio_cat' ), get_queried_object() ) ) ) : ?>
 				<?php pinboard_category_filter( pinboard_get_option( 'portfolio_cat' ) ); ?>
 			<?php endif; ?>
+			<h2 class="index-subhead">Newsroom</h2>
 			<?php if( have_posts() ) : ?>
-				<h3 class="index-subhead">Recent Posts</h3>
 				<div class="entries">
 					<?php while( have_posts() ) : the_post(); ?>
-						<?php get_template_part( 'content', get_post_format() ); ?>
+						<?php get_template_part( 'content-simple', get_post_format() ); ?>
 					<?php endwhile; ?>
 				</div><!-- .entries -->
 				<?php pinboard_posts_nav(); ?>
@@ -33,7 +33,7 @@
 			<?php endif; ?>
 		</section><!-- #content -->
 		<?php if( 'no-sidebars' != pinboard_get_option( 'layout' ) && 'full-width' != pinboard_get_option( 'layout' ) && ! is_category( pinboard_get_option( 'portfolio_cat' ) ) && ! ( is_category() && cat_is_ancestor_of( pinboard_get_option( 'portfolio_cat' ), get_queried_object() ) ) ) : ?>
-			<?php get_sidebar(); ?>
+			<?php get_sidebar('news-top'); ?>
 		<?php endif; ?>
 		<div class="clear"></div>
 	</div><!-- #container -->
