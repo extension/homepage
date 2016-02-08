@@ -746,7 +746,7 @@ input[type="button"].btn-block {
 table.benefits {width: 100%;max-width: 800px;border-collapse: collapse;}
 .benefits th {font-weight: bold;font-size: 20px;}
 .benefits td, .benefits th {padding: 6px;border-bottom: 1px solid #fff;border-right: 2px solid #fff;text-align: center; vertical-align:middle;}
-td.benefit {background: #C1DAE6; padding: 12px; color: #1B1464;width: 52%; text-align:left;}
+td.benefit {background: #C1DAE6; padding: 12px; color: #1B1464;width: 52%; text-align:left; line-height: 1.4em}
 td.nonmember {background: #D8E9F0;width: 16%;}
 td.basic {background: #CCE6F0;width: 16%;}
 td.premium {background: #C0E3F0;width: 16%;}
@@ -772,7 +772,7 @@ height: 44px;
 .no {background: url("images/x-mark.png") 50% 50% no-repeat; background-size: 36px;}
 .cell-text {text-indent: -9999px;display:block;}
 .asterisk {position: absolute !important;width: 44px !important;height: 44px;top:0; left:0;text-align: right;font-size: 24px;font-weight:normal;}
-small {display:block;}
+.benefit small {display:block; font-weight:normal; font-size: 13px; line-height: 1.3em;}
 
 
 
