@@ -20,6 +20,8 @@ License URI: license.txt
 #header #sidebar-header .searchform {
 	margin-top: 30px;
 }
+#app-location.dev {background:#FFDC50; padding:.5em 1em .1em; width: 14em; position:absolute; z-index:100;}
+#app-location.dev p {font-size:13px; color:#000;}
 .gsc-table-result td {text-align:left;}
 .search-container table {margin-bottom:0;}
 .search-container h1 {padding:0 20px;}
