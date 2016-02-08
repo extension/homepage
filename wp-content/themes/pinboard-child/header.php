@@ -13,6 +13,12 @@
 
 <body <?php body_class() ?>>
 
+	<?php if ($_SERVER['SERVER_NAME'] =='dev.extension.org') { ?>
+		<div id="app-location" class="dev">
+			<p>This is a development and demonstration site. The data on this site is regularly deleted for development purposes.</p>
+		</div>
+	<?php } ?>
+
 <script src="https://assets.extension.org/javascripts/global_shortcuts_bar_public.js" type="text/javascript"></script>
 
 
