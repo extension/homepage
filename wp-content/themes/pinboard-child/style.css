@@ -745,7 +745,6 @@ input[type="button"].btn-block {
 
 
 /* Simple checklist table */
-.basic-checks-narrow {width: 74%;}
 .basic-checks {border-collapse: collapse;}
 .basic-checks th {background:#fff;padding:0;}
 .basic-checks td {vertical-align:middle; border-bottom: 1px solid #ccc; padding:0;}
