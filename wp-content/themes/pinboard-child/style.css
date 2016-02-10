@@ -744,6 +744,21 @@ input[type="button"].btn-block {
 
 
 
+/* Simple checklist table */
+.basic-checks {border-collapse: collapse;}
+.basic-checks th {background:#fff;}
+.basic-checks td {vertical-align:middle; border-bottom: 1px solid #ccc;}
+.basic-checks td:first-child {padding: 0 10px;}
+.basic-checks td span {display: block; position: relative; width: 100px; height: 38px; background: none; text-indent: -9999px; margin-left: auto; margin-right: auto;}
+.basic-checks .yes {background: url("images/checkmark.png") 50% 50% no-repeat; background-size: 32px; background-color:#D0E6F1;}
+.basic-checks .jumbo-header {font-size: 36px; font-weight:normal;}
+.basic-checks .sub-header {padding: 10px; font-weight:normal; font-size:18px;}
+@media
+only screen and (max-width: 480px)  {
+  .basic-checks td span {width: auto; height: 40px;}
+  .basic-checks .yes {background-size: 24px;}
+}
+
 
 /* Benefits matrix table */
 table.benefits {width: 100%;max-width: 800px;border-collapse: collapse;}
