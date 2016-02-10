@@ -132,7 +132,7 @@ input.gsc-input {padding:6px !important;}
 .blog-archive-entry .entry-summary p {font-size: 18px; line-height: 30px;}
 
 .page-subnavigation {float:right; background: #e5e5e5; margin:-20px -20px 20px 2em; padding:0; width: 24.9%;}
-.page-subnavigation li {margin:0;padding:1em; list-style:none; font-size:16px;}
+.page-subnavigation li {margin:0;padding:12px 20px; list-style:none; font-size:16px;}
 .bottom-page-subnavigation-wrapper {display:none;}
 #top-subnav {display:none;}
 .small-screen {display: none;}
@@ -185,7 +185,7 @@ input.gsc-input {padding:6px !important;}
 @media screen and (min-width: 960px) {
   #container.page .entry-content {font-size:18px !important;
     /*outline:solid 3px lime !important;*/
-    padding:0 4em 3em 30px !important;
+    /*padding:0 4em 3em 30px !important;*/
   }
   #container.page .entry-header {
     padding:20px 4em 0 30px !important;
@@ -197,6 +197,7 @@ input.gsc-input {padding:6px !important;}
 
     /*outline:solid 3px blue !important;*/
   }
+	/*.page-subnavigation li {padding:5px; outline: 1px solid red;}*/
 }
 
 body.custom-background {background-image: none !important; background-color:#fff !important;}
@@ -747,9 +748,9 @@ input[type="button"].btn-block {
 /* Simple checklist table */
 .basic-checks {border-collapse: collapse;}
 .basic-checks th {background:#fff;padding:0;}
-.basic-checks td {vertical-align:middle; border-bottom: 1px solid #ccc; padding:0;}
-.basic-checks td:first-child {padding: 0 10px; font-size: 16px; line-height: 20px; text-align:left;}
-.basic-checks td span {display: block; position: relative; width: 100px; height: 38px; background: none; text-indent: -9999px; margin-left: auto; margin-right: auto;}
+.basic-checks td {vertical-align:middle; border-bottom: 1px solid #ccc; padding:0; width:15%;}
+.basic-checks td:first-child {padding: 0 10px; font-size: 16px; line-height: 20px; text-align:left; width:40%;}
+.basic-checks td span {display: block; position: relative; width: 100%; min-width: 50px; max-width: 100px; height: 38px; background: none; text-indent: -9999px; margin-left: auto; margin-right: auto;}
 .basic-checks .yes {background: url("images/checkmark.png") 50% 50% no-repeat; background-size: 32px; background-color:#D0E6F1;}
 .basic-checks .jumbo-header {font-size: 36px; font-weight:normal;}
 .basic-checks .sub-header {padding: 10px; font-weight:normal; font-size:18px;}
@@ -763,12 +764,13 @@ only screen and (max-width: 480px)  {
 }
 
 
+
 /* Benefits matrix table */
 table.benefits {width: 100%;max-width: 800px;border-collapse: collapse;}
 table.narrow-table {width: 74%;}
-.benefits th {font-weight: bold;font-size: 20px;}
+.benefits th {font-weight: bold;font-size: 18px; line-height: 21px;}
 .benefits td, .benefits th {padding: 6px;border-bottom: 1px solid #fff;border-right: 2px solid #fff;text-align: center; vertical-align:middle;}
-td.benefit {background: #C1DAE6; padding: 12px; color: #1B1464;width: 52%; text-align:left; line-height: 1.4em}
+td.benefit {background: #C1DAE6; padding: 12px; color: #1B1464;width: 52%; text-align:left; line-height: 1.4em; word-break: break-word;}
 td.nonmember {background: #D8E9F0;width: 16%;}
 td.basic {background: #CCE6F0;width: 16%;}
 td.premium {background: #C0E3F0;width: 16%;}
@@ -788,6 +790,7 @@ position: relative;
 margin-left: auto; margin-right: auto;
 width: 36px;
 height: 44px;
+line-height: 21px;
 }
 .yes-text {color: #39B54A; text-indent: 0; width: 100%; width: 100% !important; height: auto !important;}
 .yes {background: url("images/checkmark.png") 50% 50% no-repeat; background-size: 36px;}
@@ -850,4 +853,14 @@ only screen and (max-width: 480px)  {
 	#benefits-matrix td:nth-of-type(2):before { content: "Non-Member"; }
 	#benefits-matrix td:nth-of-type(3):before { content: "Basic"; }
 	#benefits-matrix td:nth-of-type(4):before { content: "Premium"; }
+}
+@media
+only screen and (max-width: 1200px)  {
+	.basic-checks .sub-header {padding: 10px;font-size:12px;}
+	.benefits th {font-weight: bold;font-size: 16px; line-height: 16px;}
+	td.benefit {font-size:16px;}
+}
+@media
+only screen and (max-width: 760px)  {
+	table.narrow-table {width: 100%;}
 }
