@@ -747,6 +747,7 @@ input[type="button"].btn-block {
 
 /* Benefits matrix table */
 table.benefits {width: 100%;max-width: 800px;border-collapse: collapse;}
+table.narrow-table {width: 74%;}
 .benefits th {font-weight: bold;font-size: 20px;}
 .benefits td, .benefits th {padding: 6px;border-bottom: 1px solid #fff;border-right: 2px solid #fff;text-align: center; vertical-align:middle;}
 td.benefit {background: #C1DAE6; padding: 12px; color: #1B1464;width: 52%; text-align:left; line-height: 1.4em}
@@ -778,9 +779,9 @@ height: 44px;
 .benefit small {display:block; font-weight:normal; font-size: 13px; line-height: 1.3em;}
 
 
-
 @media
 only screen and (max-width: 480px)  {
+	table.narrow-table {width: 100%;}
   .table-header {color: #f47B28; padding: 20px 0 10px; font-size: 21px; border-bottom: 2px solid #ccc;}
 	/* Force table to not be like tables anymore */
 	table#benefits-matrix, #benefits-matrix thead, #benefits-matrix tbody, #benefits-matrix th,  #benefits-matrix td,  #benefits-matrix tr {
