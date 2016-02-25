@@ -863,4 +863,5 @@ only screen and (max-width: 1200px)  {
 @media
 only screen and (max-width: 760px)  {
 	table.narrow-table {width: 100%;}
+	.index-subhead {margin: 0 0 0; padding: 0 1.75em; border:0;}
 }
