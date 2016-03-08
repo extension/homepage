@@ -78,6 +78,8 @@ input.gsc-input {padding:6px !important;}
 
 #site-title a {color:#aaa !important;}
 .letter { font-family: verdana; white-space: normal; background:#fff; padding: 4em; border:2px solid #ddd;}
+.letter .callout {font-size: 24px; color: #f47B28; background-color: #f5f5f5; padding: 1em; line-height: 32px;}
+
 #copyright ul li {display:inline-block; padding: 10px 10px;}
 #copyright {font-size: 14px;}
 #copyright a {color: #bbb;}
