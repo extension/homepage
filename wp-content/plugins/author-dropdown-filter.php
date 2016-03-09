@@ -14,8 +14,5 @@ function limit_wp_dropdown_users( $query_args, $r ) {
       $query_args['meta_value'] = '1';
       $query_args['who'] = '';
     }
-
-    error_log( print_r( $query_args, true ) );
     return $query_args;
-
 }
