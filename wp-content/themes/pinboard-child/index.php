@@ -1,7 +1,7 @@
 <?php
    if (is_home()) {
-		 $newsroom_id = get_cat_ID('newsroom');
-		 query_posts("cat=-".$newsroom_id);
+     $paged = get_query_var('paged');
+     query_posts('cat=-0&paged='.$paged);
    }
 ?>
 <?php get_header(); ?>
