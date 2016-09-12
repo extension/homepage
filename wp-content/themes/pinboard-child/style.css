@@ -802,6 +802,62 @@ line-height: 21px;
 .benefit small {display:block; font-weight:normal; font-size: 13px; line-height: 1.3em;}
 .usda-nifa {font-size:15px;}
 
+.explore-wrapper {
+  padding-left:50px;
+}
+.explore-step-number {
+  float:left;
+  clear:left;
+  display: block;
+  margin: 0 20px 20px 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 22px;
+  border: 4px solid #fff;
+  line-height: 36px;
+  text-align:center;
+  font-size: 21px;
+  font-weight: normal;
+  font-family:"Open Sans";
+  background: #f47B28;
+  color: #fff;
+  margin-left: -24px;
+}
+h1 .explore-step-number {
+  float:left;
+  clear:left;
+  display: block;
+  margin: 0 20px 20px 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 26px;
+  border: 4px solid #fff;
+  line-height: 44px;
+  text-align:center;
+  font-size: 24px;
+  font-weight: normal;
+  font-family:"Open Sans";
+  background: #f47B28;
+  color: #fff;
+  margin-left: -28px;
+}
+.explore-steps {padding-left: 0; margin-left:40px;
+  border-left: 4px dotted #f47B28;
+  /*outline: lime 1px solid;*/
+}
+.explore-step {margin-left:0; padding-bottom:20px;
+  /*outline: magenta 1px solid;*/
+}
+.final-step {margin-left:44px; padding-bottom:140px;}
+
+.explore-step h3 {color: #81858b;}
+.explore-step h3 small {font-size:80%;}
+.explore-step ul {padding-left:3em; padding-bottom:0; margin-bottom:0;}
+
+.explore-step-benefit {margin-left:80px;}
+.explore-step-benefit h3 {color: #f47B28; font-size: 30px; margin-bottom:0;}
+.explore-step-benefit ul {padding-left:10px;}
+
 @media
 only screen and (max-width: 480px)  {
 	table.narrow-table {width: 100%;}
