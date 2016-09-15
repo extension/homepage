@@ -844,6 +844,17 @@ h1 .explore-step-number {
 .explore-step-benefit ul {padding-left:10px;}
 .explore-extension-pdf-link {padding:20px;}
 
+
+
+#pd-list {padding-left:30px;}
+#pd-list .learn-widget-wrapper {border:0 !important; padding:0 0 !important; background: none !important; font-size:1.1em;}
+#pd-list .learn-widget-wrapper a {color: #f47B28 !important;}
+#pd-list .learn-widget-header-general {display: none;}
+#pd-list .learn-widget-header-specific {display: none;}
+#pd-list .hp-resource-item-large {font-size: 16px; line-height:24px; font-weight:bold}
+#pd-list .learn-widget-see-more {display:none;}
+#pd-list .learn-widget-event-date {font-size: 16px;}
+
 @media
 only screen and (max-width: 480px)  {
 	table.narrow-table {width: 100%;}
