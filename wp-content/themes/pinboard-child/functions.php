@@ -64,3 +64,11 @@ function show_learn_widget_professional_development() {
 }
 
 add_shortcode( 'show_learn_widget_professional_development', 'show_learn_widget_professional_development' );
+
+function show_learn_widget_horizon_report() {
+  ob_start();
+  get_template_part( 'learn-widget-horizon-report' );
+  return ob_get_clean();
+}
+
+add_shortcode( 'show_learn_widget_horizon_report', 'show_learn_widget_horizon_report' );
