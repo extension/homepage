@@ -55,3 +55,12 @@ function remove_avatar_help_text () {
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 add_filter('user_profile_picture_description', 'remove_avatar_help_text');
+
+
+function show_learn_widget_professional_development() {
+  ob_start();
+  get_template_part( 'learn-widget-pd' );
+  return ob_get_clean();
+}
+
+add_shortcode( 'show_learn_widget_professional_development', 'show_learn_widget_professional_development' );
