@@ -72,3 +72,19 @@ function show_learn_widget_horizon_report() {
 }
 
 add_shortcode( 'show_learn_widget_horizon_report', 'show_learn_widget_horizon_report' );
+
+
+function show_learn_widget( $atts ) {
+  $a = shortcode_atts( array(
+    'key' => '',
+    'tags' => '',
+    'limit' => '5',
+    'match_all_tags' => false,
+  ), $atts );
+  $a['operator'] = ($a['match_all_tags'] == "true" ? "and" : '');
+  ob_start();
+  include(locate_template('learn-widget.php'));
+  return ob_get_clean();
+}
+
+add_shortcode( 'learn_widget', 'show_learn_widget' );
