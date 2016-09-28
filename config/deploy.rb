@@ -30,10 +30,10 @@ namespace :deploy do
   task :link_and_copy_configs, :roles => :app do
     run <<-CMD
     rm -rf #{release_path}/wp-config.php &&
-    ln -nfs /services/about/shared/config/wp-config.php #{release_path}/wp-config.php &&
-    ln -nfs /services/about/shared/config/.htaccess #{release_path}/.htaccess &&
-    ln -nfs /services/about/shared/config/robots.txt #{release_path}/robots.txt &&
-    ln -nfs /services/about/shared/uploads #{release_path}/wp-content/uploads
+    ln -nfs /services/homepage/shared/config/wp-config.php #{release_path}/wp-config.php &&
+    ln -nfs /services/homepage/shared/config/.htaccess #{release_path}/.htaccess &&
+    ln -nfs /services/homepage/shared/config/robots.txt #{release_path}/robots.txt &&
+    ln -nfs /services/homepage/shared/uploads #{release_path}/wp-content/uploads
     CMD
   end
 
