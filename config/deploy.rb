@@ -12,7 +12,6 @@ set :user, "pacecar"
 set :use_sudo, false
 set :keep_releases, 3
 ssh_options[:forward_agent] = true
-set :port, 24
 #ssh_options[:verbose] = :debug
 
 after "deploy:update_code", "deploy:link_and_copy_configs"
@@ -31,10 +30,10 @@ namespace :deploy do
   task :link_and_copy_configs, :roles => :app do
     run <<-CMD
     rm -rf #{release_path}/wp-config.php &&
-    ln -nfs /services/about/shared/config/wp-config.php #{release_path}/wp-config.php &&
-    ln -nfs /services/about/shared/config/.htaccess #{release_path}/.htaccess &&
-    ln -nfs /services/about/shared/config/robots.txt #{release_path}/robots.txt &&
-    ln -nfs /services/about/shared/uploads #{release_path}/wp-content/uploads
+    ln -nfs /services/homepage/shared/config/wp-config.php #{release_path}/wp-config.php &&
+    ln -nfs /services/homepage/shared/config/.htaccess #{release_path}/.htaccess &&
+    ln -nfs /services/homepage/shared/config/robots.txt #{release_path}/robots.txt &&
+    ln -nfs /services/homepage/shared/uploads #{release_path}/wp-content/uploads
     CMD
   end
 
@@ -47,15 +46,17 @@ namespace :deploy do
    # Override default web enable/disable tasks
    namespace :web do
 
-      desc "Put Apache in maintenancemode by touching the maintenancemode file"
-      task :disable, :roles => :app do
-        invoke_command "touch /services/maintenance/#{vhost}.maintenancemode"
-      end
+     desc "Put Apache and Cronmon in maintenancemode by touching the maintenancemode file"
+     task :disable, :roles => :app do
+      invoke_command "touch /services/maintenance/#{vhost}.maintenancemode"
+      invoke_command "touch /services/maintenance/CRONMONHALT"
+     end
 
-      desc "Remove Apache from maintenancemode by removing the maintenancemode file"
-      task :enable, :roles => :app do
-        invoke_command "rm -f /services/maintenance/#{vhost}.maintenancemode"
-      end
+     desc "Remove Apache and Cronmon from maintenancemode by removing the maintenancemode file"
+     task :enable, :roles => :app do
+      invoke_command "rm -f /services/maintenance/#{vhost}.maintenancemode"
+      invoke_command "rm -f /services/maintenance/CRONMONHALT"
+     end
 
    end
 
