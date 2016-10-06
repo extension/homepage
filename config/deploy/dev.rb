@@ -7,4 +7,3 @@ end
 set :vhost, 'dev-homepage.extension.org'
 set :deploy_server, 'dev-homepage.aws.extension.org'
 server deploy_server, :app, :web, :db, :primary => true
-set :port, 22
