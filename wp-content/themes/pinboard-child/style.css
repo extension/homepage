@@ -76,6 +76,7 @@ input.gsc-input {padding:6px !important;}
   font-size:14px;
 }
 
+
 #site-title a {color:#aaa !important;}
 .letter { font-family: verdana; white-space: normal; background:#fff; padding: 4em; border:2px solid #ddd;}
 .letter .callout {font-size: 24px; color: #f47B28; background-color: #f5f5f5; padding: 1em; line-height: 32px;}
@@ -185,21 +186,10 @@ input.gsc-input {padding:6px !important;}
 }
 
 @media screen and (min-width: 960px) {
-  #container.page .entry-content {font-size:18px !important;
-    /*outline:solid 3px lime !important;*/
-    /*padding:0 4em 3em 30px !important;*/
-  }
-  #container.page .entry-header {
-    padding:20px 4em 0 30px !important;
-  }
-  /*#container.page .entry {padding:3em 5em 3em 4em !important;}*/
+  .page .entry {padding: 3em 5em 3em 4em !important;}
+  #container.page .entry-content {font-size:18px !important;}
   #container.post .entry {padding:3em 5em 3em 4em !important;}
-  #container.post .entry-content {
-    font-size:18px !important;
-
-    /*outline:solid 3px blue !important;*/
-  }
-	/*.page-subnavigation li {padding:5px; outline: 1px solid red;}*/
+  #container.post .entry-content {font-size:18px !important;}
 }
 
 body.custom-background {background-image: none !important; background-color:#fff !important;}
