@@ -8,7 +8,7 @@
 
       <ul class="inline noprint">
         <li>&copy; <?php echo date('Y'); ?> eXtension. All rights reserved.</li>
-        <li><a href="http://articles.extension.org/main/privacy">Privacy</a></li>
+        <li><a href="https://extension.org/privacy">Privacy</a></li>
         <li><a href="<?php echo home_url( '/' ); ?>/contact/">Contact Us</a></li>
         <li><a href="http://articles.extension.org/main/disclaimer">Disclaimer</a></li>
         <li><a href="https://extension.org/terms-of-use/">Terms of Use</a></li>
