@@ -845,6 +845,14 @@ h1 .explore-step-number {
 #pd-list .learn-widget-see-more {display:none;}
 #pd-list .learn-widget-event-date {font-size: 16px;}
 
+
+.search-page {max-width: 80em; padding: 2em 4em; background:#fff;}
+.search-list-item {margin-bottom:2em; list-style: none;}
+.search-header {font-size: 24px; margin-bottom:5px;}
+.search-list-item p {font-size: 15px; line-height: 1.25em;}
+.search-prompt {font-size: 16px;}
+.search-prompt span {background: #FDFFC4; padding:4px 10px;}
+
 @media
 only screen and (max-width: 480px)  {
 	table.narrow-table {width: 100%;}
