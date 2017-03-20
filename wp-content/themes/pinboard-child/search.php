@@ -14,9 +14,10 @@
               <?php while ( have_posts() ) { the_post(); ?>
 
                  <div class="search-list-item">
-                   <h3 class="search-header"><a href="<?php echo get_permalink(); ?>"><?php the_title();  ?></a></h3>
-                   <?php  the_post_thumbnail('medium') ?>
-                   <p><?php echo get_the_excerpt(); ?></p>
+                   <h3 class="search-header"><a href="<?php the_permalink(); ?>"><?php the_title();  ?></a></h3>
+                   <?php the_post_thumbnail('medium') ?>
+                   <?php the_date(); ?> <?php the_excerpt(); ?>
+
                  </div>
 
               <?php } ?>
