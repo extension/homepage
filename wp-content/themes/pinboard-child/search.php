@@ -7,7 +7,8 @@
         <h1 class="search-title"> <?php echo $wp_query->found_posts; ?>
           <?php _e( 'Search Results Found For', 'locale' ); ?>: "<?php the_search_query(); ?>" </h1>
 
-          <p class="search-prompt"><span>You're searching eXtension Foundation news and updates. To search educational content, please visit <a href="http://articles.extension.org/">articles.eXtension.org</a>.</span></p>
+          <p class="search-prompt"><span>You're searching eXtension Foundation news and updates. To search educational content, please visit <a href="http://articles.extension.org/main/search?q=<?php echo $_GET["s"]; ?>">articles.eXtension.org</a>.</span></p>
+
 
           <?php if ( have_posts() ) { ?>
 
