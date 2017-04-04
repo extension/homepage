@@ -88,3 +88,14 @@ function show_learn_widget( $atts ) {
 }
 
 add_shortcode( 'learn_widget', 'show_learn_widget' );
+
+function show_google_form( $atts ) {
+  $a = shortcode_atts( array(
+    'form' => '',
+  ), $atts );
+  ob_start();
+  include(locate_template('google-form.php'));
+  return ob_get_clean();
+}
+
+add_shortcode( 'gform', 'show_google_form' );
