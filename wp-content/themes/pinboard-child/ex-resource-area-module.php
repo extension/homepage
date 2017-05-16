@@ -49,7 +49,7 @@
 	<li><a href="http://articles.extension.org/drinking_water">Drinking Water and Human Health</a></li>
 	<li><a href="http://articles.extension.org/family_caregiving">Family Caregiving</a></li>
 	<li><a href="http://articles.extension.org/food_safety">Food Safety</a></li>
-	<li><a href="http://articles.extension.org/militaryfamilies">Military Families</a></li>
+	<li><a href="https://militaryfamilies.extension.org">Military Families</a></li>
 	<li><a href="http://articles.extension.org/parenting">Parenting</a></li>
 	<li><a href="http://articles.extension.org/personal_finance">Personal Finance</a></li>
 	</ul>
