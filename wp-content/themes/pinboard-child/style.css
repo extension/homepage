@@ -791,6 +791,7 @@ line-height: 21px;
 .asterisk {position: absolute !important;width: 44px !important;height: 44px;top:0; left:0;text-align: right;font-size: 24px;font-weight:normal;}
 .benefit small {display:block; font-weight:normal; font-size: 13px; line-height: 1.3em;}
 .usda-nifa {font-size:15px;}
+.sidebar-image {padding: 24px; background: #fff;}
 
 
 .explore-step-number {
