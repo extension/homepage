@@ -9,7 +9,7 @@
 add_filter( 'wp_dropdown_users_args', 'limit_wp_dropdown_users', 10, 2 );
 function limit_wp_dropdown_users( $query_args, $r ) {
 
-    if(isset($r['name']) and $r['name'] == 'post_author') {
+    if(isset($r['name']) and ($r['name'] == 'post_author' or $r['name'] == 'post_author_override')) {
       $query_args['meta_key'] = 'allow_ghost_post';
       $query_args['meta_value'] = '1';
       $query_args['who'] = '';
