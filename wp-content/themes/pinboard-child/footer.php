@@ -7,7 +7,7 @@
     <p class="copyright twocol">
 
       <ul class="inline noprint">
-        <li>&copy; <?php echo date('Y'); ?> eXtension. All rights reserved.</li>
+        <li>Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-ShareAlike License</a>.</li>
         <li><a href="<?php echo home_url( '/' ); ?>membership/current/">eXtension Members</a></li>
         <li><a href="<?php echo home_url( '/' ); ?>privacy/">Privacy</a></li>
         <li><a href="<?php echo home_url( '/' ); ?>contact/">Contact Us</a></li>
