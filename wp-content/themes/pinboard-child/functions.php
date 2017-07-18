@@ -15,7 +15,8 @@ function posts_on_mobile_homepage( $query ) {
 function exclude_category( $query ) {
   if ( is_home() ) {
     $newsroom_id = get_cat_ID('newsroom');
-    $query->set( 'cat', '-'.$newsroom_id );
+    $successstories_id = get_cat_ID('Success Stories');
+    $query->set( 'cat', '-'.$newsroom_id.', -'.$successstories_id );
   }
 }
 add_action( 'pre_get_posts', 'exclude_category' );
