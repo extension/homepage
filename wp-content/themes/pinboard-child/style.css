@@ -214,10 +214,12 @@ body.custom-background {background-image: none !important; background-color:#fff
 /* Force Mailchimp to play nice */
 /*.mc4wp-form {background: #eee; padding:1em;}*/
 .mail-list {background:#eee; padding:20px;}
+.mail-list.not-honking-huge {max-width:400px;}
+.mail-list.not-honking-huge p {margin-bottom:10px;}
 .mail-list h2 {font-size:30px; line-height:1.3em;}
 .mc4wp-form-fields p br {display:none;}
 .mc4wp-response p {font-size:16px;}
-.mc4wp-form-fields label {font-weight:bold; font-size:1.2em; display:block;}
+.mc4wp-form-fields label {font-weight:bold; font-size:16px; display:block;}
 .mc4wp-form-fields input {
   box-sizing: border-box; /* css3 rec */
  -moz-box-sizing: border-box; /* ff */
@@ -226,8 +228,8 @@ body.custom-background {background-image: none !important; background-color:#fff
  -khtml-box-sizing: border-box; /* konqueror */
   display:block;
   width:100%;
-  font-size:1.2em;
-  padding: 1.5%;
+  font-size:14px;
+  padding: 10px;
   box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .05);
   background: #fff;
   color: #000;
