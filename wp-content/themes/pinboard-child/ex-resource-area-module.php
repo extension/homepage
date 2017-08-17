@@ -99,6 +99,7 @@
 	</ul>
 	<h4>Pest Management</h4>
 	<ul class='unstyled'>
+	<li><a href="http://articles.extension.org/ant_pests">Ant Pests</a></li>
 	<li><a href="http://articles.extension.org/feral_hogs">Feral Hogs</a></li>
 	<li><a href="http://articles.extension.org/fire_ants">Imported Fire Ants</a></li>
 	<li><a href="http://articles.extension.org/invasive_species">Invasive Species</a></li>
