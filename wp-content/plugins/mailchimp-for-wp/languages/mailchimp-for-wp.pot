@@ -313,6 +313,10 @@ msgstr ""
 msgid "Select the form to show"
 msgstr ""
 
+#: includes/forms/class-form-element.php:82
+msgid "Leave this field empty if you're human:"
+msgstr ""
+
 #: includes/forms/class-form-previewer.php:146
 msgid "Form preview"
 msgstr ""
@@ -369,7 +373,7 @@ msgstr ""
 msgid "Property of the current page or post."
 msgstr ""
 
-#: includes/forms/class-form.php:133
+#: includes/forms/class-form.php:51
 msgid "There is no form with ID %d, perhaps it was deleted?"
 msgstr ""
 
@@ -517,31 +521,31 @@ msgstr ""
 msgid "Appearance"
 msgstr ""
 
-#: includes/forms/views/edit-form.php:25
+#: includes/forms/views/edit-form.php:26
 msgid "Form"
 msgstr ""
 
-#: includes/forms/views/edit-form.php:34
+#: includes/forms/views/edit-form.php:36
 msgid "Edit Form"
 msgstr ""
 
-#: includes/forms/views/edit-form.php:58
+#: includes/forms/views/edit-form.php:61
 msgid "Enter form title here"
 msgstr ""
 
-#: includes/forms/views/edit-form.php:59
+#: includes/forms/views/edit-form.php:65
 msgid "Enter the title of your sign-up form"
 msgstr ""
 
-#: includes/forms/views/edit-form.php:65
+#: includes/forms/views/edit-form.php:74
 msgid "Shortcode"
 msgstr ""
 
-#: includes/forms/views/edit-form.php:67
+#: includes/forms/views/edit-form.php:76
 msgid "Get shortcode"
 msgstr ""
 
-#: includes/forms/views/edit-form.php:72
+#: includes/forms/views/edit-form.php:84
 msgid "Preview this form"
 msgstr ""
 

@@ -4,9 +4,10 @@ Donate link: https://mc4wp.com/#utm_source=wp-plugin-repo&utm_medium=mailchimp-f
 Tags: mailchimp, mc4wp, email, marketing, newsletter, subscribe, widget, mc4wp, contact form 7, woocommerce, buddypress, ibericode, mailchimp forms, mailchimp integrations
 Requires at least: 4.1
 Tested up to: 4.8.1
-Stable tag: 4.1.6
+Stable tag: 4.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires PHP: 5.2.4
 
 MailChimp for WordPress, the absolute best. Subscribe your WordPress site visitors to your MailChimp lists, with ease.
 
@@ -192,6 +193,31 @@ MailChimp for WordPress comes with many filter & action hooks which allow you to
 6. Dive into detailed sign-up statistics (premium feature).
 
 == Changelog == 
+
+
+#### 4.1.9 - September 19, 2017
+
+**Improvements**
+
+- Add `<label>` element to sign-up checkbox for WCAG compatibility.
+- Custom integration now works with Enfold theme's contact form element.
+
+
+#### 4.1.7 & 4.1.8 - September 8, 2017
+
+**Fixes**
+
+- Properly escape the return value of `add_query_arg` when it is used in HTML attributes to prevent cross-site scripting. Thanks to [Karim Ouerghemmi of RIPS](https://www.ripstech.com/) for responsibly disclosing.
+- Now loading integrations after WPML so that String Translations work properly.
+
+**Additions**
+
+- Add sign-up integration for WPForms forms.
+
+**Improvements**
+
+- Updated internal JS dependencies.
+- Form tag `{data key="foo.bar"}` now allows you to access nested array values.
 
 
 #### 4.1.6 - July 31, 2017
