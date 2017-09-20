@@ -15,6 +15,20 @@ class ComposerStaticInit53de4def9f9611d4493d50d1c639cfa8
         'cb296d991e3145f10320ab99c1b9ed05' => __DIR__ . '/../..' . '/includes/default-filters.php',
     );
 
+    public static $prefixLengthsPsr4 = array (
+        'C' => 
+        array (
+            'CodeClimate\\PhpTestReporter\\' => 28,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'CodeClimate\\PhpTestReporter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codeclimate/php-test-reporter/src',
+        ),
+    );
+
     public static $prefixesPsr0 = array (
         'x' => 
         array (
@@ -90,6 +104,8 @@ class ComposerStaticInit53de4def9f9611d4493d50d1c639cfa8
         'MC4WP_Usage_Tracking' => __DIR__ . '/../..' . '/includes/admin/class-usage-tracking.php',
         'MC4WP_User_Integration' => __DIR__ . '/../..' . '/includes/integrations/class-user-integration.php',
         'MC4WP_Validator' => __DIR__ . '/../..' . '/includes/class-validator.php',
+        'MC4WP_WPForms_Field' => __DIR__ . '/../..' . '/integrations/wpforms/class-field.php',
+        'MC4WP_WPForms_Integration' => __DIR__ . '/../..' . '/integrations/wpforms/class-wpforms.php',
         'MC4WP_WooCommerce_Integration' => __DIR__ . '/../..' . '/integrations/woocommerce/class-woocommerce.php',
         'xrstf\\Composer52\\AutoloadGenerator' => __DIR__ . '/..' . '/xrstf/composer-php52/lib/xrstf/Composer52/AutoloadGenerator.php',
         'xrstf\\Composer52\\Generator' => __DIR__ . '/..' . '/xrstf/composer-php52/lib/xrstf/Composer52/Generator.php',
@@ -98,6 +114,8 @@ class ComposerStaticInit53de4def9f9611d4493d50d1c639cfa8
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit53de4def9f9611d4493d50d1c639cfa8::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit53de4def9f9611d4493d50d1c639cfa8::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit53de4def9f9611d4493d50d1c639cfa8::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit53de4def9f9611d4493d50d1c639cfa8::$classMap;
 
