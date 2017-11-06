@@ -1,6 +1,33 @@
 Changelog
 =========
 
+#### 4.1.11 - November 2, 2017
+
+**Fixes**
+
+- Filter out empty array values when overriding selected MailChimp lists via `_mc4wp_lists`. 
+
+**Improvements**
+
+- Updated JavaScript dependencies.
+
+**Additions**
+
+- Link to the [HTML Forms](https://www.htmlforms.io/) from the plugin settings pages.
+
+
+#### 4.1.10 - October 19, 2017
+
+**Improvements**
+
+- Remove unused options from Ninja Forms integration.
+- Now logging all sign-ups from Ninja Forms integrations when using [MailChimp for WordPress Premium](https://mc4wp.com/premium-features/). 
+
+**Additions**
+
+- Added Gravity Forms integration. You can now integrate with Gravity Forms by adding the "MailChimp" field to your forms.
+
+
 #### 4.1.9 - September 19, 2017
 
 **Improvements**
