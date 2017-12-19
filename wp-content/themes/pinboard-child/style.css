@@ -891,8 +891,10 @@ h1 .explore-step-number {
 .search-list-item {margin-bottom:3em; list-style: none; clear: left;}
 .search-header {font-size: 24px; margin-bottom:10px; line-height:1.25em}
 .search-list-item p {font-size: 15px; line-height: 1.25em;}
-.search-prompt {font-size: 16px;}
-.search-prompt span {background: #FDFFC4; padding:4px 10px;}
+.search-prompt {font-size: 16px; line-height: 1.6em;}
+.search-prompt span {background: #FDFFC4; padding:4px 10px;
+-webkit-box-decoration-break: clone;
+ box-decoration-break: clone;}
 
 .search-list-item img {max-width: 100px; float: left; outline: 1px solid #ccc; margin-right: 10px;}
 
