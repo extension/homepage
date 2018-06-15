@@ -5,7 +5,7 @@
 	<h4>Community</h4>
 	<ul>
 	<li><a href="http://articles.extension.org/ag_law">Agricultural and Food Law</a></li>
-  <li><a href="https://publish.extension.org/civildialogue/">Civil Dialogue</a></li>
+  <li><a href="https://civildialogue.extension.org/">Civil Dialogue</a></li>
 	<li><a href="http://articles.extension.org/community_planning_and_zoning">Community Planning and Zoning</a></li>
 	<li><a href="http://articles.extension.org/community_and_regional_food_systems">Community, Local and Regional Food Systems</a></li>
 	<li><a href="http://articles.extension.org/cooperatives">Cooperatives</a></li>
